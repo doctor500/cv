@@ -28,6 +28,10 @@ jobs:
       with:
         name: cv.pdf
         path: cv.pdf
+  create_release:
+    runs-on: ubuntu-latest
+    needs: publish_pdf
+    steps:
     - name: Setup for cron pipeline
       if: ${{github.event_name == 'schedule'}}
       run: echo "PREFIX_FILE_NAME=SCHEDULE" >> $GITHUB_ENV
