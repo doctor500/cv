@@ -1,0 +1,22 @@
+name: Build PDF
+
+on:
+  push:
+    branches:
+    - master
+    #temp
+    - feat/pdf-pipeline
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Publish PDF from GitHub pages
+      uses: misaelnieto/web_to_pdf_action@master
+      with:
+        webPageURL: https://doctor500.github.io/cv/
+        outputFile: ./cv.pdf
+        usePuppeteer: true
+        useScreen: true
+        pdfOptions: '{"format": "Letter", "margin": {"top": "10mm", "left": "10mm", "right": "10mm", "bottom": "10mm"}}'
