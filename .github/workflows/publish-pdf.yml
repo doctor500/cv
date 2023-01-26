@@ -8,9 +8,7 @@ on:
   # Run Pipeline on Manual Push
   push:
     branches:
-    - master
-    #temp
-    - feat/pdf-pipeline
+    - main
 
 jobs:
   publish_pdf:
