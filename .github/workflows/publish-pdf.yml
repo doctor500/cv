@@ -37,17 +37,16 @@ jobs:
       uses: josStorer/get-current-time@v2.0.2
       id: current-time
       with:
-        format: YYYY MMM
+        format: YYYYMM
     - name: Create Release
       id: create_release
       uses: actions/create-release@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        RUN_YEAR: "${{ steps.current-time.outputs.year }}"
-        RUN_MONTH: "${{ steps.current-time.outputs.month }}"
+        PIPELINE_YEARDATE: "${{ steps.current-time.outputs.formattedTime }}"
       with:
-        tag_name: "CV-${{ env.RUN_MONTH }}${{ env.RUN_YEAR }}-${{ env.PREFIX_FILE_NAME }}"
-        release_name: "CV-${{ env.RUN_MONTH }}${{ env.RUN_YEAR }}-${{ env.PREFIX_FILE_NAME }}"
+        tag_name: "CV-${{ env.PIPELINE_YEARDATE }}-${{ env.PREFIX_FILE_NAME }}"
+        release_name: "CV-${{ env.PIPELINE_YEARDATE }}-${{ env.PREFIX_FILE_NAME }}"
         draft: false
         prerelease: false
     - name: Upload Release Asset
