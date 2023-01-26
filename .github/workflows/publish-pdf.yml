@@ -1,4 +1,5 @@
 name: Build PDF
+permissions: write-all
 
 on:
   # Run pipeline every first day of the month
