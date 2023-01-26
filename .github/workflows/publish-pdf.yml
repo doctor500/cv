@@ -37,14 +37,24 @@ jobs:
     - name: Setup for manual trigger pipeline
       if: ${{github.event_name != 'schedule'}}
       run: echo "PREFIX_FILE_NAME=$(echo $GITHUB_SHA | cut -c 1-6)" >> $GITHUB_ENV
+    - name: Get current time
+      uses: josStorer/get-current-time@v2.0.2
+      id: current-time
+      with:
+        format: YYYYMMDD-HH
+    - name: Use current time
+      env:
+        RUN_YEAR: "${{ steps.current-time.outputs.year }}"
+        RUN_MONTH: "${{ steps.current-time.outputs.month }}"
+      run: echo $RUN_YEAR $RUN_MONTH
     - name: Create Release
       id: create_release
       uses: actions/create-release@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        tag_name: "CV-${{ env.PREFIX_FILE_NAME }}-${{ env.GITHUB_RUN_MONTH }}-${{ env.GITHUB_RUN_YEAR }}"
-        release_name: "CV-${{ env.PREFIX_FILE_NAME }}-${{ env.GITHUB_RUN_MONTH }}-${{ env.GITHUB_RUN_YEAR }}"
+        tag_name: "CV-${{ env.PREFIX_FILE_NAME }}-${{ env.RUN_MONTH }}-${{ env.RUN_YEAR }}"
+        release_name: "CV-${{ env.PREFIX_FILE_NAME }}-${{ env.RUN_MONTH }}-${{ env.RUN_YEAR }}"
         draft: false
         prerelease: false
     - name: Upload Release Asset
