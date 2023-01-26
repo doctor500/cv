@@ -54,6 +54,7 @@ jobs:
       uses: actions/upload-release-asset@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        PIPELINE_YEARDATE: "${{ steps.current-time.outputs.formattedTime }}"
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
         asset_path: ./cv.pdf
