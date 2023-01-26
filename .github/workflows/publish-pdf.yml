@@ -33,10 +33,11 @@ jobs:
     steps:
     - name: Setup Custom variable
       run: |
-        if "${{github.event_name}}" == "schedule":
+        if [ "${{github.event_name}}" == "schedule" ]; then
           echo "PREFIX_FILE_NAME=SCHEDULE" >> $GITHUB_ENV
-        else:
+        else
           echo "PREFIX_FILE_NAME=$(echo $GITHUB_SHA | cut -c 1-6)" >> $GITHUB_ENV
+        fi
     - name: Create Release
       id: create_release
       uses: actions/create-release@v1
