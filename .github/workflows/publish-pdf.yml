@@ -27,10 +27,6 @@ jobs:
       with:
         name: cv.pdf
         path: cv.pdf
-  create_release:
-    runs-on: ubuntu-latest
-    needs: publish_pdf
-    steps:
     - name: Setup for cron pipeline
       if: ${{github.event_name == 'schedule'}}
       run: echo "PREFIX_FILE_NAME=SCHEDULE" >> $GITHUB_ENV
@@ -41,7 +37,7 @@ jobs:
       uses: josStorer/get-current-time@v2.0.2
       id: current-time
       with:
-        format: YYYYMMMMDD-HH
+        format: YYYY MMM
     - name: Create Release
       id: create_release
       uses: actions/create-release@v1
@@ -50,8 +46,8 @@ jobs:
         RUN_YEAR: "${{ steps.current-time.outputs.year }}"
         RUN_MONTH: "${{ steps.current-time.outputs.month }}"
       with:
-        tag_name: "CV-${{ env.PREFIX_FILE_NAME }}-${{ env.RUN_MONTH }}-${{ env.RUN_YEAR }}"
-        release_name: "CV-${{ env.PREFIX_FILE_NAME }}-${{ env.RUN_MONTH }}-${{ env.RUN_YEAR }}"
+        tag_name: "CV-${{ env.RUN_MONTH }}${{ env.RUN_YEAR }}-${{ env.PREFIX_FILE_NAME }}"
+        release_name: "CV-${{ env.RUN_MONTH }}${{ env.RUN_YEAR }}-${{ env.PREFIX_FILE_NAME }}"
         draft: false
         prerelease: false
     - name: Upload Release Asset
