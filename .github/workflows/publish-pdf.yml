@@ -18,5 +18,4 @@ jobs:
         webPageURL: https://doctor500.github.io/cv/
         outputFile: ./cv.pdf
         usePuppeteer: true
-        useScreen: true
         pdfOptions: '{"format": "Letter", "margin": {"top": "10mm", "left": "10mm", "right": "10mm", "bottom": "10mm"}}'
