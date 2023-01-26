@@ -70,8 +70,10 @@ __Bina Nusantara University, Jakarta__
 
 ## Professional Experience
 
-`Nov 2021 - Present`
+`2021 - Now`
 __DevOps Engineer__, Gojek - GoTo Financial, Jakarta
+
+*(Nov 2021 - Now)*
 
 Part Commerce Enablement - Developer Experience (CE DevX) Team.
 Some key contributions so far:
@@ -82,8 +84,10 @@ Some key contributions so far:
 - Managed and maintained Gitlab-based CI/CD & Runner
 - Collaborated intensively with feature teams during the on-call schedule, making sure our infrastructure availability using Prometheus and Grafana as the monitoring stack
 
-`Mar 2020 - Oct 2021`
+`2020 - 2021`
 __Release Engineer__, Pegipegi
+
+*(Mar 2020 - Oct 2021)*
 
 Part of Pegipegi's functional team. Focus on software engineering concerned with the compilation, assembly, and delivery of source code into finished products or other software components. Some key contributions:
 - Design architecture of container-based Jenkins and create provisioning mechanism for Master & Agent in Kubernetes environment
@@ -92,8 +96,10 @@ Part of Pegipegi's functional team. Focus on software engineering concerned with
 - Implement Jenkins's new pipeline mechanism from file-based to repo-based (Jenkins Shared Library) for better release standardization.
 - Maintain the operation of Pegipegi Engineering tools
 
-`Mar 2018 - Feb 2020`
+`2018 - 2020`
 __Data Center Staff__, Bina Nusantara - IT Division
+
+*(Mar 2018 - Feb 2020)*
 
 Collaborate in Data Center & IT Infrastructure group to Help Binus IT Operational Process. Some key contributions:
 - Creating data report, transformation, and analysis, especially in PDDikti reporting process
@@ -102,8 +108,10 @@ Collaborate in Data Center & IT Infrastructure group to Help Binus IT Operationa
 - Improving network infrastructure by creating system integration
 - Troubleshooting application & core systems in the production environment
 
-`Feb 2016 - Jan 2019`
+`2016 - 2019`
 __Freelance Web Developer__, Self Freelance
+
+*(Feb 2016 - Jan 2019)*
 
 Developing & Design web-based applications based on user's requirements for several companies & organizations:
 - PT. Tri Jaya Samudera (Feb 2016)
