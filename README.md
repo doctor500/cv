@@ -9,7 +9,8 @@ This CV is using Jekyll-based page and renders by the GitHub page pipeline.
 
 ```mermaid
 graph LR;
-    A[Create PDF file]-->B[Setup ENV]
-    B[Setup ENV]-->C[Create Release Tag]
-    C[Create Release Tag]-->D[Upload Release Asset]
+    A[Generate GitHub Pages]-->B[Create PDF file]
+    B[Create PDF file]-->C[Setup ENV]
+    C[Setup ENV]-->D[Create Release Tag]
+    D[Create Release Tag]-->E[Upload Release Asset]
 ```
