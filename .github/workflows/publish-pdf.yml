@@ -2,6 +2,8 @@ name: Build PDF
 permissions: write-all
 
 on:
+  # Manual Trigger
+  workflow_dispatch:
   # Run pipeline every first day of the month
   schedule:
     - cron: '0 0 1 * *'
@@ -14,11 +16,28 @@ jobs:
   publish_pdf:
     runs-on: ubuntu-latest
     steps:
+    - name: Setup for scheduled pipeline
+      if: ${{github.event_name == 'schedule'}}
+      run: |
+        echo "PREFIX_FILE_NAME=$(date +'%m')" >> $GITHUB_ENV
+        echo "RELEASE_TYPE=Scheduled" >> $GITHUB_ENV
+        echo "RELEASE_DESC=Monthly release for CV" >> $GITHUB_ENV
+    - name: Setup for manual trigger pipeline
+      if: ${{github.event_name != 'schedule'}}
+      run: |
+        echo "PREFIX_FILE_NAME=$(echo $GITHUB_SHA | cut -c 1-7)" >> $GITHUB_ENV
+        echo "RELEASE_TYPE=Manual" >> $GITHUB_ENV
+        echo "RELEASE_DESC=on-demand release (generated manually)" >> $GITHUB_ENV
+    - name: Get current date
+      run: |
+        echo "PIPELINE_DATE=$(date +'%Y%m%d')" >> $GITHUB_ENV
+        echo "PIPELINE_YEAR=$(date +'%Y')" >> $GITHUB_ENV
     - name: Create PDF file from GitHub pages
+      id: create_pdf
       uses: misaelnieto/web_to_pdf_action@master
       with:
         webPageURL: https://doctor500.github.io/cv/
-        outputFile: cv.pdf
+        outputFile: "CV_David Layardi_${{ env.PIPELINE_DATE }}.pdf"
         usePuppeteer: true
         pdfOptions: '{"format": "Letter", "margin": {"top": "10mm", "left": "10mm", "right": "10mm", "bottom": "10mm"}}'
     # - name: Publish pipeline artifact
@@ -26,35 +45,12 @@ jobs:
     #   with:
     #     name: cv.pdf
     #     path: cv.pdf
-    - name: Setup for cron pipeline
-      if: ${{github.event_name == 'schedule'}}
-      run: echo "PREFIX_FILE_NAME=SCHEDULE" >> $GITHUB_ENV
-    - name: Setup for manual trigger pipeline
-      if: ${{github.event_name != 'schedule'}}
-      run: echo "PREFIX_FILE_NAME=$(echo $GITHUB_SHA | cut -c 1-6)" >> $GITHUB_ENV
-    - name: Get current time
-      uses: josStorer/get-current-time@v2.0.2
-      id: current-time
-      with:
-        format: YYYYMM
     - name: Create Release
       id: create_release
-      uses: actions/create-release@v1.1.4
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        PIPELINE_YEARDATE: "${{ steps.current-time.outputs.formattedTime }}"
+      uses: softprops/action-gh-release@v1
       with:
-        tag_name: "CV-${{ env.PIPELINE_YEARDATE }}-${{ env.PREFIX_FILE_NAME }}"
-        release_name: "CV-${{ env.PIPELINE_YEARDATE }}-${{ env.PREFIX_FILE_NAME }}"
-        draft: false
-        prerelease: false
-    - name: Upload Release Asset
-      uses: actions/upload-release-asset@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        PIPELINE_YEARDATE: "${{ steps.current-time.outputs.formattedTime }}"
-      with:
-        upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./cv.pdf
-        asset_name: "CV-${{ env.PIPELINE_YEARDATE }}-${{ env.PREFIX_FILE_NAME }}.pdf"
-        asset_content_type: application/pdf
+        files: "CV_David Layardi_${{ env.PIPELINE_DATE }}.pdf"
+        fail_on_unmatched_files: true
+        name: "🚀 ${{ env.RELEASE_TYPE }} publish. ${{ env.PREFIX_FILE_NAME }}_${{ env.PIPELINE_YEAR }} "
+        tag_name: "${{ env.PIPELINE_YEAR }}-${{ env.RELEASE_TYPE }}-${{ env.PREFIX_FILE_NAME }}"
+        body: "${{ env.RELEASE_DESC }} "
