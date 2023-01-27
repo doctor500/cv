@@ -7,10 +7,10 @@ on:
   # Run pipeline every first day of the month
   schedule:
     - cron: '0 0 1 * *'
-  # Run Pipeline on Manual Push
-  push:
-    branches:
-    - main
+  # # Run Pipeline on Manual Push
+  # push:
+  #   branches:
+  #   - main
 
 jobs:
   publish_pdf:
