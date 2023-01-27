@@ -8,8 +8,9 @@ Cloud Infrastructure, Automation, DevOps Engineer.
 <div id="webaddress">
 <text>Jakarta, Indonesia</text>
 | <a href="mailto:david@layardi.com">david@layardi.com</a>
-| <a href="https://medium.com/@davidlayardi">Medium</a>
+| <a href="https://github.com/doctor500">GitHub</a>
 | <a href="https://www.linkedin.com/in/david-lay/">LinkedIn</a>
+| <a href="https://medium.com/@davidlayardi">Medium</a>
 </div>
 
 
