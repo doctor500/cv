@@ -23,11 +23,13 @@ jobs:
       run: |
         echo "PREFIX_FILE_NAME=$(date +'%m')" >> $GITHUB_ENV
         echo "RELEASE_TYPE=Scheduled" >> $GITHUB_ENV
+        echo "RELEASE_DESC=Monthly release for CV" >> $GITHUB_ENV
     - name: Setup for manual trigger pipeline
       if: ${{github.event_name != 'schedule'}}
       run: |
         echo "PREFIX_FILE_NAME=$(echo $GITHUB_SHA | cut -c 1-7)" >> $GITHUB_ENV
         echo "RELEASE_TYPE=Manual" >> $GITHUB_ENV
+        echo "RELEASE_DESC=on-demand release (generated manually)" >> $GITHUB_ENV
     - name: Get current date
       run: |
         echo "PIPELINE_DATE=$(date +'%Y%m%d')" >> $GITHUB_ENV
@@ -51,8 +53,9 @@ jobs:
       with:
         files: "CV_David Layardi_${{ env.PIPELINE_DATE }}.pdf"
         fail_on_unmatched_files: true
-        name: ":page_facing_up: ${{ env.RELEASE_TYPE }} publish - ${{ env.PREFIX_FILE_NAME }} ${{ env.PIPELINE_YEAR }} "
+        name: "🚀 ${{ env.RELEASE_TYPE }} publish. ${{ env.PREFIX_FILE_NAME }}_${{ env.PIPELINE_YEAR }} "
         tag_name: "${{ env.PIPELINE_YEAR }}-${{ env.RELEASE_TYPE }}-${{ env.PREFIX_FILE_NAME }}"
+        body: "${{ env.RELEASE_DESC }} "
     # - name: Create Release
     #   id: create_release
     #   uses: actions/create-release@v1.1.4
