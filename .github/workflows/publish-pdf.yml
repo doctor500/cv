@@ -21,11 +21,11 @@ jobs:
         outputFile: cv.pdf
         usePuppeteer: true
         pdfOptions: '{"format": "Letter", "margin": {"top": "10mm", "left": "10mm", "right": "10mm", "bottom": "10mm"}}'
-    - name: Publish pipeline artifact
-      uses: actions/upload-artifact@v3
-      with:
-        name: cv.pdf
-        path: cv.pdf
+    # - name: Publish pipeline artifact
+    #   uses: actions/upload-artifact@v3
+    #   with:
+    #     name: cv.pdf
+    #     path: cv.pdf
     - name: Setup for cron pipeline
       if: ${{github.event_name == 'schedule'}}
       run: echo "PREFIX_FILE_NAME=SCHEDULE" >> $GITHUB_ENV
@@ -39,7 +39,7 @@ jobs:
         format: YYYYMM
     - name: Create Release
       id: create_release
-      uses: actions/create-release@v1
+      uses: actions/create-release@v1.1.4
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         PIPELINE_YEARDATE: "${{ steps.current-time.outputs.formattedTime }}"

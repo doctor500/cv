@@ -1,6 +1,6 @@
 ---
 layout: cv
-title: David Layardi's CV
+title: David Layardi
 ---
 # David Layardi
 Cloud Infrastructure, Automation, DevOps Engineer.
