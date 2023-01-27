@@ -9,6 +9,8 @@ on:
   push:
     branches:
     - main
+    #debug
+    - feat/refactor-pipeline
 
 jobs:
   publish_pdf:
@@ -37,9 +39,16 @@ jobs:
       id: current-time
       with:
         format: YYYYMM
+    - name: Get current time v2
+      run: echo "PIPELINE_YEARDATE_V2=$(date +'%Y%m%d')" >> $GITHUB_ENV
+      #debug
+    - name: Console out ENV
+      run: echo $PIPELINE_YEARDATE_V2 && echo $PREFIX_FILE_NAME
     - name: Create Release
       id: create_release
       uses: actions/create-release@v1.1.4
+      #debug
+      if: ${{github.event_name == 'schedule'}}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         PIPELINE_YEARDATE: "${{ steps.current-time.outputs.formattedTime }}"
@@ -50,6 +59,8 @@ jobs:
         prerelease: false
     - name: Upload Release Asset
       uses: actions/upload-release-asset@v1
+      #debug
+      if: ${{github.event_name == 'schedule'}}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         PIPELINE_YEARDATE: "${{ steps.current-time.outputs.formattedTime }}"
