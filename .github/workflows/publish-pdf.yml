@@ -34,16 +34,8 @@ jobs:
     - name: Setup for manual trigger pipeline
       if: ${{github.event_name != 'schedule'}}
       run: echo "PREFIX_FILE_NAME=$(echo $GITHUB_SHA | cut -c 1-6)" >> $GITHUB_ENV
-    - name: Get current time
-      uses: josStorer/get-current-time@v2.0.2
-      id: current-time
-      with:
-        format: YYYYMM
-    - name: Get current time v2
-      run: echo "PIPELINE_YEARDATE_V2=$(date +'%Y%m%d')" >> $GITHUB_ENV
-      #debug
-    - name: Console out ENV
-      run: echo $PIPELINE_YEARDATE_V2 && echo $PREFIX_FILE_NAME
+    - name: Get current date
+      run: echo "PIPELINE_DATE=$(date +'%Y%m%d')" >> $GITHUB_ENV
     - name: Create Release
       id: create_release
       uses: actions/create-release@v1.1.4
@@ -51,10 +43,9 @@ jobs:
       if: ${{github.event_name == 'schedule'}}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        PIPELINE_YEARDATE: "${{ steps.current-time.outputs.formattedTime }}"
       with:
-        tag_name: "CV-${{ env.PIPELINE_YEARDATE }}-${{ env.PREFIX_FILE_NAME }}"
-        release_name: "CV-${{ env.PIPELINE_YEARDATE }}-${{ env.PREFIX_FILE_NAME }}"
+        tag_name: "CV-${{ env.PIPELINE_DATE }}-${{ env.PREFIX_FILE_NAME }}"
+        release_name: "CV-${{ env.PIPELINE_DATE }}-${{ env.PREFIX_FILE_NAME }}"
         draft: false
         prerelease: false
     - name: Upload Release Asset
@@ -63,9 +54,8 @@ jobs:
       if: ${{github.event_name == 'schedule'}}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        PIPELINE_YEARDATE: "${{ steps.current-time.outputs.formattedTime }}"
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
         asset_path: ./cv.pdf
-        asset_name: "CV-${{ env.PIPELINE_YEARDATE }}-${{ env.PREFIX_FILE_NAME }}.pdf"
+        asset_name: "CV-${{ env.PIPELINE_DATE }}-${{ env.PREFIX_FILE_NAME }}.pdf"
         asset_content_type: application/pdf
