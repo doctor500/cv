@@ -51,6 +51,6 @@ jobs:
       with:
         files: "CV_David Layardi_${{ env.PIPELINE_DATE }}.pdf"
         fail_on_unmatched_files: true
-        name: "🚀 ${{ env.RELEASE_TYPE }} release ${{ env.PIPELINE_MONTH }}${{ env.PIPELINE_YEAR }}"
+        name: "🚀 ${{ env.RELEASE_TYPE }} release ${{ env.PIPELINE_MONTH }} ${{ env.PIPELINE_YEAR }}"
         tag_name: "${{ env.PIPELINE_YEAR }}-${{ env.RELEASE_TYPE }}-${{ env.PIPELINE_TIMESTAMP }}"
         body: "${{ env.RELEASE_DESC }} "
