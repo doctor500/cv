@@ -34,7 +34,7 @@ jobs:
         echo "PIPELINE_YEAR=$(date +'%Y')" >> $GITHUB_ENV
     - name: Create PDF file from GitHub pages
       id: create_pdf
-      uses: misaelnieto/web_to_pdf_action@master
+      uses: misaelnieto/web_to_pdf_action@v0.3.1
       with:
         webPageURL: https://doctor500.github.io/cv/
         outputFile: "CV_David Layardi_${{ env.PIPELINE_DATE }}.pdf"
