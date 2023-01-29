@@ -58,6 +58,7 @@ jobs:
       with:
         htmlFile: ./_site/index.html
         outputFile: "./CV_David Layardi_${{ env.PIPELINE_DATE }}.pdf"
+        pdfOptions: '{"format": "A4", "margin": {"top": "10mm", "left": "10mm", "right": "20mm", "bottom": "20mm"}}'
     # - name: Create PDF file from GitHub pages
     #   id: create_pdf
     #   uses: misaelnieto/web_to_pdf_action@v0.3.1
@@ -71,7 +72,6 @@ jobs:
       with:
         name: "CV_David Layardi_${{ env.PIPELINE_DATE }}.pdf"
         path: "./CV_David Layardi_${{ env.PIPELINE_DATE }}.pdf"
-        pdfOptions: '{"format": "A4", "margin": {"top": "10mm", "left": "10mm", "right": "20mm", "bottom": "20mm"}}'
     #temp
     # - name: Create Release
     #   id: create_release
