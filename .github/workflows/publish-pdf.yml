@@ -13,8 +13,25 @@ on:
   #   - main
 
 jobs:
+  build_jekyll:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v3
+    - name: Build Jekyll pages
+      uses: actions/jekyll-build-pages@v1.0.6
+      with:
+        source: ./
+        destination: ./_site
+    - name: Publish pages to pipeline artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: jekyll-published-page
+        path: ./_site
+
   publish_pdf:
     runs-on: ubuntu-latest
+    needs: [build_jekyll]
     steps:
     - name: Setup for scheduled pipeline
       if: ${{ github.event_name == 'schedule' }}
@@ -26,27 +43,29 @@ jobs:
       run: |
         echo "RELEASE_TYPE=Manual" >> $GITHUB_ENV
         echo "RELEASE_DESC=on-demand release (generated manually)" >> $GITHUB_ENV
-    - name: Get current date
+    - name: Setup for get current date
       run: |
         echo "PIPELINE_TIMESTAMP=$(date +'%s')" >> $GITHUB_ENV
         echo "PIPELINE_DATE=$(date +'%Y%m%d')" >> $GITHUB_ENV
         echo "PIPELINE_YEAR=$(date +'%Y')" >> $GITHUB_ENV
         echo "PIPELINE_MONTH=$(date +'%B')" >> $GITHUB_ENV
-    - name: Create PDF file from GitHub pages
-      id: create_pdf
-      uses: misaelnieto/web_to_pdf_action@v0.3.1
+    - name: Pull artifact from previous job
+      uses: actions/download-artifact@v3
       with:
-        webPageURL: https://doctor500.github.io/cv/
-        outputFile: "CV_David Layardi_${{ env.PIPELINE_DATE }}.pdf"
-        usePuppeteer: true
-        pdfOptions: '{"format": "Letter", "margin": {"top": "10mm", "left": "10mm", "right": "10mm", "bottom": "10mm"}}'
-    # - name: Publish pipeline artifact
+        name: jekyll-published-page
+        path: ./_site
+    - name: Create PDF from artifact
+      uses: fifsky/html-to-pdf-action@v0.1.0
+      with:
+        htmlFile: ./_site/index.html
+        outputFile: "./CV_David Layardi_${{ env.PIPELINE_DATE }}.pdf"
+        pdfOptions: '{"format": "A4", "margin": {"top": "10mm", "left": "10mm", "right": "20mm", "bottom": "20mm"}}'
+    # - name: Publish PDF result to artifact
     #   uses: actions/upload-artifact@v3
     #   with:
     #     name: "CV_David Layardi_${{ env.PIPELINE_DATE }}.pdf"
-    #     path: "CV_David Layardi_${{ env.PIPELINE_DATE }}.pdf"
-    - name: Create Release
-      id: create_release
+    #     path: "./CV_David Layardi_${{ env.PIPELINE_DATE }}.pdf"
+    - name: Publish PDF to GitHub release
       uses: softprops/action-gh-release@v1
       with:
         files: "CV_David Layardi_${{ env.PIPELINE_DATE }}.pdf"
