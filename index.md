@@ -61,7 +61,7 @@ __Bina Nusantara University, Jakarta__
 
 ## Activities
 
-### Article Publications
+### Publications
 
 `Aug 20, 2021`
 [Automate Export From Jenkins API Job List to Google Sheets Using Google Apps Script](https://medium.com/geekculture/automate-export-from-jenkins-api-job-list-to-google-sheets-using-google-apps-script-2eef44008bdc). Reach 1100+ Reader (per 2023/01/26), on Geek Culture publication

@@ -1,4 +1,4 @@
-Markdown-based CV
+# Markdown-based CV
 
 Special thanks to [elipapa's project](https://github.com/elipapa/markdown-cv) as my inspiration and reference.
 
@@ -7,10 +7,10 @@ This CV is using Jekyll-based page and renders by the GitHub page pipeline.
 
 ## Pipeline Flow
 
+### Generate PDF
 ```mermaid
 graph TD;
-    A[Generate GitHub Pages]-->B[Setup Variables]
-    B[Setup Variables]-->C[Create PDF file]
-    C[Create PDF file]-->D[Create Release Tag]
-    D[Create Release Tag]-->E[Upload Release Asset]
+    A[Setup Variables]-->B[Create PDF file]
+    B[Create PDF file]-->C[Create Release Tag]
+    C[Create Release Tag]-->D[Upload Release Asset]
 ```
