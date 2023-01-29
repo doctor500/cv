@@ -13,6 +13,22 @@ on:
   #   - main
 
 jobs:
+  build_jekyll:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v3
+    - name: Build with Jekyll
+      uses: actions/jekyll-build-pages@v1.0.6
+      with:
+        source: ./
+        destination: ./_site
+    - name: Publish pipeline artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: jekyll-page
+        path: ./_site
+
   publish_pdf:
     runs-on: ubuntu-latest
     steps:
@@ -32,19 +48,19 @@ jobs:
         echo "PIPELINE_DATE=$(date +'%Y%m%d')" >> $GITHUB_ENV
         echo "PIPELINE_YEAR=$(date +'%Y')" >> $GITHUB_ENV
         echo "PIPELINE_MONTH=$(date +'%B')" >> $GITHUB_ENV
-    - name: Create PDF file from GitHub pages
-      id: create_pdf
-      uses: misaelnieto/web_to_pdf_action@v0.3.1
-      with:
-        webPageURL: https://doctor500.github.io/cv/
-        outputFile: "CV_David Layardi_${{ env.PIPELINE_DATE }}.pdf"
-        usePuppeteer: true
-        # pdfOptions: '{"format": "Letter", "margin": {"top": "3cm", "left": "3cm", "right": "3cm", "bottom": "3cm"}}'
-    - name: Publish pipeline artifact
-      uses: actions/upload-artifact@v3
-      with:
-        name: "CV_David Layardi_${{ env.PIPELINE_DATE }}.pdf"
-        path: "CV_David Layardi_${{ env.PIPELINE_DATE }}.pdf"
+    # - name: Create PDF file from GitHub pages
+    #   id: create_pdf
+    #   uses: misaelnieto/web_to_pdf_action@v0.3.1
+    #   with:
+    #     webPageURL: https://doctor500.github.io/cv/
+    #     outputFile: "CV_David Layardi_${{ env.PIPELINE_DATE }}.pdf"
+    #     usePuppeteer: true
+    #     # pdfOptions: '{"format": "Letter", "margin": {"top": "3cm", "left": "3cm", "right": "3cm", "bottom": "3cm"}}'
+    # - name: Publish pipeline artifact
+    #   uses: actions/upload-artifact@v3
+    #   with:
+    #     name: "CV_David Layardi_${{ env.PIPELINE_DATE }}.pdf"
+    #     path: "CV_David Layardi_${{ env.PIPELINE_DATE }}.pdf"
     #temp
     # - name: Create Release
     #   id: create_release
