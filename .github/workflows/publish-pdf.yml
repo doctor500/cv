@@ -39,7 +39,7 @@ jobs:
         webPageURL: https://doctor500.github.io/cv/
         outputFile: "CV_David Layardi_${{ env.PIPELINE_DATE }}.pdf"
         usePuppeteer: true
-        pdfOptions: '{"format": "Letter"}'
+        pdfOptions: '{"format": "Letter", "margin": {"top": "3cm", "left": "3cm", "right": "3cm", "bottom": "3cm"}}'
     - name: Publish pipeline artifact
       uses: actions/upload-artifact@v3
       with:
