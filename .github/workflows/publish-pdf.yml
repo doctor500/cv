@@ -39,18 +39,19 @@ jobs:
         webPageURL: https://doctor500.github.io/cv/
         outputFile: "CV_David Layardi_${{ env.PIPELINE_DATE }}.pdf"
         usePuppeteer: true
-        pdfOptions: '{"format": "Letter", "margin": {"top": "10mm", "left": "10mm", "right": "10mm", "bottom": "10mm"}}'
-    # - name: Publish pipeline artifact
-    #   uses: actions/upload-artifact@v3
-    #   with:
-    #     name: "CV_David Layardi_${{ env.PIPELINE_DATE }}.pdf"
-    #     path: "CV_David Layardi_${{ env.PIPELINE_DATE }}.pdf"
-    - name: Create Release
-      id: create_release
-      uses: softprops/action-gh-release@v1
+        pdfOptions: '{"format": "Letter"}'
+    - name: Publish pipeline artifact
+      uses: actions/upload-artifact@v3
       with:
-        files: "CV_David Layardi_${{ env.PIPELINE_DATE }}.pdf"
-        fail_on_unmatched_files: true
-        name: "🚀 ${{ env.RELEASE_TYPE }} release ${{ env.PIPELINE_MONTH }} ${{ env.PIPELINE_YEAR }}"
-        tag_name: "${{ env.PIPELINE_YEAR }}-${{ env.RELEASE_TYPE }}-${{ env.PIPELINE_TIMESTAMP }}"
-        body: "${{ env.RELEASE_DESC }} "
+        name: "CV_David Layardi_${{ env.PIPELINE_DATE }}.pdf"
+        path: "CV_David Layardi_${{ env.PIPELINE_DATE }}.pdf"
+    #temp
+    # - name: Create Release
+    #   id: create_release
+    #   uses: softprops/action-gh-release@v1
+    #   with:
+    #     files: "CV_David Layardi_${{ env.PIPELINE_DATE }}.pdf"
+    #     fail_on_unmatched_files: true
+    #     name: "🚀 ${{ env.RELEASE_TYPE }} release ${{ env.PIPELINE_MONTH }} ${{ env.PIPELINE_YEAR }}"
+    #     tag_name: "${{ env.PIPELINE_YEAR }}-${{ env.RELEASE_TYPE }}-${{ env.PIPELINE_TIMESTAMP }}"
+    #     body: "${{ env.RELEASE_DESC }} "
