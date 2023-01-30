@@ -4,8 +4,10 @@
 [![Build PDF](https://github.com/doctor500/cv/actions/workflows/publish-pdf.yml/badge.svg)](https://github.com/doctor500/cv/actions/workflows/publish-pdf.yml)
 
 ## ℹ️ Quick Overview
-Special thanks to [elipapa's project](https://github.com/elipapa/markdown-cv) as my inspiration and reference. This CV is using Jekyll-based page and renders by the GitHub page pipeline.
-
+Special thanks to [elipapa's project](https://github.com/elipapa/markdown-cv) as my inspiration and reference. This CV is using Jekyll-based page and renders by the GitHub page pipeline. Features:
+- Customizeable templates
+- Pre-build Pipeline for generate PDF files
+- Pre-build docker-compose
 
 ## 🤖 Pipeline Flow
 
@@ -17,6 +19,13 @@ graph TD;
     C[Create PDF from artifacts]-->D[Create release tag]
     D[Create release tag]-->E[Embed PDF to release tag]
 ```
+To enable generate PDF feature, you can enable github action after you fork this repo. Please note that this pipeline have schedule to run every month. You can disable this schedule by edit `.github/workflows/publish-pdf.yml` file, delete this line :
+```
+...
+  schedule:
+    - cron: '0 0 1 * *'
+...
+```
 
 ## 🎨 Customization & Development
 
@@ -26,6 +35,9 @@ You can start fork this repo and directly edit `index.md` content.
 
 Enable it on **Settings > Pages**. on **Branch** section, choose `main` branch and `Save` it. The github pages will deploy your site to `https://[your-username].github.io/[repo-name]`
 
+### Customize CV templates
+There are several templates available that will be added more soon to this repo, you can take a look on `./media/`.
+It has naming format `[template_name]-print.css` and `[template_name]-screen.css`. You can edit `_config.yml`, and edit `style: ...` value to `template_name` you want to use.
 
 ### Local Development
 You can refer to [jekyll](https://jekyllrb.com/) official website for install jekyll locally. If you have docker installed, you can utilize `docker-compose.yml` that already created here.

@@ -58,18 +58,18 @@ jobs:
       uses: fifsky/html-to-pdf-action@v0.1.0
       with:
         htmlFile: ./_site/index.html
-        outputFile: "./CV_David Layardi_${{ env.PIPELINE_DATE }}.pdf"
+        outputFile: "./CV-David_Layardi-${{ env.PIPELINE_DATE }}.pdf"
         pdfOptions: '{"format": "A4", "margin": {"top": "10mm", "left": "10mm", "right": "20mm", "bottom": "20mm"}}'
     # - name: Publish PDF result to artifact
     #   uses: actions/upload-artifact@v3
     #   with:
-    #     name: "CV_David Layardi_${{ env.PIPELINE_DATE }}.pdf"
-    #     path: "./CV_David Layardi_${{ env.PIPELINE_DATE }}.pdf"
+    #     name: "CV-David_Layardi-${{ env.PIPELINE_DATE }}.pdf"
+    #     path: "./CV-David_Layardi-${{ env.PIPELINE_DATE }}.pdf"
     - name: Publish PDF to GitHub release
       uses: softprops/action-gh-release@v1
       with:
-        files: "CV_David Layardi_${{ env.PIPELINE_DATE }}.pdf"
+        files: "CV-David_Layardi-${{ env.PIPELINE_DATE }}.pdf"
         fail_on_unmatched_files: true
         name: "🚀 ${{ env.RELEASE_TYPE }} release ${{ env.PIPELINE_MONTH }} ${{ env.PIPELINE_YEAR }}"
         tag_name: "${{ env.PIPELINE_YEAR }}-${{ env.RELEASE_TYPE }}-${{ env.PIPELINE_TIMESTAMP }}"
-        body: "${{ env.RELEASE_DESC }} "
+        body: "${{ env.RELEASE_DESC }}"
