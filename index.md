@@ -38,7 +38,7 @@ Since 2018, I've successfully delivered automation-based innovation to solve bus
 __Bina Nusantara University, Jakarta__
 
 - Bachelor's degree, Information System
-- Taking Business Intelligence Specialization. Graduate in the 7th semester. GPA 3.8 of 4.0
+- Taking Business Intelligence Specialization. Graduated in 7th semester. GPA 3.8 of 4.0
 
 
 ## Training & Certifications
