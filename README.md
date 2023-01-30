@@ -5,13 +5,14 @@
 
 ## ℹ️ Quick Overview
 Special thanks to [elipapa's project](https://github.com/elipapa/markdown-cv) as my inspiration and reference. This CV is using Jekyll-based page and renders by the GitHub page pipeline. Features:
-- Customizable templates
-- Pre-build Pipeline for generating PDF files
-- Pre-build docker-compose
+1. Customizable templates 🎨
+2. Pre-build Pipeline for generating PDF files 📄
+3. Pre-build docker-compose 🐳
 
-## 🤖 Pipeline Flow
+## 🤖 Pipeline Overview
 
-### Generate PDF
+### Pipeline for generating the PDF file
+Workflow:
 ```mermaid
 graph TD;
     A[Setup Variables]-->B[Generate Jekyll page artifacts]
@@ -30,14 +31,14 @@ To enable generate PDF feature, you can enable the GitHub action integration aft
 ## 🎨 Customization & Development
 
 You can use this repo to start creating your markdown-based CV.
-### Create your own CV now!
+### 1️⃣ Create your own CV now!
 You can start to fork this repo and directly edit the `index.md` content. to name it available online, you can enable GitHub pages on **Settings > Pages**. on the **Branch** section, choose the `main` branch and `Save` it. The GitHub pages will deploy your site to `https://[your-username].github.io/[repo-name]`
 
-### Customize CV templates
+### 2️⃣ Customize CV templates
 There are several templates available that will be added soon to this repo, you can take a look at `./media/`.
 It has naming format `[template_name]-print.css` and `[template_name]-screen.css`. You can edit `_config.yml`, and edit the `style: ...` value to `template_name` you want to use.
 
-### Local Development
+### 3️⃣ Local Development
 You can refer to [Jekyll](https://jekyllrb.com/) official website to install Jekyll locally. If you have docker installed, you can utilize `docker-compose.yml` that is already created here.
 
 
