@@ -27,7 +27,7 @@ AWS, GCP, Linux VM, Windows Server, Debian, CentOS, Docker, Kubernetes, MySQL, P
 ## Professional Experience
 
 `Nov 2021 - Now`
-__DevOps Engineer__, Gojek - GoTo Financial, Jakarta
+__DevOps Engineer__, Gojek - GoTo Financial
 
 Part Commerce Enablement - Developer Experience (CE DevX) Team. We provide cloud infrastructure platform for CE products and engineers at scale.
 
