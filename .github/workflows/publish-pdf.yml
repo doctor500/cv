@@ -59,7 +59,7 @@ jobs:
       with:
         htmlFile: ./_site/index.html
         outputFile: "./CV-David_Layardi-${{ env.PIPELINE_DATE }}.pdf"
-        pdfOptions: '{"format": "A4", "margin": {"top": "10mm", "left": "10mm", "right": "20mm", "bottom": "20mm"}}'
+        pdfOptions: '{"format": "A4", "margin": {"top": "10mm", "left": "10mm", "right": "10mm", "bottom": "10mm"}}'
     # - name: Publish PDF result to artifact
     #   uses: actions/upload-artifact@v3
     #   with:

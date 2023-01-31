@@ -22,8 +22,7 @@ Since 2018, I've successfully delivered automation-based innovation to solve bus
 
 ### Technical Skill
 
-**Administration**: Amazon Web Services (AWS), Google Cloud Platform (GCP), Linux VM, Windows Server VM, Debian, CentOS, Docker, Kubernetes, MySQL, PostgreSQL, OpenVPN, Nginx, Git. **Automation**: Python, Java(Groovy), Jenkins, Gitlab CI, GitHub Actions, Helm, Kustomize, Terraform.
-
+AWS, GCP, Linux VM, Windows Server, Debian, CentOS, Docker, Kubernetes, MySQL, PostgreSQL, Git, Python, Java (Groovy), Jenkins, Gitlab CI, GitHub Actions, Helm, Kustomize, Terraform.
 
 ## Professional Experience
 
@@ -35,9 +34,8 @@ Part Commerce Enablement - Developer Experience (CE DevX) Team. We provide cloud
 Responsibilities:
 - 1) Plan and execute cloud cost saving activity
 - 2) Lead and organize sharing session for CE DevX
-- 3) Manage Terraform, Hashicorp Vault, Gitlab CI pipeline & runners
-- 4) Maintain Kubernetes cluster, and Helm Chart templating
-- 5) Maintain multicloud reliability with Prometheus and Grafana
+- 3) Manage Terraform, Hashicorp Vault, and Helm Chart templating
+- 4) Maintain multicloud Kubernetes cluster, Gitlab CI pipeline & runners 
 
 Achivements:
 - 1) Reduce AWS infra cost for development up to 50% on an hourly basis
@@ -77,16 +75,7 @@ Achivements:
 - 3) Develop WiFi debugging tools to help network-infra team
 - 4) Integrate Windows-stack with physical facility (access door, and WiFi SSO)
 
-`Feb 2016 - Jan 2019`
-__Freelance Web Developer__, Self Freelance
-
-Developing & Design web-based applications based on user's requirements for several companies & organizations:
-- 1) PT. Tri Jaya Samudera (Feb 2016)
-- 2) SMAN 7 Kota Bekasi (Jul 2016 - Aug 2016)
-- 3) PT. Inspirasi Digital Elevasi (Jul 2018 - Aug 2018)
-
 <!-- <div style="page-break-after: always;"></div> -->
-
 ## Activities
 ### Medium Articles
 `Aug 2021`
@@ -99,14 +88,6 @@ Reach 1100+ Reader (per 2023/01/26) under Geek Culture publication
 
 Reach 8500+ Reader (per 2023/01/26) under CodeX publication
 
-### Open Source Projects
-`Jan 2023`
-**Mardown-based CV**
-
-[https://github.com/doctor500/cv](https://github.com/doctor500/cv)
-
-Build using Jekyll, and GitHub Actions. This CV is generated using this project.
-
 ## Training & Certifications
 
 `Jan 2023`
@@ -115,14 +96,9 @@ Build using Jekyll, and GitHub Actions. This CV is generated using this project.
 `Sep 2022`
 [Google Cloud Fundamentals: Core Infrastructure](https://www.coursera.org/account/accomplishments/verify/B2V6L4ZSGNUH), *from Coursera*
 
-`Feb 2022`
-[Agile Foundations](https://1drv.ms/b/s!AgiuQdtA6Daqk1u47d6CR6wWbLF7?e=Pdl7EF), *from LinkedIn*
-
 `Mar 2021`
 [DevOps Engineering on AWS](https://1drv.ms/b/s!AgiuQdtA6DaqkRFlSnO8rKrDO8iQ?e=htxgE9), *from AWS*
 
-`Oct 2020`
-[DevOps Essential](https://google.qwiklabs.com/public_profiles/33bd98d5-c80f-418b-ad9e-417674ccc9bf), *from Qwiklabs*
 
 
 ## Education
