@@ -20,55 +20,6 @@ Passionate as an Application Developer since 2011 in various web application dev
 
 Since 2018, I've successfully delivered automation-based innovation to solve business problems for more than 10 professional projects. Now I'm focused on Infrastructure & Automation by implementing the DevOps culture to improve Software Engineer productivity. 
 
-### Technical Skill
-
-- Research
-- AWS & GCP Administration
-- Linux Server Administration
-- Docker, & Kubernetes
-- Jenkins & Groovy
-- Gitlab CI
-- Helm & Kustomize
-- Python
-- Terraform
-
-## Education
-
-`2016-2020`
-__Bina Nusantara University, Jakarta__
-
-- Bachelor's degree, Information System
-- Taking Business Intelligence Specialization. Graduated in 7th semester. GPA 3.8 of 4.0
-
-
-## Training & Certifications
-
-`Jan 2023`
-[Associate Cloud Engineer](https://www.credential.net/3e62c331-8419-43d6-9d48-849d04182582), *from GCP*
-
-`Sep 2022`
-[Google Cloud Fundamentals: Core Infrastructure](https://www.coursera.org/account/accomplishments/verify/B2V6L4ZSGNUH), *from Coursera*
-
-`Feb 2022`
-[Agile Foundations](https://1drv.ms/b/s!AgiuQdtA6Daqk1u47d6CR6wWbLF7?e=Pdl7EF), *from LinkedIn*
-
-`Mar 2021`
-[DevOps Engineering on AWS](https://1drv.ms/b/s!AgiuQdtA6DaqkRFlSnO8rKrDO8iQ?e=htxgE9), *from AWS*
-
-`Oct 2020`
-[DevOps Essential](https://google.qwiklabs.com/public_profiles/33bd98d5-c80f-418b-ad9e-417674ccc9bf), *from Qwiklabs*
-
-
-## Activities
-
-### Publications
-
-`Aug 20, 2021`
-[Automate Export From Jenkins API Job List to Google Sheets Using Google Apps Script](https://medium.com/geekculture/automate-export-from-jenkins-api-job-list-to-google-sheets-using-google-apps-script-2eef44008bdc). Reach 1100+ Reader (per 2023/01/26), on Geek Culture publication
-
-`July 22, 2021`
-[Easy Deploy SonarQube on Kubernetes with YAML configuration](https://medium.com/codex/easy-deploy-sonarqube-on-kubernetes-with-yaml-configuration-27f5adc8de90). Reach 8500+ Reader (per 2023/01/26), on CodeX publication
-
 ## Professional Experience
 
 `2021 - Now`
@@ -119,7 +70,64 @@ Developing & Design web-based applications based on user's requirements for seve
 - 2) SMAN 7 Kota Bekasi (Jul 2016 - Aug 2016)
 - 3) PT. Inspirasi Digital Elevasi (Jul 2018 - Aug 2018)
 
+### Technical Skill
+
+- Research
+- AWS & GCP Administration
+- Linux Server Administration
+- Docker, & Kubernetes
+- Jenkins & Groovy
+- Gitlab CI
+- Helm & Kustomize
+- Python
+- Terraform
+
+## Activities
+
+### Medium Publications
+
+`Aug 20, 2021`
+[**Automate Export From Jenkins API Job List to Google Sheets Using Google Apps Script**](https://medium.com/geekculture/automate-export-from-jenkins-api-job-list-to-google-sheets-using-google-apps-script-2eef44008bdc). 
+
+Reach 1100+ Reader (per 2023/01/26) under Geek Culture publication
+
+`July 22, 2021`
+[**Easy Deploy SonarQube on Kubernetes with YAML configuration**](https://medium.com/codex/easy-deploy-sonarqube-on-kubernetes-with-yaml-configuration-27f5adc8de90). 
+
+Reach 8500+ Reader (per 2023/01/26) under CodeX publication
+
+### Projects
+**Mardown-based CV**
+
+[https://github.com/doctor500/cv](https://github.com/doctor500/cv)
+
+I build this open-source so everyone can create their own CV just using markdown. Utilizing the markdown format make people can focus on the CV content itself rather than think about what editing platform needs to use for customizing the templates. One example of this project implementation is this CV itself
+
+## Training & Certifications
+
+`Jan 2023`
+[Associate Cloud Engineer](https://www.credential.net/3e62c331-8419-43d6-9d48-849d04182582), *from GCP*
+
+`Sep 2022`
+[Google Cloud Fundamentals: Core Infrastructure](https://www.coursera.org/account/accomplishments/verify/B2V6L4ZSGNUH), *from Coursera*
+
+`Feb 2022`
+[Agile Foundations](https://1drv.ms/b/s!AgiuQdtA6Daqk1u47d6CR6wWbLF7?e=Pdl7EF), *from LinkedIn*
+
+`Mar 2021`
+[DevOps Engineering on AWS](https://1drv.ms/b/s!AgiuQdtA6DaqkRFlSnO8rKrDO8iQ?e=htxgE9), *from AWS*
+
+`Oct 2020`
+[DevOps Essential](https://google.qwiklabs.com/public_profiles/33bd98d5-c80f-418b-ad9e-417674ccc9bf), *from Qwiklabs*
+
+
+## Education
+
+`2016-2020`
+__Bina Nusantara University, Jakarta__
+
+- Bachelor's degree, Information System
+- Taking Business Intelligence Specialization. Graduated in 7th semester. GPA 3.8 of 4.0
 
 <!-- ### Footer
 Last updated: Jan 2023 -->
-
