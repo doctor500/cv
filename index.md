@@ -6,19 +6,19 @@ title: David Layardi
 Cloud Infrastructure, Automation, DevOps Engineer.
 
 <div id="webaddress">
-<text>Jakarta, ID 🇮🇩</text>
+<text>Jakarta, Indonesia</text>
 | <a href="mailto:david@layardi.com">david@layardi.com</a>
-| <a href="https://github.com/doctor500">GitHub</a>
-| <a href="https://www.linkedin.com/in/david-lay/">LinkedIn</a>
-| <a href="https://medium.com/@davidlayardi">Medium</a>
+| <a href="https://github.com/doctor500">github.com/doctor500</a>
+| <a href="https://www.linkedin.com/in/david-lay/">linkedin.com/in/david-lay</a>
+| <a href="https://medium.com/@davidlayardi">medium.com/@davidlayardi</a>
 </div>
 
 
 ## Profile Summary
 
-Indonesian Engineer. Passionate as an Application Developer since 2011 in various web application development with soft skills that I built up from 5-year organizational experience in analytical thinking, problem-solving, and collaboration.
+Indonesian, speaks native Bahasa & intermediate English. Passionate as an application developer since 2011 in various web application development with soft skills that I built up from 5-year organizational experience in analytical thinking, problem-solving, and collaboration.
 
-Since 2018, I've successfully delivered automation-based innovation to solve business problems for more than 10 professional projects. Now I'm focused on Infrastructure & Automation by implementing the DevOps culture to improve Software Engineer productivity. 
+Since 2018, I've successfully delivered automation-based innovation to solve business problems for more than 10 professional projects. Now I'm focused on infrastructure & automation by implementing the DevOps culture to improve software engineer productivity. 
 
 ### Technical Skill
 
