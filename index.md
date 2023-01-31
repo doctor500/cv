@@ -73,7 +73,7 @@ Achivements:
 - 1) Pioneer of QR-based event registration system, [used on national-scale event](https://binus.ac.id/2019/01/sarasehan-dialog-nasional-bersama-menteri-ristekdikti-republik-nasional/)
 - 2) Create tools & scripts to automate data analyst reporting processes
 - 3) Develop WiFi debugging tools to help network-infra team
-- 4) Integrate Windows-stack with physical facility (access door, and WiFi SSO)
+- 4) Integrate Windows AD with physical facilities (access door, and WiFi SSO)
 
 <!-- <div style="page-break-after: always;"></div> -->
 ## Activities
