@@ -80,6 +80,7 @@ code {
 p code {
 	position: absolute;
 	left: -11%;
+	max-width: 10%;
 }
 
 
@@ -124,6 +125,7 @@ h1 {
 	line-height: 1em;
 	position: relative;
 	left: 28%;
+	width: 72%;
 }
 
 h1+p { 
@@ -169,6 +171,7 @@ a:hover {
 	color: #ccc;
 	font-family: Menlo,monospace,sans-serif;
 	font-size: 80%;
+	width: 72%;
 }
 
 #webaddress a {
