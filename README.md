@@ -70,7 +70,7 @@ Please note that this pipeline has scheduled to run every month. You can disable
 ...
 ```
 
-## Pull update from template source to your repo
+## 🔄 Pull update from template source to your repo
 By default, if you're using repo template it will never fetch new update from the template source (this repo) so it will little bit tricky. This steps only applicable if you're clone this repo to your local. We can done it by adding new remote source to your repo local folder. 
 
 Only execute this command for the first time:
@@ -85,5 +85,20 @@ git fetch template
 git checkout main
 ```
 ```GIT
-git merge template/main
+git merge template/main --allow-unrelated-histories
 ```
+Resolve the conflict via GitHub desktop or IDE if you facing some merge conflict
+
+## 💘 Contributing
+Feel free to contribute to this repo, let's have discussion during PR and if it can make this project better. You can submit about new templates, new pipeline feature, refactor,etc. I believe this project still far from stable/good, so I also looking for better improvement.
+
+## 🪪 License
+MIT License
+
+Copyright (c) [David Layardi david@layardi.com]
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
