@@ -10,16 +10,17 @@ Special thanks to [elipapa's project](https://github.com/elipapa/markdown-cv) as
 3. Pre-build docker-compose 🐳
 
 ### Quickstart
-1. Fork this repo, clone forked to your local
-2. [Enable GitHub page on your repo](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site#creating-your-site)
-3. Edit `index.md` content
-4. Commit, see the result on `https://[your-username].github.io/[repo-name]`
+1. Push `Use this templates` button and choose `Create a new repository`
+2. Fill **Repostory name**, and push `Create repository from template`. You don't have to include all branches because all you need is provided on `main` branch
+3. [Enable GitHub page on your repo](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site#creating-your-site)
+4. Edit `index.md` content
+5. Commit, see the result on `https://[your-username].github.io/[repo-name]`
 
 ## 🎨 Customization & Development
 
 You can use this repo to start creating your markdown-based CV.
 ### 1️⃣ Create your own CV now!
-You can start to fork this repo and directly edit the `index.md` content. to name it available online, you can enable GitHub pages on **Settings > Pages**. on the **Branch** section, choose the `main` branch and `Save` it. The GitHub pages will deploy your site to `https://[your-username].github.io/[repo-name]`
+You can start to create new repo by `Use this template` button and directly edit the `index.md` content. to name it available online, you can enable GitHub pages on **Settings > Pages**. on the **Branch** section, choose the `main` branch and `Save` it. The GitHub pages will deploy your site to `https://[your-username].github.io/[repo-name]`
 
 ### 2️⃣ (Optional) Customize CV templates
 There are several templates available that will be added soon to this repo, you can take a look at `./media/`.
@@ -67,4 +68,22 @@ Please note that this pipeline has scheduled to run every month. You can disable
   schedule:
     - cron: '0 0 1 * *'
 ...
+```
+
+## Pull update from template source to your repo
+By default, if you're using repo template it will never fetch new update from the template source (this repo) so it will little bit tricky. This steps only applicable if you're clone this repo to your local. We can done it by adding new remote source to your repo local folder. 
+
+Only execute this command for the first time:
+```GIT
+git remote add template git@github.com:doctor500/cv.git
+```
+To pull new update/changes from this repo, use the following commands:
+```GIT
+git fetch template
+```
+```GIT
+git checkout main
+```
+```GIT
+git merge template/main
 ```
