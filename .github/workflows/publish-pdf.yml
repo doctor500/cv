@@ -41,8 +41,8 @@ jobs:
     - name: Setup Variables
       run: |
         cat <<EOF > release_notes.txt
-        :spiral_notepad: Release notes
-        ${{ github.event.inputs.release_notes }}
+        ## :spiral_notepad: Release notes
+           ${{ github.event.inputs.release_notes }}
         EOF
         echo "PIPELINE_TIMESTAMP=$(date +'%s')" >> $GITHUB_ENV
         echo "PIPELINE_DATE=$(date +'%Y%m%d')" >> $GITHUB_ENV
