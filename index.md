@@ -1,6 +1,6 @@
 ---
 layout: cv
-title: David Layardi - Example
+title: David Layardi
 ---
 # David Layardi - Example
 Cloud Infrastructure, Automation, DevOps Engineer.
