@@ -2,7 +2,7 @@
 layout: cv
 title: David Layardi
 ---
-# David Layardi - Example
+# David Layardi
 Cloud Infrastructure, Automation, DevOps Engineer.
 
 <div id="webaddress">
