@@ -69,4 +69,5 @@ jobs:
         fail_on_unmatched_files: true
         name: "🚀 PDF Publish R.${{ env.PIPELINE_DATE }}"
         tag_name: "PDF_${{ env.PIPELINE_DATE }}-${{ env.PIPELINE_TIMESTAMP }}"
+        body_path: release_notes.txt
         body: "No description provided on this release"
