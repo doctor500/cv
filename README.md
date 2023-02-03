@@ -61,14 +61,6 @@ graph TD;
 ```
 To enable generate PDF feature, you can enable the GitHub action integration after you fork this repo. 
 
-Please note that this pipeline has scheduled to run every month. You can disable this schedule by editing the `.github/workflows/publish-pdf.yml` file, and removing this part :
-```YAML
-...
-  schedule:
-    - cron: '0 0 1 * *'
-...
-```
-
 ## 💘 Contributing
 I believe this project still far from stable/good, so I also looking for better improvement. You can submit about new templates, new pipeline feature, refactor, etc. by creating Pull Request (PR) to this repo
 

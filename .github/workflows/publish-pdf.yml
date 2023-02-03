@@ -4,9 +4,14 @@ permissions: write-all
 on:
   # Manual Trigger
   workflow_dispatch:
+    inputs:
+      release_notes:
+        description: 'Release notes for this release'
+        required: true
+        default: 'No description provided on this release'
   # Run pipeline every first day of the month
-  schedule:
-    - cron: '0 0 1 * *'
+  # schedule:
+  #   - cron: '0 0 1 * *'
   # # Run Pipeline on Manual Push
   # push:
   #   branches:
@@ -33,22 +38,14 @@ jobs:
     runs-on: ubuntu-latest
     needs: [build_jekyll]
     steps:
-    - name: Setup for scheduled pipeline
-      if: ${{ github.event_name == 'schedule' }}
+    - name: Setup Variables
       run: |
-        echo "RELEASE_TYPE=Scheduled" >> $GITHUB_ENV
-        echo "RELEASE_DESC=Monthly release for CV" >> $GITHUB_ENV
-    - name: Setup for manual trigger pipeline
-      if: ${{ github.event_name != 'schedule' }}
-      run: |
-        echo "RELEASE_TYPE=Manual" >> $GITHUB_ENV
-        echo "RELEASE_DESC=on-demand release (generated manually)" >> $GITHUB_ENV
-    - name: Setup for get current date
-      run: |
+        cat <<EOF > release_notes.txt
+        :spiral_notepad: Release notes
+        ${{ github.event.inputs.release_notes }}
+        EOF
         echo "PIPELINE_TIMESTAMP=$(date +'%s')" >> $GITHUB_ENV
         echo "PIPELINE_DATE=$(date +'%Y%m%d')" >> $GITHUB_ENV
-        echo "PIPELINE_YEAR=$(date +'%Y')" >> $GITHUB_ENV
-        echo "PIPELINE_MONTH=$(date +'%B')" >> $GITHUB_ENV
     - name: Pull artifact from previous job
       uses: actions/download-artifact@v3
       with:
@@ -70,6 +67,6 @@ jobs:
       with:
         files: "CV-David_Layardi-${{ env.PIPELINE_DATE }}.pdf"
         fail_on_unmatched_files: true
-        name: "🚀 ${{ env.RELEASE_TYPE }} release ${{ env.PIPELINE_MONTH }} ${{ env.PIPELINE_YEAR }}"
-        tag_name: "${{ env.PIPELINE_YEAR }}-${{ env.RELEASE_TYPE }}-${{ env.PIPELINE_TIMESTAMP }}"
-        body: "${{ env.RELEASE_DESC }}"
+        name: "🚀 PDF Publish R.${{ env.PIPELINE_DATE }}"
+        tag_name: "PDF_${{ env.PIPELINE_DATE }}-${{ env.PIPELINE_TIMESTAMP }}"
+        body: "No description provided on this release"
