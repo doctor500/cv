@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
     inputs:
       release_notes:
-        description: 'Release notes for this release'
+        description: 'Release notes for this PDF release'
         required: true
         default: 'No description provided on this release'
   # Run pipeline every first day of the month
