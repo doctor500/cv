@@ -54,8 +54,8 @@ docker-compose down
 Workflow:
 ```mermaid
 graph TD;
-    A[Setup Variables]-->B[Generate Jekyll page artifacts]
-    B[Generate Jekyll page artifacts]-->C[Create PDF from artifacts]
+    A[Generate Jekyll page artifacts]-->B[Setup Variables]
+    B[Setup Variables]-->C[Create PDF from artifacts]
     C[Create PDF from artifacts]-->D[Create release tag]
     D[Create release tag]-->E[Embed PDF to release tag]
 ```
