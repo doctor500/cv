@@ -22,7 +22,7 @@ Since 2018, I've successfully delivered automation-based innovation to solve bus
 
 ### Technical Skill
 
-AWS, GCP, Linux VM, Windows Server, Debian, CentOS, Docker, Kubernetes, MySQL, PostgreSQL, Git, Python, Java (Groovy), Jenkins, Gitlab CI, GitHub Actions, Helm, Kustomize, Terraform.
+AWS, GCP, Linux VM, Windows Server, Debian, CentOS, Docker, Kubernetes, MySQL, PostgreSQL, Git, Python, Java (Groovy), Shell, Jenkins, Gitlab CI, GitHub Actions, Helm, Kustomize, Terraform, Nginx, Cloudflare, Newrelic.
 
 ## Professional Experience
 
@@ -104,9 +104,9 @@ Reach 8500+ Reader (per 2023/01/26) under CodeX publication
 ## Education
 
 `2016 - 2020`
-__Bina Nusantara University, Jakarta__. Bachelor's degree, Information Systems
+__Bina Nusantara University, Jakarta__. Bachelor's degree, Major in Information Systems
 
-Take Business Intelligence specialization. Graduate in the 7th semester. GPA 3.8 of 4.0
+Take Business Intelligence minor, Graduate in the 7th semester. Final GPA: 3.8 of 4.0
 
 <!-- ### Footer
 Last updated: Jan 2023 -->
