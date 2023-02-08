@@ -29,7 +29,7 @@ jobs:
       uses: actions/checkout@v3
     - name: Fill sensitive data to markdown
       if: ${{ github.event.inputs.build_private == 'true' && vars.CV_PHONE_NUMBER != '' }}
-      run: sed -i'.bak' 's/<div id="webaddress">/<div id="webaddress">\n<text>${{ vars.CV_PHONE_NUMBER }}}<\/text>/' index.md
+      run: sed -i'.bak' 's/<div id="webaddress">/<div id="webaddress">\n<text>${{ secrets.CV_PHONE_NUMBER }}<\/text>/' index.md
     - name: Build Jekyll pages
       uses: actions/jekyll-build-pages@v1.0.6
       with:
