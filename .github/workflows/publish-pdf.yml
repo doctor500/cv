@@ -9,6 +9,10 @@ on:
         description: 'Release notes for this PDF release'
         required: true
         default: 'No description provided on this release'
+      build_private:
+        type: boolean
+        description: 'Build privately & include sensitive data'
+        default: false
   # Run pipeline every first day of the month
   # schedule:
   #   - cron: '0 0 1 * *'
@@ -23,16 +27,27 @@ jobs:
     steps:
     - name: Checkout repo
       uses: actions/checkout@v3
+    - name: Fill sensitive data to markdown
+      if: ${{ github.event.inputs.build_private == 'true' }}
+      run: sed -i'.bak' 's/<div id="webaddress">/<div id="webaddress">\n<text>${{ secrets.CV_PHONE_NUMBER }}<\/text> | /' index.md
     - name: Build Jekyll pages
       uses: actions/jekyll-build-pages@v1.0.6
       with:
         source: ./
         destination: ./_site
     - name: Publish pages to pipeline artifact
+      if: ${{ github.event.inputs.build_private == 'false' }}
       uses: actions/upload-artifact@v3
       with:
         name: jekyll-published-page
         path: ./_site
+    - name: Publish pages with sensitive data to pipeline artifact
+      if: ${{ github.event.inputs.build_private == 'true' }}
+      uses: actions/upload-artifact@v3
+      with:
+        name: jekyll-published-page
+        path: ./_site
+        retention-days: 2
 
   publish_pdf:
     runs-on: ubuntu-latest
@@ -57,12 +72,15 @@ jobs:
         htmlFile: ./_site/index.html
         outputFile: "./CV-David_Layardi-${{ env.PIPELINE_DATE }}.pdf"
         pdfOptions: '{"format": "A4", "margin": {"top": "10mm", "left": "10mm", "right": "10mm", "bottom": "10mm"}}'
-    # - name: Publish PDF result to artifact
-    #   uses: actions/upload-artifact@v3
-    #   with:
-    #     name: "CV-David_Layardi-${{ env.PIPELINE_DATE }}.pdf"
-    #     path: "./CV-David_Layardi-${{ env.PIPELINE_DATE }}.pdf"
+    - name: Publish PDF result to artifact
+      if: ${{ github.event.inputs.build_private == 'true' }}
+      uses: actions/upload-artifact@v3
+      with:
+        name: "CV-David_Layardi-${{ env.PIPELINE_DATE }}.pdf"
+        path: "./CV-David_Layardi-${{ env.PIPELINE_DATE }}.pdf"
+        retention-days: 2
     - name: Publish PDF to GitHub release
+      if: ${{ github.event.inputs.build_private == 'false' }}
       uses: softprops/action-gh-release@v1
       with:
         files: "CV-David_Layardi-${{ env.PIPELINE_DATE }}.pdf"
