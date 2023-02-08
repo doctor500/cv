@@ -4,29 +4,30 @@
 [![Build PDF](https://github.com/doctor500/cv/actions/workflows/publish-pdf.yml/badge.svg)](https://github.com/doctor500/cv/actions/workflows/publish-pdf.yml)
 
 ## 👋 Overview
-Special thanks to [elipapa's project](https://github.com/elipapa/markdown-cv) as my inspiration and references. This CV is using Jekyll-based page and rendered by the GitHub page pipeline. Features:
+Special thanks to [elipapa's project](https://github.com/elipapa/markdown-cv) as my inspiration and references. This CV is using Jekyll-based page and is rendered by the GitHub page pipeline. Features:
 1. Customizable templates 🎨
 2. Pre-build Pipeline for generating PDF files 📄
 3. Pre-build docker-compose 🐳
 
 ### Quickstart
 1. Fork this repository
-2. [Enable GitHub page on your repo](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site#creating-your-site)
-3. Edit `index.md` content
+2. Create a new branch from the main branch
+3. [Enable GitHub page on new branch](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site#creating-your-site)
+3. Edit `index.md` content on the new branch
 4. Commit, see the result on `https://[your-username].github.io/[repo-name]`
 
 ## 🎨 Customization & Development
 
 You can use this repo to start creating your markdown-based CV.
 ### 1️⃣ Create your own CV now!
-You can start to fork this repo and directly edit the `index.md` content. to name it available online, you can enable GitHub pages on **Settings > Pages**. on the **Branch** section, choose the `main` branch and `Save` it. The GitHub pages will deploy your site to `https://[your-username].github.io/[repo-name]`
+You can start to fork this repo, create a new branch (example: `gh-pages`), and directly edit the `index.md` content. to name it available online, you can enable GitHub pages on **Settings > Pages**. on the **Branch** section, choose the `gh-pages` branch and `Save` it. The GitHub pages will deploy your site to `https://[your-username].github.io/[repo-name]`
 
 ### 2️⃣ (Optional) Customize CV templates
 There are several templates available that will be added soon to this repo, you can take a look at `./media/`.
 It has naming format `[template_name]-print.css` and `[template_name]-screen.css`. You can edit `_config.yml`, and edit the `style: ...` value to `template_name` you want to use.
 
 ### 3️⃣ (Optional) Local Jekyll Render
-If you want to preview the results first before commiting to the repo, you can installing Jekyll in your local env. Please refer to [Jekyll](https://jekyllrb.com/) official website about how to install Jekyll locally. 
+If you want to preview the results first before committing to the repo, you can install Jekyll in your local env. Please refer to [Jekyll](https://jekyllrb.com/) official website about how to install Jekyll locally. 
 
 If you have docker installed, you can utilize `docker-compose.yml` that is already created here.
 
@@ -61,8 +62,16 @@ graph TD;
 ```
 To enable generate PDF feature, you can enable the GitHub action integration after you fork this repo. 
 
+### Sub-feature, build pipeline with sensitive data
+This pipeline also has options to generate PDFs privately in case you want to include sensitive data (for example phone number). I create an example to add a phone number inside the markdown before the build process. I store the phone number data on GitHub repo variables, and this PDF will not create a new release into the repo. It also will **expired 48h** after it generated on pipeline artifacts
+
+You can use this feature by tick the check box `Build privately & include sensitive data`. To fill the phone number:
+1. Open repo **Settings** > **Secrets and variables** > Actions
+2. Going to `Variables` tab and click **New repository variable**.
+3. Fill Name with `CV_PHONE_NUMBER`, and Secret with your phone number (ex: `+62 123123123`)
+
 ## 💘 Contributing
-I believe this project still far from stable/good, so I also looking for better improvement. You can submit about new templates, new pipeline feature, refactor, etc. by creating Pull Request (PR) to this repo
+I believe this project is still far from stable/good, so I also looking for better improvement. You can submit about new templates, new pipeline feature, refactor, etc. by creating Pull Request (PR) to this repo
 
 ## 🪪 License
 MIT License
