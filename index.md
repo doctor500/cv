@@ -16,64 +16,58 @@ Cloud Infrastructure, Automation, DevOps Engineer.
 
 ## Profile Summary
 
-Indonesian, speaks native Bahasa & intermediate English. Passionate as an application developer since 2011 in various web application development with soft skills that I built up from 5-year organizational experience in analytical thinking, problem-solving, and collaboration.
 
-Since 2018, I've successfully delivered automation-based innovation to solve business problems for more than 10+ professional projects. Now I'm focused on infrastructure & automation by implementing the DevOps culture to improve software engineer productivity. 
 
-### Technical Skill
+High-curious people with research-driven learning. Start in the application development field in 2011 with soft skills that I built up from 5-year organizational experience in analytical thinking, problem-solving, and collaboration.
 
-AWS, GCP, Linux VM, Windows Server, Debian, CentOS, Docker, Kubernetes, MySQL, PostgreSQL, Git, Python, Java (Groovy), Shell, Jenkins, Gitlab CI, GitHub Actions, Helm, Kustomize, Terraform, Nginx, Cloudflare, Newrelic.
+I have experience in infrastructure and pipeline automation in 3 industries since 2018. Has been involved in more than 10+ professional projects to solve business and automation use cases.
 
 ## Professional Experience
 
 `Nov 2021 - Now`
-__DevOps Engineer__, Gojek - GoTo Financial
 
-Part Commerce Enablement - Developer Experience (CE DevX) Team. We provide cloud infrastructure platforms for CE products and engineers at scale.
+__DevOps Engineer__, Gojek - GoTo Financial (GTF)
 
-Responsibilities:
-- 1) Plan and execute cloud cost-saving activity
-- 2) Lead and organize sharing sessions for CE DevX
-- 3) Manage Terraform, Hashicorp Vault, and Helm Chart templating
-- 4) Maintain multi-cloud Kubernetes cluster, Gitlab CI pipeline & runners
+Maintained 100+ backend services in multi-cloud Kubernetes cluster, Gitlab CI pipeline & runners to fulfill 24/7 business needs.
 
-Achievements:
-- 1) Reduce AWS infra cost for development by up to 50% on an hourly basis
-- 2) End-to-end implementation of Hashicorp Vault with Operator pattern
-- 3) PoC and Implementation for reverse IaC to legacy infrastructure
+- 1) Decreased AWS infra cost for development by up to 50% hourly by planning and executing cloud cost-saving activities.
+
+- 2) Provided 100% configuration visibility to prevent backend misconfiguration cases by improving GTF product-level (Selly Keyboard) backend release processes using open-source secret and configuration management (Vault). 
+
+- 3) Create transformation for 400+ existing production-level AWS resources to Code-based configuration and integrate them with cloud cost analysis.
+
+- 4) Scaled up culture-sharing as knowledge dissemination on a team scale by creating sharing session framework.
 
 `Mar 2020 - Oct 2021`
 __Release Engineer__, Pegipegi
 
-Part core engineering functional team. Focus on software engineering concerning compilation, assembly, and delivery of source code into finished products or other software components.
+Maintain Jenkins pipeline & internal tools Kubernetes Cluster that serves more than 100+ pipelines of backend services.
 
-Responsibilities:
-- 1) Research & PoC tools that support DevOps culture implementation
-- 2) Manage Jenkins pipeline & runner on the multi-cloud environment
-- 3) Maintain Kubernetes cluster & Atlassian Bitbucket repository
 
-Achievements:
-- 1) PoC & Implementation for Jenkins on top of Kubernetes
-- 2) Refactor Pipeline from Jenkins-file to Jenkins Shared Library
-- 3) Create multi-cloud support for the deployment pipeline
-- 4) PoC Phabricator for monorepo implementation
+- 1) Transform 80%+ of redundant pipeline files into a single standardized deployment pipeline. Rebuilt the company-level pipeline to scale up pipeline maintainability.
+
+- 2) Decreased up to 6x provisioning time of pipeline supporting resources by migrating them to on top of the Kubernetes platform. Provide ready-to-use resources in less than a minute.
+
+- 3) Decreased up to 85% of the pipeline initialization build time of the backend repo (mono repo).
+
+- 4) Scalled up backend pipeline capabilities to support multi-cloud deployment process.
 
 `Mar 2018 - Feb 2020`
 __Data Center Staff__, Bina Nusantara - IT Division
 
-Collaborate in Data Center & IT Infrastructure group to Help Binus IT Operational Processes.
 
-Responsibilities:
-- 1) Research & PoC tools for creating automation/integration
-- 2) Support task of data analyst & data center infrastructure team
-- 3) Provide ETL & data report for PDDikti &/ University reporting
-- 4) Support application & infra troubleshooting at the production level
+Work closely with Data Center & IT Infrastructure group to Help Binus IT Operational Processes.
 
-Achievements:
-- 1) Pioneer of QR-based event registration system, [used on national-scale event](https://binus.ac.id/2019/01/sarasehan-dialog-nasional-bersama-menteri-ristekdikti-republik-nasional/)
-- 2) Create tools & scripts to automate data analyst reporting processes
-- 3) Develop WiFi debugging tools to help network-infra team
-- 4) Integrate Windows AD with physical facilities to enable access list automation (data sync for access doors and building's WiFi for SSO)
+
+- 1) Pioneer of QR-based event registration system for Binus University, [<u>used on national-scale event</u>](https://binus.ac.id/2019/01/sarasehan-dialog-nasional-bersama-menteri-ristekdikti-republik-nasional/). Reduced manual checking time by 10x from minutes to QR scan and go in seconds. 
+
+- 2) Create tools & scripts to automate data analyst reporting processes. Provided automation for student document reports to the university and government.
+
+- 3) Developed WiFi debugging tools to help the network-infra team when doing on-site WiFi connection troubleshooting. Simplified debug data gathering into a one-click process.
+  
+- 4) Integrate Windows AD with physical facilities to enable access list automation. (access doors and building's WiFi for SSO). Speed up the batch manual registration process from a week to less than an hour automatic process.
+
+
 
 <!-- <div style="page-break-after: always;"></div> -->
 ## Activities
@@ -88,7 +82,7 @@ Reach 1100+ Reader (per 2023/01/26) under Geek Culture publication
 
 Reach 8500+ Reader (per 2023/01/26) under CodeX publication
 
-## Training & Certifications
+### Training & Certifications
 
 `Jan 2023`
 [Associate Cloud Engineer](https://www.credential.net/3e62c331-8419-43d6-9d48-849d04182582), *from GCP*
@@ -99,6 +93,12 @@ Reach 8500+ Reader (per 2023/01/26) under CodeX publication
 `Mar 2021`
 [DevOps Engineering on AWS](https://1drv.ms/b/s!AgiuQdtA6DaqkRFlSnO8rKrDO8iQ?e=htxgE9), *from AWS*
 
+
+
+### Technical Skill
+
+
+AWS, GCP, Linux VM, Windows Server, Debian, CentOS, Docker, Kubernetes, MySQL, PostgreSQL, Git, Python, Java (Groovy), Shell, Jenkins, Gitlab CI, GitHub Actions, Helm, Kustomize, Terraform, Nginx, Cloudflare, Newrelic
 
 
 ## Education
