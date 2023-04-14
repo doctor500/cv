@@ -31,11 +31,8 @@ __DevOps Engineer__, Gojek - GoTo Financial (GTF)
 Maintained 100+ backend services in multi-cloud Kubernetes cluster, Gitlab CI pipeline & runners to fulfill 24/7 business needs.
 
 - 1) Decreased AWS infra cost for development by up to 50% hourly by planning and executing cloud cost-saving activities.
-
 - 2) Provided 100% configuration visibility to prevent backend misconfiguration cases by improving GTF product-level (Selly Keyboard) backend release processes using open-source secret and configuration management (Vault). 
-
 - 3) Create transformation for 400+ existing production-level AWS resources to Code-based configuration and integrate them with cloud cost analysis.
-
 - 4) Scaled up culture-sharing as knowledge dissemination on a team scale by creating sharing session framework.
 
 `Mar 2020 - Oct 2021`
@@ -45,11 +42,8 @@ Maintain Jenkins pipeline & internal tools Kubernetes Cluster that serves more t
 
 
 - 1) Transform 80%+ of redundant pipeline files into a single standardized deployment pipeline. Rebuilt the company-level pipeline to scale up pipeline maintainability.
-
 - 2) Decreased up to 6x provisioning time of pipeline supporting resources by migrating them to on top of the Kubernetes platform. Provide ready-to-use resources in less than a minute.
-
 - 3) Decreased up to 85% of the pipeline initialization build time of the backend repo (mono repo).
-
 - 4) Scalled up backend pipeline capabilities to support multi-cloud deployment process.
 
 `Mar 2018 - Feb 2020`
@@ -60,11 +54,8 @@ Work closely with Data Center & IT Infrastructure group to Help Binus IT Operati
 
 
 - 1) Pioneer of QR-based event registration system for Binus University, [<u>used on national-scale event</u>](https://binus.ac.id/2019/01/sarasehan-dialog-nasional-bersama-menteri-ristekdikti-republik-nasional/). Reduced manual checking time by 10x from minutes to QR scan and go in seconds. 
-
 - 2) Create tools & scripts to automate data analyst reporting processes. Provided automation for student document reports to the university and government.
-
 - 3) Developed WiFi debugging tools to help the network-infra team when doing on-site WiFi connection troubleshooting. Simplified debug data gathering into a one-click process.
-  
 - 4) Integrate Windows AD with physical facilities to enable access list automation. (access doors and building's WiFi for SSO). Speed up the batch manual registration process from a week to less than an hour automatic process.
 
 
@@ -75,12 +66,12 @@ Work closely with Data Center & IT Infrastructure group to Help Binus IT Operati
 `Aug 2021`
 [**Automate Export From Jenkins API Job List to Google Sheets Using Google Apps Script**](https://medium.com/geekculture/automate-export-from-jenkins-api-job-list-to-google-sheets-using-google-apps-script-2eef44008bdc)
 
-Reach 1100+ Reader (per 2023/01/26) under Geek Culture publication
+Reach 1.3k+ Reader (per 2023/04/14) under Geek Culture publication
 
 `Jul 2021`
 [**Easy Deploy SonarQube on Kubernetes with YAML configuration**](https://medium.com/codex/easy-deploy-sonarqube-on-kubernetes-with-yaml-configuration-27f5adc8de90)
 
-Reach 8500+ Reader (per 2023/01/26) under CodeX publication
+Reach 10k+ Reader (per 2023/04/14) under CodeX publication
 
 ### Training & Certifications
 
