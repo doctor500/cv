@@ -30,7 +30,7 @@ __DevOps Engineer__, Gojek - GoTo Financial (GTF)
 
 Maintained 100+ backend services in multi-cloud Kubernetes cluster, Gitlab CI pipeline & runners to fulfill 24/7 business needs.
 
-- 1) Decreased AWS infra cost for development by up to 50% hourly by planning and executing cloud cost-saving activities.
+- 1) Decreased AWS infra cost for application development by up to 50% hourly by planning and executing cloud cost-saving activities based on resource utilization metrics.
 - 2) Provided 100% configuration visibility to prevent backend misconfiguration cases by improving GTF product-level (Selly Keyboard) backend release processes using open-source secret and configuration management (Vault). 
 - 3) Create transformation for 400+ existing production-level AWS resources to Code-based configuration and integrate them with cloud cost analysis.
 - 4) Scaled up culture-sharing as knowledge dissemination on a team scale by creating sharing session framework.
@@ -98,6 +98,12 @@ AWS, GCP, Linux VM, Windows Server, Debian, CentOS, Docker, Kubernetes, MySQL, P
 __Bina Nusantara University, Jakarta__. Bachelor's degree, Major in Information Systems
 
 Take Business Intelligence minor, Graduate in the 7th semester. Final GPA: 3.8 of 4.0
+
+## Language
+__Indonesian__ - Native proficiency
+
+__English__ - Intermediate working limited proficiency
+
 
 <!-- ### Footer
 Last updated: Jan 2023 -->
