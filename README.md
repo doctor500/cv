@@ -62,10 +62,10 @@ graph TD;
 ```
 To enable generate PDF feature, you can enable the GitHub action integration after you fork this repo. 
 
-### Sub-feature, build pipeline with sensitive data
-This pipeline also has options to generate PDFs privately in case you want to include sensitive data (for example phone number). I create an example to add a phone number inside the markdown before the build process. I store the phone number data on GitHub repo secrets, and this PDF will not create a new release into the repo. It also will **expired 48h** after it generated on pipeline artifacts
+### Sub-feature, build pdf with phone number data
+This pipeline also has options to generate PDFs privately in case you want to include sensitive data (phone number). The generated PDF will not create a new release into the repo, and also the PDF will **expired 48h** after it generated on pipeline artifacts.
 
-You can use this feature by tick the check box `Build privately & include sensitive data`. To fill the phone number:
+You can use this feature by tick the check box ✅ `Build privately & include sensitive data`. To fill the phone number:
 1. Open repo **Settings** > **Secrets and variables** > Actions
 2. Going to `Secrets` tab and click **New repository secret**.
 3. Fill Name with `CV_PHONE_NUMBER`, and Secret with your phone number (ex: `+62 123123123`)
