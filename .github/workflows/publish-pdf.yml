@@ -70,20 +70,20 @@ jobs:
       uses: fifsky/html-to-pdf-action@v0.1.0
       with:
         htmlFile: ./_site/index.html
-        outputFile: "./CV-David_Layardi-${{ env.PIPELINE_DATE }}.pdf"
+        outputFile: "./CV-${{ env.PIPELINE_DATE }}.pdf"
         pdfOptions: '{"format": "A4", "margin": {"top": "10mm", "left": "10mm", "right": "10mm", "bottom": "10mm"}}'
     - name: Publish PDF result to artifact
       if: ${{ github.event.inputs.build_private == 'true' }}
       uses: actions/upload-artifact@v3
       with:
-        name: "CV-David_Layardi-${{ env.PIPELINE_DATE }}.pdf"
-        path: "./CV-David_Layardi-${{ env.PIPELINE_DATE }}.pdf"
+        name: "CV-${{ env.PIPELINE_DATE }}.pdf"
+        path: "./CV-${{ env.PIPELINE_DATE }}.pdf"
         retention-days: 2
     - name: Publish PDF to GitHub release
       if: ${{ github.event.inputs.build_private == 'false' }}
       uses: softprops/action-gh-release@v1
       with:
-        files: "CV-David_Layardi-${{ env.PIPELINE_DATE }}.pdf"
+        files: "CV-${{ env.PIPELINE_DATE }}.pdf"
         fail_on_unmatched_files: true
         name: "🚀 PDF Publish R.${{ env.PIPELINE_DATE }}"
         tag_name: "PDF_${{ env.PIPELINE_DATE }}-${{ env.PIPELINE_TIMESTAMP }}"
