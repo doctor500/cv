@@ -22,82 +22,72 @@ on:
   #   - main
 
 jobs:
-  debug_variable:
+  build_jekyll:
     runs-on: ubuntu-latest
     steps:
-    - name: Print branch name
+    - name: Checkout repo
+      uses: actions/checkout@v3
+    - name: Fill sensitive data to markdown
+      if: ${{ github.event.inputs.build_private == 'true' }}
+      run: sed -i'.bak' 's/<div id="webaddress">/<div id="webaddress">\n<text>${{ secrets.CV_PHONE_NUMBER }}<\/text> | /' index.md
+    - name: Build Jekyll pages
+      uses: actions/jekyll-build-pages@v1.0.6
+      with:
+        source: ./
+        destination: ./_site
+    - name: Publish pages to pipeline artifact
+      if: ${{ github.event.inputs.build_private == 'false' }}
+      uses: actions/upload-artifact@v3
+      with:
+        name: jekyll-published-page
+        path: ./_site
+    - name: Publish pages with sensitive data to pipeline artifact
+      if: ${{ github.event.inputs.build_private == 'true' }}
+      uses: actions/upload-artifact@v3
+      with:
+        name: jekyll-published-page
+        path: ./_site
+        retention-days: 2
+
+  publish_pdf:
+    runs-on: ubuntu-latest
+    needs: [build_jekyll]
+    steps:
+    - name: Setup Variables
       run: |
+        cat <<EOF > release_notes.txt
+        ## :spiral_notepad: Release notes
+           ${{ github.event.inputs.release_notes }}
+        EOF
         echo "PIPELINE_BRANCH_NAME=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> $GITHUB_ENV
         echo "PIPELINE_TIMESTAMP=$(date +'%s')" >> $GITHUB_ENV
         echo "PIPELINE_DATE=$(date +'%Y%m%d')" >> $GITHUB_ENV
-        echo $GITHUB_ENV
-        echo "final result: $PIPELINE_BRANCH_NAME"
-
-  # build_jekyll:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #   - name: Checkout repo
-  #     uses: actions/checkout@v3
-  #   - name: Fill sensitive data to markdown
-  #     if: ${{ github.event.inputs.build_private == 'true' }}
-  #     run: sed -i'.bak' 's/<div id="webaddress">/<div id="webaddress">\n<text>${{ secrets.CV_PHONE_NUMBER }}<\/text> | /' index.md
-  #   - name: Build Jekyll pages
-  #     uses: actions/jekyll-build-pages@v1.0.6
-  #     with:
-  #       source: ./
-  #       destination: ./_site
-  #   - name: Publish pages to pipeline artifact
-  #     if: ${{ github.event.inputs.build_private == 'false' }}
-  #     uses: actions/upload-artifact@v3
-  #     with:
-  #       name: jekyll-published-page
-  #       path: ./_site
-  #   - name: Publish pages with sensitive data to pipeline artifact
-  #     if: ${{ github.event.inputs.build_private == 'true' }}
-  #     uses: actions/upload-artifact@v3
-  #     with:
-  #       name: jekyll-published-page
-  #       path: ./_site
-  #       retention-days: 2
-
-  # publish_pdf:
-  #   runs-on: ubuntu-latest
-  #   needs: [build_jekyll]
-  #   steps:
-  #   - name: Setup Variables
-  #     run: |
-  #       cat <<EOF > release_notes.txt
-  #       ## :spiral_notepad: Release notes
-  #          ${{ github.event.inputs.release_notes }}
-  #       EOF
-  #       echo "PIPELINE_TIMESTAMP=$(date +'%s')" >> $GITHUB_ENV
-  #       echo "PIPELINE_DATE=$(date +'%Y%m%d')" >> $GITHUB_ENV
-  #   - name: Pull artifact from previous job
-  #     uses: actions/download-artifact@v3
-  #     with:
-  #       name: jekyll-published-page
-  #       path: ./_site
-  #   - name: Create PDF from artifact
-  #     uses: fifsky/html-to-pdf-action@v0.1.0
-  #     with:
-  #       htmlFile: ./_site/index.html
-  #       outputFile: "./CV-${{ env.PIPELINE_DATE }}.pdf"
-  #       pdfOptions: '{"format": "A4", "margin": {"top": "10mm", "left": "10mm", "right": "10mm", "bottom": "10mm"}}'
-  #   - name: Publish PDF result to artifact
-  #     if: ${{ github.event.inputs.build_private == 'true' }}
-  #     uses: actions/upload-artifact@v3
-  #     with:
-  #       name: "CV-${{ env.PIPELINE_DATE }}.pdf"
-  #       path: "./CV-${{ env.PIPELINE_DATE }}.pdf"
-  #       retention-days: 2
-  #   - name: Publish PDF to GitHub release
-  #     if: ${{ github.event.inputs.build_private == 'false' }}
-  #     uses: softprops/action-gh-release@v1
-  #     with:
-  #       files: "CV-${{ env.PIPELINE_DATE }}.pdf"
-  #       fail_on_unmatched_files: true
-  #       name: "🚀 PDF Publish R.${{ env.PIPELINE_DATE }}"
-  #       tag_name: "PDF_${{ env.PIPELINE_DATE }}-${{ env.PIPELINE_TIMESTAMP }}"
-  #       body_path: release_notes.txt
-  #       body: "No description provided on this release"
-  #       # target_commitish: ""
+    # - name: Pull artifact from previous job
+    #   uses: actions/download-artifact@v3
+    #   with:
+    #     name: jekyll-published-page
+    #     path: ./_site
+    # - name: Create PDF from artifact
+    #   uses: fifsky/html-to-pdf-action@v0.1.0
+    #   with:
+    #     htmlFile: ./_site/index.html
+    #     outputFile: "./CV-${{ env.PIPELINE_DATE }}.pdf"
+    #     pdfOptions: '{"format": "A4", "margin": {"top": "10mm", "left": "10mm", "right": "10mm", "bottom": "10mm"}}'
+    # - name: Publish PDF result to artifact
+    #   if: ${{ github.event.inputs.build_private == 'true' }}
+    #   uses: actions/upload-artifact@v3
+    #   with:
+    #     name: "CV-${{ env.PIPELINE_DATE }}.pdf"
+    #     path: "./CV-${{ env.PIPELINE_DATE }}.pdf"
+    #     retention-days: 2
+    - name: Publish PDF to GitHub release
+      if: ${{ github.event.inputs.build_private == 'false' }}
+      uses: softprops/action-gh-release@v1
+      with:
+        # files: "CV-${{ env.PIPELINE_DATE }}.pdf"
+        # fail_on_unmatched_files: true
+        name: "🚀 PDF Publish R.${{ env.PIPELINE_DATE }}"
+        tag_name: "PDF_${{ env.PIPELINE_DATE }}-${{ env.PIPELINE_TIMESTAMP }}"
+        body_path: release_notes.txt
+        body: "No description provided on this release"
+        target_commitish: "${{ env.PIPELINE_BRANCH_NAME }}"
