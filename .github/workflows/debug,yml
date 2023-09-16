@@ -2,9 +2,11 @@ name: Debug Variable
 permissions: write-all
 
 on:
-  # Manual Trigger
   workflow_dispatch:
 
+  push:
+    branches:
+    - fix/pipeline-tagging
 
 jobs:
   debug_variable:
