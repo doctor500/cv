@@ -90,12 +90,3 @@ jobs:
         body_path: release_notes.txt
         body: "No description provided on this release"
         # target_commitish: ""
-  debug_variable:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Print branch name
-      run: |
-        echo $GITHUB_ENV
-        echo "branch=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}"
-        echo "PIPELINE_TIMESTAMP=$(date +'%s')" >> $GITHUB_ENV
-        echo "PIPELINE_DATE=$(date +'%Y%m%d')" >> $GITHUB_ENV
