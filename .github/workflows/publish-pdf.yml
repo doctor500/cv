@@ -27,10 +27,12 @@ jobs:
     steps:
     - name: Print branch name
       run: |
-        echo $GITHUB_ENV
-        echo "branch=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}"
+        echo "PIPELINE_BRANCH_NAME=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> $GITHUB_ENV
         echo "PIPELINE_TIMESTAMP=$(date +'%s')" >> $GITHUB_ENV
         echo "PIPELINE_DATE=$(date +'%Y%m%d')" >> $GITHUB_ENV
+        echo $GITHUB_ENV
+        echo "final result: $PIPELINE_BRANCH_NAME"
+
   # build_jekyll:
   #   runs-on: ubuntu-latest
   #   steps:
