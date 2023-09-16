@@ -59,6 +59,7 @@ jobs:
         ## :spiral_notepad: Release notes
            ${{ github.event.inputs.release_notes }}
         EOF
+        echo "PIPELINE_BRANCH_NAME=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> $GITHUB_ENV
         echo "PIPELINE_TIMESTAMP=$(date +'%s')" >> $GITHUB_ENV
         echo "PIPELINE_DATE=$(date +'%Y%m%d')" >> $GITHUB_ENV
     - name: Pull artifact from previous job
@@ -89,3 +90,4 @@ jobs:
         tag_name: "PDF_${{ env.PIPELINE_DATE }}-${{ env.PIPELINE_TIMESTAMP }}"
         body_path: release_notes.txt
         body: "No description provided on this release"
+        target_commitish: "${{ env.PIPELINE_BRANCH_NAME }}"
