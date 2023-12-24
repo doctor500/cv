@@ -70,15 +70,15 @@ jobs:
     - name: Create PDF from artifact
       uses: markwilson/html2pdf@v1.1
       with:
-        htmlPath: ./_site/index.html
+        htmlPath: "./_site/index.html"
         pdfName: "CV-${{ env.PIPELINE_DATE }}"
-    # - name: Publish PDF result to artifact
-    #   if: ${{ github.event.inputs.build_private == 'true' }}
-    #   uses: actions/upload-artifact@v3
-    #   with:
-    #     name: "CV-${{ env.PIPELINE_DATE }}.pdf"
-    #     path: "./CV-${{ env.PIPELINE_DATE }}.pdf"
-    #     retention-days: 2
+    - name: Publish PDF result to artifact
+      if: ${{ github.event.inputs.build_private == 'true' }}
+      uses: actions/upload-artifact@v3
+      with:
+        name: "CV-${{ env.PIPELINE_DATE }}.pdf"
+        path: "$GITHUB_WORKSPACE/dist/CV-${{ env.PIPELINE_DATE }}.pdf"
+        retention-days: 2
     - name: Publish PDF to GitHub release
       if: ${{ github.event.inputs.build_private == 'false' }}
       uses: softprops/action-gh-release@v1
