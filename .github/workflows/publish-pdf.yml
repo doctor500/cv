@@ -83,7 +83,7 @@ jobs:
       if: ${{ github.event.inputs.build_private == 'false' }}
       uses: softprops/action-gh-release@v1
       with:
-        files: "CV-${{ env.PIPELINE_DATE }}.pdf"
+        files: "${{ github.workspace }}/dist/CV-${{ env.PIPELINE_DATE }}.pdf"
         fail_on_unmatched_files: true
         name: "🚀 PDF Publish R.${{ env.PIPELINE_DATE }}"
         tag_name: "PDF_${{ env.PIPELINE_DATE }}-${{ env.PIPELINE_TIMESTAMP }}"
