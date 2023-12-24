@@ -77,7 +77,7 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: "CV-${{ env.PIPELINE_DATE }}.pdf"
-        path: "$GITHUB_WORKSPACE/dist/CV-${{ env.PIPELINE_DATE }}.pdf"
+        path: "${{ github.workspace }}/dist/CV-${{ env.PIPELINE_DATE }}.pdf"
         retention-days: 2
     - name: Publish PDF to GitHub release
       if: ${{ github.event.inputs.build_private == 'false' }}
