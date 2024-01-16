@@ -36,6 +36,8 @@ __Infrastructure Engineer__, GovTech Procurement Indonesia
 
 Govement Technology (GovTech) Procurement is one of the tribes that rapidly growth under the Digital Business and Technology (DBT) Division in PT Telkom Indonesia
 
+
+
 `Nov 2021 - Dec 2023`
 
 __DevOps Engineer__, Gojek - GoTo Financial (GTF)
@@ -97,15 +99,20 @@ Take Business Intelligence minor, Graduate in the 7th semester. Final GPA: 3.8 o
 
 ## Activities
 ### Medium Articles
+`Apr 2023`
+[**How Cloudflare Zero Trust & VS Code Tunnels Reducing My Back Pain**](https://medium.com/@davidlayardi/how-cloudflare-trust-zero-vs-code-tunnels-reducing-my-back-pain-67c38c506a28)
+
+Reach 900+ Reader (per 2024/01/17) under Self Publication
+
 `Aug 2021`
 [**Automate Export From Jenkins API Job List to Google Sheets Using Google Apps Script**](https://medium.com/geekculture/automate-export-from-jenkins-api-job-list-to-google-sheets-using-google-apps-script-2eef44008bdc)
 
-Reach 1.5k+ Reader (per 2023/08/08) under Geek Culture publication
+Reach 1.7k+ Reader (per 2024/01/17) under Geek Culture publication
 
 `Jul 2021`
 [**Easy Deploy SonarQube on Kubernetes with YAML configuration**](https://medium.com/codex/easy-deploy-sonarqube-on-kubernetes-with-yaml-configuration-27f5adc8de90)
 
-Reach 12k+ Reader (per 2023/08/08) under CodeX publication
+Reach 13.8k+ Reader (per 2024/01/17) under CodeX publication
 
 
 ### Training & Certifications
