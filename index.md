@@ -30,7 +30,13 @@ AWS (EC2, ECR, IAM, VPC, ECR, LB, Route53), GCP (CE, GKE, Cloud SQL, Logging, IA
 
 ## Professional Experience
 
-`Nov 2021 - Now`
+`Jan 2024 - Now`
+
+__Infrastructure Engineer__, GovTech Procurement Indonesia
+
+Govement Technology (GovTech) Procurement is one of the tribes that rapidly growth under the Digital Business and Technology (DBT) Division in PT Telkom Indonesia
+
+`Nov 2021 - Dec 2023`
 
 __DevOps Engineer__, Gojek - GoTo Financial (GTF)
 
@@ -39,7 +45,7 @@ Maintained **100+** backend services in multi-cloud **Kubernetes** cluster, **Gi
 - 1) **Decreased AWS infra cost** for application development by **up to 50% hourly** by planning and executing **cloud cost-saving** activities based on resource utilization metrics.
 - 2) **Provided 100% configuration visibility** to prevent backend misconfiguration cases by improving GTF product-level (Selly Keyboard) backend release processes using open-source secret and configuration management (**Vault**). 
 - 3) Create **transformation for 400+** existing production-level **AWS** resources to Code-based configuration and integrate them with cloud cost analysis.
-- 4) Scaled up culture-sharing as knowledge dissemination on a team scale by creating sharing session framework.
+- 4) Optimize the **GCP Cloud SQL** Migration Process from **2 Hours to 15 minutes** by implementing the CDC mechanism using **GCP DMS**
 
 
 <div style="page-break-after: always;"></div>
