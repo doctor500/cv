@@ -91,7 +91,6 @@ Develop & Design web-based applications based on user requirements for several c
 - 3) PT. Inspirasi Digital Elevasi (July 2018 - August 2018). Develop Invoice Management System for their client (PT. Royal ElSalam Universal) with web-based **PHP, MySQL, and Apache** server.
 
 
-<div style="page-break-after: always;"></div>
 
 ## Education
 
