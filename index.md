@@ -83,6 +83,9 @@ Work closely with the Data Center & IT Infrastructure group to Help Binus IT Ope
 - 3) Developed WiFi debugging tools to help the network-infra team when doing on-site WiFi connection troubleshooting. Simplified debug data gathering into a one-click process. Develop using **C#, PHP, and Windows Server 2016**.
 - 4) Integrate **Windows AD** with physical facilities to enable access list automation. (access doors and building's WiFi for SSO). Speed up the batch manual registration process from a week to less than an hour automatic process. Develop using **Windows Active Directory API, PHP, Pentaho, and MikroTik**. 
 
+<div style="page-break-after: always;"></div>
+
+
 `Feb 2016 - Jan 2019`
 __Freelance Web Developer__, Self Freelance
 Develop & Design web-based applications based on user requirements for several companies & organizations:
@@ -91,7 +94,6 @@ Develop & Design web-based applications based on user requirements for several c
 - 3) PT. Inspirasi Digital Elevasi (July 2018 - August 2018). Develop Invoice Management System for their client (PT. Royal ElSalam Universal) with web-based **PHP, MySQL, and Apache** server.
 
 
-<div style="page-break-after: always;"></div>
 
 
 ## Education
