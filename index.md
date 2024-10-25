@@ -39,9 +39,9 @@ Government Technology (GovTech) Procurement is one of the tribes that is rapidly
 - 1) Lead and execute infra refactoring from GCP Cloud Run workload into Kubernetes-based workload. **Decrease infra production costs** by more than **75%** daily, and save *95k+ USD* in monthly basis.
 - 2) Transform nation-level Mail Services from monolith VM into scalable and cost-effective Kubernetes deployment. Increase service scaling performance *6x* more faster and more reliable.
 - 3) Implement fully audited and approval-based access control for over **500+** cloud resources in GovTech Procurement using Teleport.
-- 4) Managing more than *20+* Kubernetes clusters that can have more than *70+* cost-effective worker nodes (spot instances).
+- 4) Managing more than **20+* Kubernetes clusters that can have more than **70+* cost-effective worker nodes (spot instances).
  
-
+<div style="page-break-after: always;"></div>
 
 
 `Nov 2021 - Dec 2023`
@@ -56,7 +56,6 @@ Maintained **100+** backend services in multi-cloud **Kubernetes** cluster, **Gi
 - 4) Optimize the **GCP Cloud SQL** Migration Process from **2 Hours to 15 minutes** by implementing the CDC mechanism using **GCP DMS**
 
 
-<div style="page-break-after: always;"></div>
 
 
 `Mar 2020 - Oct 2021`
