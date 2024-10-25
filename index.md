@@ -17,7 +17,7 @@ Cloud Infrastructure, Automation, DevOps Engineer.
 ## Profile Summary
 
 
-My journey has been a research-driven pursuit of my passion and curiosity since 2011. I began with application development in VB6 and have since honed my skills as a freelance web developer specializing in PHP-based programming since 2016. In 2018, I shifted my focus toward infrastructure and automation and worked in three different industries. I've completed over 10 projects, delivering exceptional results by developing innovative automation solutions for complex business challenges.
+My journey has been a research-driven pursuit of my passion and curiosity since 2011. I began with application development in VB6 and have since honed my skills as a freelance web developer specializing in PHP-based programming since 2016. In 2018, I shifted my focus toward infrastructure and automation and worked in more than three industries. I've completed over 10 projects, delivering exceptional results by developing innovative automation solutions for complex business challenges.
 
 I have extensive knowledge and experience in AWS and GCP Cloud environments. My expertise includes application pipeline engineering, container-based architectures, and cloud infrastructure operations. Additionally, I am skilled in maintaining thorough logs and conducting monitoring practices. Guided by innovation, I'm dedicated to enhancing operational efficiency for sustainable growth.
 
@@ -25,7 +25,7 @@ I have extensive knowledge and experience in AWS and GCP Cloud environments. My 
 ### Technical Skill
 
 
-AWS (EC2, ECR, IAM, VPC, ECR, LB, Route53), GCP (CE, GKE, Cloud SQL, Logging, IAM, VPC, Artifact Registry, LB, Cloud DNS), Linux VM, Windows Server, Debian, CentOS, Docker, Kubernetes, MySQL, PostgreSQL, Git, Python, Java (Groovy), Shell, Jenkins, Gitlab CI, GitHub Actions, Helm, Kustomize, Terraform, Nginx, Cloudflare, Newrelic, Datadog, Prometheus, Grafana
+AWS (EC2, ECR, IAM, VPC, ECR, LB, Route53), GCP (CE, GKE, Cloud SQL, Cloud Logging, Cloud Monitoring, IAM, VPC, Artifact Registry, LB, Cloud DNS, Cloud Storage, Cloud Run, Secret Manager), Linux VM, Windows Server, Debian, CentOS, Docker, Kubernetes, MySQL, PostgreSQL, Git, Python, Java (Groovy), Shell, Jenkins, Gitlab CI, GitHub Actions, Helm, Kustomize, Terraform, Nginx, Cloudflare, Newrelic, Datadog, Prometheus, Grafana, OpenVPN, Teleport
 
 
 ## Professional Experience
@@ -34,7 +34,13 @@ AWS (EC2, ECR, IAM, VPC, ECR, LB, Route53), GCP (CE, GKE, Cloud SQL, Logging, IA
 
 __Infrastructure Engineer__, GovTech Procurement Indonesia
 
-Govement Technology (GovTech) Procurement is one of the tribes that rapidly growth under the Digital Business and Technology (DBT) Division in PT Telkom Indonesia
+Government Technology (GovTech) Procurement is one of the tribes that is rapidly growing under the Digital Business and Technology (DBT) Division in PT Telkom Indonesia. I'm entrusted to maintain the operations of **600+** nation-scale government procurement apps. 
+
+- 1) Lead and execute infra refactoring from GCP Cloud Run workload into Kubernetes-based workload. **Decrease infra production costs** by more than **75%** daily, and save *95k+ USD* in monthly basis.
+- 2) Transform nation-level Mail Services from monolith VM into scalable and cost-effective Kubernetes deployment. Increase service scaling performance *6x* more faster and more reliable.
+- 3) Implement fully audited and approval-based access control for over **500+** cloud resources in GovTech Procurement using Teleport.
+- 4) Managing more than *20+* Kubernetes clusters that can have more than *70+* cost-effective worker nodes (spot instances).
+ 
 
 
 
@@ -69,20 +75,20 @@ Maintain **Jenkins** pipeline & internal tools **Kubernetes Cluster** that serve
 __Data Center Staff__, Bina Nusantara - IT Division
 
 
-Work closely with Data Center & IT Infrastructure group to Help Binus IT Operational Processes.
+Work closely with the Data Center & IT Infrastructure group to Help Binus IT Operational Processes.
 
 
 - 1) Pioneer of QR-based event registration system for Binus University, [<u>used on national-scale event</u>](https://binus.ac.id/2019/01/sarasehan-dialog-nasional-bersama-menteri-ristekdikti-republik-nasional/). Reduced manual checking time by 10x from minutes to QR scan and go in seconds. Develop using **PHP Laravel, SQL Server, and Windows Server 2016**. 
-- 2) Create tools & scripts to automate data analyst reporting processes. Provided automation for student document reports to the university and government. Provide several tools/script using **PHP Laravel, Windows BAT Script, Pentaho, and SQL Server**.
+- 2) Create tools & scripts to automate data analyst reporting processes. Provided automation for student document reports to the university and government. Provide several tools/scripts using **PHP Laravel, Windows BAT Script, Pentaho, and SQL Server**.
 - 3) Developed WiFi debugging tools to help the network-infra team when doing on-site WiFi connection troubleshooting. Simplified debug data gathering into a one-click process. Develop using **C#, PHP, and Windows Server 2016**.
 - 4) Integrate **Windows AD** with physical facilities to enable access list automation. (access doors and building's WiFi for SSO). Speed up the batch manual registration process from a week to less than an hour automatic process. Develop using **Windows Active Directory API, PHP, Pentaho, and MikroTik**. 
 
 `Feb 2016 - Jan 2019`
 __Freelance Web Developer__, Self Freelance
 Develop & Design web-based applications based on user requirements for several companies & organizations:
-- 1) PT. Tri Jaya Samudera (February 2016). Design and develop company profile using non-database website (Static Website). Deployed on **Apache** server.
+- 1) PT. Tri Jaya Samudera (February 2016). Design and develop a company profile using a non-database website (Static Website). Deployed on **Apache** server.
 - 2) SMAN 7 Kota Bekasi (July 2016 - August 2016). Develop CMS with **PHP & MySQL** Based.
-- 3) PT. Inspirasi Digital Elevasi (July 2018 - August 2018). Develop Invoice Management System for their client (PT. Royal ElSalam Universal) with web based **PHP, MySQL, and Apache** server.
+- 3) PT. Inspirasi Digital Elevasi (July 2018 - August 2018). Develop Invoice Management System for their client (PT. Royal ElSalam Universal) with web-based **PHP, MySQL, and Apache** server.
 
 
 <div style="page-break-after: always;"></div>
@@ -143,7 +149,7 @@ Make the build and release process more standardized by implementing the Jenkins
 `Apr 2019 - Dec 2019`
 **Automation for PDDikti Reporting**, Bina Nusantara - IT Division
 
-The primary goal is creating a data pipeline from operational data to reporting data. This project using a combination of Pentaho Data Integration and in-house application development with PHP Laravel Framework. Responsible for project architecture and backend development. Optimizing semi-manual processes that can fail at any time into the process of pressing a button and the process can be seen when it's finished.
+The primary goal is to create a data pipeline from operational data to reporting data. This project uses a combination of Pentaho Data Integration and in-house application development with PHP Laravel Framework. Responsible for project architecture and backend development. Optimizing semi-manual processes that can fail at any time into the process of pressing a button and the process can be seen when it's finished.
 
 
 ## Language
@@ -153,4 +159,4 @@ __English__ - Business level proficiency
 
 
 <!-- ### Footer
-Last updated: Jan 2023 -->
+Last updated: October 2024 -->
