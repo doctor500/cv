@@ -36,10 +36,10 @@ __Infrastructure Engineer__, GovTech Procurement Indonesia
 
 Government Technology (GovTech) Procurement is one of the tribes that is rapidly growing under the Digital Business and Technology (DBT) Division in PT Telkom Indonesia. I'm entrusted to maintain the operations of **600+** nation-scale government procurement apps. 
 
-- 1) Lead and execute infra refactoring from GCP Cloud Run workload into Kubernetes-based workload. **Decrease infra production costs** by more than **75%** daily, and save *95k+ USD* in monthly basis.
-- 2) Transform nation-level Mail Services from monolith VM into scalable and cost-effective Kubernetes deployment. Increase service scaling performance *6x* more faster and more reliable.
+- 1) Lead and execute infra refactoring from GCP Cloud Run workload into Kubernetes-based workload. **Decrease infra production costs** by more than **75%** daily, and save **95k+ USD** in monthly basis.
+- 2) Transform nation-level Mail Services from monolith VM into scalable and cost-effective Kubernetes deployment. Increase service scaling performance **6x** more faster and more reliable.
 - 3) Implement fully audited and approval-based access control for over **500+** cloud resources in GovTech Procurement using Teleport.
-- 4) Managing more than *20+* Kubernetes clusters that can have more than *70+* cost-effective worker nodes (spot instances).
+- 4) Managing more than **20+** Kubernetes clusters that can have more than **70+** cost-effective worker nodes (spot instances).
  
  
 <div style="page-break-after: always;"></div>
