@@ -108,20 +108,25 @@ Take Business Intelligence minor, Graduate in the 7th semester. Final GPA: 3.8 o
 
 ## Activities
 ### Medium Articles
+`Apr 2024`
+[**Accessing GCP Secret Manager from GKE Cluster using Murmur**](https://davidlayardi.medium.com/accessing-gcp-secret-manager-from-gke-cluster-using-murmur-34c679f25333)
+
+Reach 250+ Reader (per 2024/10/27) under Self Publication
+
 `Apr 2023`
 [**How Cloudflare Zero Trust & VS Code Tunnels Reducing My Back Pain**](https://medium.com/@davidlayardi/how-cloudflare-trust-zero-vs-code-tunnels-reducing-my-back-pain-67c38c506a28)
 
-Reach 900+ Reader (per 2024/01/17) under Self Publication
+Reach 1800+ Reader (per 2024/10/27) under Self Publication
 
 `Aug 2021`
 [**Automate Export From Jenkins API Job List to Google Sheets Using Google Apps Script**](https://medium.com/geekculture/automate-export-from-jenkins-api-job-list-to-google-sheets-using-google-apps-script-2eef44008bdc)
 
-Reach 1.7k+ Reader (per 2024/01/17) under Geek Culture publication
+Reach 2000+ Reader (per 2024/10/27) under Geek Culture publication
 
 `Jul 2021`
 [**Easy Deploy SonarQube on Kubernetes with YAML configuration**](https://medium.com/codex/easy-deploy-sonarqube-on-kubernetes-with-yaml-configuration-27f5adc8de90)
 
-Reach 13.8k+ Reader (per 2024/01/17) under CodeX publication
+Reach 17500+ Reader (per 2024/10/27) under CodeX publication
 
 
 ### Training & Certifications
@@ -140,6 +145,11 @@ Reach 13.8k+ Reader (per 2024/01/17) under CodeX publication
 
 
 ### Latest Professional Projects
+
+`May 2024 - Present`
+**SPSE Migration from Bare Metal to Goverment-certified Cloud**, GovTech Procurement
+
+Execute & supervise the Automation process of the SPSE migration process. Do assessment, troubleshooting, and design for implementing automation at the infrastructure level. We're ongoing moving more than 600 SPSE to a Government-certified cloud. Provide them with better security & reliable infrastructure.
 
 `Aug 2022 - Sep 2022`
 **Config & Secret Management for Selly.id using Vault Cluster**, Gojek - GoTo Financial (GTF)
