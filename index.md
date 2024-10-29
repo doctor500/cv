@@ -34,12 +34,12 @@ AWS (EC2, ECR, IAM, VPC, ECR, LB, Route53), GCP (CE, GKE, Cloud SQL, Cloud Loggi
 
 __Infrastructure Engineer__, GovTech Procurement Indonesia
 
-Government Technology (GovTech) Procurement is one of the tribes that is rapidly growing under the Digital Business and Technology (DBT) Division in PT Telkom Indonesia. I'm entrusted to maintain the operations of **600+** nation-scale government procurement apps. 
+Government Technology (GovTech) Procurement is part of Telkom Indonesia (IDX: TLKM). I'm entrusted to maintain the operations of **600+** nation-scale government procurement apps, managing more than **20+** Kubernetes clusters that can have more than **70+** cost-effective worker nodes (spot instances).
 
 - 1) Lead and execute infra refactoring from GCP Cloud Run workload into Kubernetes-based workload. **Decrease infra production costs** by more than **75%** daily, and save **95k+ USD** in monthly basis.
-- 2) Transform nation-level Mail Services from monolith VM into scalable and cost-effective Kubernetes deployment. Increase service scaling performance **6x** more faster and more reliable.
+- 2) Transform nation-level Mail Services from monolith VM into scalable and cost-effective Kubernetes deployment. Increase service scaling performance **6x** faster and more reliable.
 - 3) Implement fully audited and approval-based access control for over **500+** cloud resources in GovTech Procurement using Teleport.
-- 4) Managing more than **20+** Kubernetes clusters that can have more than **70+** cost-effective worker nodes (spot instances).
+- 4) Research and implement (POC) independently or in groups for some tooling that can improve GovTech Procurement mankind productivity such as **Goldilocks, External Secrets Operator, Kafka on Kubernetes, Pomerium on GKE**, and many more.
  
  
 <div style="page-break-after: always;"></div>
@@ -62,7 +62,7 @@ Maintained **100+** backend services in multi-cloud **Kubernetes** cluster, **Gi
 `Mar 2020 - Oct 2021`
 __Release Engineer__, Pegipegi
 
-Maintain **Jenkins** pipeline & internal tools **Kubernetes Cluster** that serves more than 100+ pipelines of backend services.
+Maintain the Jenkins pipeline and internal tools in the Kubernetes Cluster, which serves more than 100+ pipelines of backend services.
 
 
 - 1) Transform **80%+** of redundant **Jenkins** pipeline files into a single standardized deployment pipeline. **Rebuilt the company-level pipeline** to scale up pipeline maintainability.
@@ -132,13 +132,13 @@ Reach 17500+ Reader (per 2024/10/27) under CodeX publication
 ### Training & Certifications
 
 `Jan 2023`
-[Associate Cloud Engineer](https://www.credential.net/3e62c331-8419-43d6-9d48-849d04182582), *from GCP*
+[Associate Cloud Engineer](https://www.credential.net/3e62c331-8419-43d6-9d48-849d04182582), **from GCP**
 
 `Sep 2022`
-[Google Cloud Fundamentals: Core Infrastructure](https://www.coursera.org/account/accomplishments/verify/B2V6L4ZSGNUH), *from Coursera*
+[Google Cloud Fundamentals: Core Infrastructure](https://www.coursera.org/account/accomplishments/verify/B2V6L4ZSGNUH), **from Coursera**
 
 `Mar 2021`
-[DevOps Engineering on AWS](https://1drv.ms/b/s!AgiuQdtA6DaqkRFlSnO8rKrDO8iQ?e=htxgE9), *from AWS*
+[DevOps Engineering on AWS](https://1drv.ms/b/s!AgiuQdtA6DaqkRFlSnO8rKrDO8iQ?e=htxgE9), **from AWS**
 
 
 <div style="page-break-after: always;"></div>
@@ -147,9 +147,9 @@ Reach 17500+ Reader (per 2024/10/27) under CodeX publication
 ### Latest Professional Projects
 
 `May 2024 - Present`
-**SPSE Migration from Bare Metal to Goverment-certified Cloud**, GovTech Procurement
+**SPSE Migration from Bare Metal to Government-certified Cloud**, GovTech Procurement
 
-Execute & supervise the Automation process of the SPSE migration process. Do assessment, troubleshooting, and design for implementing automation at the infrastructure level. We're ongoing moving more than 600 SPSE to a Government-certified cloud. Provide them with better security & reliable infrastructure.
+Execute and supervise the Automation process of the SPSE migration process. Assess, troubleshoot, and design for implementing automation at the infrastructure level. We're currently moving more than 600 SPSE services to a Government-certified cloud. Provide them with better security and reliable infrastructure.
 
 `Aug 2022 - Sep 2022`
 **Config & Secret Management for Selly.id using Vault Cluster**, Gojek - GoTo Financial (GTF)
