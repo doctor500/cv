@@ -25,7 +25,7 @@ I have extensive knowledge and experience in AWS and GCP Cloud environments. My 
 ### Technical Skill
 
 
-AWS (EC2, ECR, IAM, VPC, ECR, LB, Route53), GCP (CE, GKE, Cloud SQL, Cloud Logging, Cloud Monitoring, IAM, VPC, Artifact Registry, LB, Cloud DNS, Cloud Storage, Cloud Run, Secret Manager), Linux VM, Windows Server, Debian, CentOS, Docker, Kubernetes, MySQL, PostgreSQL, Git, Python, Java (Groovy), Shell, Jenkins, Gitlab CI, GitHub Actions, Helm, Kustomize, Terraform, Nginx, Cloudflare, Newrelic, Datadog, Prometheus, Grafana, OpenVPN, Teleport
+AWS (EC2, ECR, IAM, VPC, LB, Route53), GCP (CE, GKE, Cloud SQL, Cloud Logging, Cloud Monitoring, IAM, VPC, Artifact Registry, LB, Cloud DNS, Cloud Storage, Cloud Run, Secret Manager), Linux VM, Windows Server, Debian, CentOS, Docker, Kubernetes, Helm, Kustomize, MySQL, PostgreSQL, Git, Jenkins, GitLab CI, GitHub Actions, Python, Java (Groovy), Shell, Terraform, Nginx, OpenVPN, Teleport, Cloudflare, NewRelic, Datadog, Prometheus, Grafana
 
 
 ## Professional Experience
