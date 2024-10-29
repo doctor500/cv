@@ -88,7 +88,11 @@ Work closely with the Data Center & IT Infrastructure group to Help Binus IT Ope
 
 `Feb 2016 - Jan 2019`
 __Freelance Web Developer__, Self Freelance
+
+
 Develop & Design web-based applications based on user requirements for several companies & organizations:
+
+
 - 1) PT. Tri Jaya Samudera (February 2016). Design and develop a company profile using a non-database website (Static Website). Deployed on **Apache** server.
 - 2) SMAN 7 Kota Bekasi (July 2016 - August 2016). Develop CMS with **PHP & MySQL** Based.
 - 3) PT. Inspirasi Digital Elevasi (July 2018 - August 2018). Develop Invoice Management System for their client (PT. Royal ElSalam Universal) with web-based **PHP, MySQL, and Apache** server.
