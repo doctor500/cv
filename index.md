@@ -36,10 +36,10 @@ __Infrastructure Engineer__, GovTech Procurement Indonesia
 
 Government Technology (GovTech) Procurement is part of Telkom Indonesia (IDX: TLKM). I'm entrusted to maintain the operations of **600+** nation-scale government procurement apps, managing more than **20+** Kubernetes clusters that can have more than **70+** cost-effective worker nodes (spot instances).
 
-- 1) Lead and execute infra refactoring from GCP Cloud Run workload into Kubernetes-based workload. **Decrease infra production costs** by more than **75%** daily, and save **95k+ USD** in monthly basis.
-- 2) Transform nation-level Mail Services from monolith VM into scalable and cost-effective Kubernetes deployment. Increase service scaling performance **6x** faster and more reliable.
-- 3) Implement fully audited and approval-based access control for over **500+** cloud resources in GovTech Procurement using Teleport.
-- 4) Research and implement (POC) independently or in groups for some tooling that can improve GovTech Procurement mankind productivity such as **Goldilocks, External Secrets Operator, Kafka on Kubernetes, Pomerium on GKE**, and many more.
+- 1) Lead and execute infrastructure refactoring from the GCP Cloud Run workload to the GKE Kubernetes cluster. Decrease production costs by more than **90%** daily and save over **$150,000** monthly.
+- 2) Transform the nation-level Mail Services from a monolithic VM to a scalable and cost-effective Kubernetes deployment. **Increase service scaling performance by six times**, making it more reliable.
+- 3) Implement fully audited and approval-based access control for over **500** cloud resources in GovTech Procurement using Teleport.
+- 4) Research and implement (POC) independently or in groups for tooling to improve GovTech Procurement mankind productivity, such as Goldilocks, External Secrets Operator, Kafka on Kubernetes, Pomerium on GKE, and many more.
  
  
 <div style="page-break-after: always;"></div>
