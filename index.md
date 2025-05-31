@@ -115,22 +115,22 @@ Take Business Intelligence minor, Graduate in the 7th semester. Final GPA: 3.8 o
 `Apr 2024`
 [**Accessing GCP Secret Manager from GKE Cluster using Murmur**](https://davidlayardi.medium.com/accessing-gcp-secret-manager-from-gke-cluster-using-murmur-34c679f25333)
 
-Reach 250+ Reader (per 2024/10/27) under Self Publication
+Reach 350+ Visitor (per 2025/05/31) under Self Publication
 
 `Apr 2023`
 [**How Cloudflare Zero Trust & VS Code Tunnels Reducing My Back Pain**](https://medium.com/@davidlayardi/how-cloudflare-trust-zero-vs-code-tunnels-reducing-my-back-pain-67c38c506a28)
 
-Reach 1800+ Reader (per 2024/10/27) under Self Publication
+Reach 2700+ Visitor (per 2025/05/31) under Self Publication
 
 `Aug 2021`
 [**Automate Export From Jenkins API Job List to Google Sheets Using Google Apps Script**](https://medium.com/geekculture/automate-export-from-jenkins-api-job-list-to-google-sheets-using-google-apps-script-2eef44008bdc)
 
-Reach 2000+ Reader (per 2024/10/27) under Geek Culture publication
+Reach 2200+ Visitor (per 2025/05/31) under Geek Culture publication
 
 `Jul 2021`
 [**Easy Deploy SonarQube on Kubernetes with YAML configuration**](https://medium.com/codex/easy-deploy-sonarqube-on-kubernetes-with-yaml-configuration-27f5adc8de90)
 
-Reach 17500+ Reader (per 2024/10/27) under CodeX publication
+Reach 19500+ Visitor (per 2025/05/31) under CodeX publication
 
 
 ### Training & Certifications
@@ -180,4 +180,4 @@ __English__ - Business level proficiency
 
 
 <!-- ### Footer
-Last updated: October 2024 -->
+Last updated: May 2025 -->
