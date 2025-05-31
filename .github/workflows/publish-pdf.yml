@@ -26,24 +26,24 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout repo
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
     - name: Fill sensitive data to markdown
       if: ${{ github.event.inputs.build_private == 'true' }}
       run: sed -i'.bak' 's/<div id="webaddress">/<div id="webaddress">\n<text>${{ secrets.CV_PHONE_NUMBER }}<\/text> | /' index.md
     - name: Build Jekyll pages
-      uses: actions/jekyll-build-pages@v1.0.6
+      uses: actions/jekyll-build-pages@v1.0.13
       with:
         source: ./
         destination: ./_site
     - name: Publish pages to pipeline artifact
       if: ${{ github.event.inputs.build_private == 'false' }}
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: jekyll-published-page
         path: ./_site
     - name: Publish pages with sensitive data to pipeline artifact
       if: ${{ github.event.inputs.build_private == 'true' }}
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: jekyll-published-page
         path: ./_site
@@ -63,7 +63,7 @@ jobs:
         echo "PIPELINE_TIMESTAMP=$(date +'%s')" >> $GITHUB_ENV
         echo "PIPELINE_DATE=$(date +'%Y%m%d')" >> $GITHUB_ENV
     - name: Pull artifact from previous job
-      uses: actions/download-artifact@v3
+      uses: actions/download-artifact@v4
       with:
         name: jekyll-published-page
         path: ./_site
@@ -81,7 +81,7 @@ jobs:
         retention-days: 2
     - name: Publish PDF to GitHub release
       if: ${{ github.event.inputs.build_private == 'false' }}
-      uses: softprops/action-gh-release@v1
+      uses: softprops/action-gh-release@v2
       with:
         files: "${{ github.workspace }}/dist/CV-${{ env.PIPELINE_DATE }}.pdf"
         fail_on_unmatched_files: true
