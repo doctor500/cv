@@ -36,10 +36,10 @@ __Infrastructure Engineer__, GovTech Procurement Indonesia
 
 Government Technology (GovTech) Procurement is part of Telkom Indonesia (IDX: TLKM). I'm entrusted to maintain the operations of **600+** nation-scale government procurement apps, managing more than **20+** Kubernetes clusters that can have more than **70+** cost-effective worker nodes (spot instances).
 
-- 1) Lead and execute infra refactoring from GCP Cloud Run workload into Kubernetes-based workload. **Decrease infra production costs** by more than **75%** daily, and save **95k+ USD** in monthly basis.
-- 2) Transform nation-level Mail Services from monolith VM into scalable and cost-effective Kubernetes deployment. Increase service scaling performance **6x** faster and more reliable.
-- 3) Implement fully audited and approval-based access control for over **500+** cloud resources in GovTech Procurement using Teleport.
-- 4) Research and implement (POC) independently or in groups for some tooling that can improve GovTech Procurement mankind productivity such as **Goldilocks, External Secrets Operator, Kafka on Kubernetes, Pomerium on GKE**, and many more.
+- 1) Lead and execute infrastructure refactoring from the GCP Cloud Run workload to the GKE Kubernetes cluster. Decrease production costs by more than **90%** daily and save over **$150,000** monthly.
+- 2) Transform the nation-level Mail Services from a monolithic VM to a scalable and cost-effective Kubernetes deployment. **Increase service scaling performance by six times**, making it more reliable.
+- 3) Implement fully audited and approval-based access control for over **500** cloud resources in GovTech Procurement using Teleport.
+- 4) Research and implement (POC) independently or in groups for tooling to improve GovTech Procurement mankind productivity, such as Goldilocks, External Secrets Operator, Kafka on Kubernetes, Pomerium on GKE, and many more.
  
  
 <div style="page-break-after: always;"></div>
@@ -115,22 +115,22 @@ Take Business Intelligence minor, Graduate in the 7th semester. Final GPA: 3.8 o
 `Apr 2024`
 [**Accessing GCP Secret Manager from GKE Cluster using Murmur**](https://davidlayardi.medium.com/accessing-gcp-secret-manager-from-gke-cluster-using-murmur-34c679f25333)
 
-Reach 250+ Reader (per 2024/10/27) under Self Publication
+Reach 350+ Visitor (per 2025/05/31) under Self Publication
 
 `Apr 2023`
 [**How Cloudflare Zero Trust & VS Code Tunnels Reducing My Back Pain**](https://medium.com/@davidlayardi/how-cloudflare-trust-zero-vs-code-tunnels-reducing-my-back-pain-67c38c506a28)
 
-Reach 1800+ Reader (per 2024/10/27) under Self Publication
+Reach 2700+ Visitor (per 2025/05/31) under Self Publication
 
 `Aug 2021`
 [**Automate Export From Jenkins API Job List to Google Sheets Using Google Apps Script**](https://medium.com/geekculture/automate-export-from-jenkins-api-job-list-to-google-sheets-using-google-apps-script-2eef44008bdc)
 
-Reach 2000+ Reader (per 2024/10/27) under Geek Culture publication
+Reach 2200+ Visitor (per 2025/05/31) under Geek Culture publication
 
 `Jul 2021`
 [**Easy Deploy SonarQube on Kubernetes with YAML configuration**](https://medium.com/codex/easy-deploy-sonarqube-on-kubernetes-with-yaml-configuration-27f5adc8de90)
 
-Reach 17500+ Reader (per 2024/10/27) under CodeX publication
+Reach 19500+ Visitor (per 2025/05/31) under CodeX publication
 
 
 ### Training & Certifications
@@ -180,4 +180,4 @@ __English__ - Business level proficiency
 
 
 <!-- ### Footer
-Last updated: October 2024 -->
+Last updated: May 2025 -->
