@@ -1,0 +1,158 @@
+/* 
+   Template: doctor-originale-1 (Print)
+   Inspiration: FAANGPath / Overleaf Simple Template
+   Layout: Single Column, ATS-Friendly, Serif
+*/
+
+@page {
+  size: A4;
+  margin: 1.5cm 2cm;
+}
+
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 11pt;
+  line-height: 1.4;
+  color: #000000;
+  background: #FFFFFF;
+  margin: 0;
+  padding: 0;
+}
+
+/* Hide web-only elements if any */
+#webaddress text {
+  display: inline;
+}
+
+/* Main Container - remove any web styling */
+#main {
+  width: 100%;
+  margin: 0;
+  box-shadow: none;
+}
+
+#content {
+  padding: 0;
+}
+
+/* 
+   HEADER 
+*/
+
+/* Name */
+h1 {
+  font-size: 24pt;
+  font-weight: normal; /* Often not bold in classic LaTeX templates */
+  text-align: center;
+  margin: 0 0 5pt 0;
+  padding: 0;
+  color: #000000;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Role (Paragraph after h1) */
+h1 + p {
+  text-align: center;
+  font-size: 11pt;
+  margin: 0 0 5pt 0;
+  padding: 0;
+  font-style: italic;
+}
+
+/* Contact Info */
+#webaddress {
+  text-align: center;
+  font-size: 10pt;
+  margin-bottom: 20pt;
+}
+
+#webaddress a {
+  text-decoration: none;
+  color: #000000;
+}
+
+/* 
+   SECTIONS 
+*/
+
+/* Section Headers */
+h2 {
+  font-size: 12pt;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-bottom: 1px solid #000000;
+  margin: 15pt 0 10pt 0;
+  padding-bottom: 2pt;
+  letter-spacing: 0.5px;
+}
+
+/* Sub-headings (Job Titles, Degrees) */
+h3 {
+  font-size: 11pt;
+  font-weight: bold;
+  margin: 10pt 0 2pt 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between; /* If flex works in print renderer, otherwise fallback */
+}
+
+/* Content */
+p {
+  margin: 0 0 5pt 0;
+  text-align: justify;
+}
+
+ul {
+  margin: 0 0 10pt 0;
+  padding-left: 1.2em; /* Minimal indentation */
+}
+
+li {
+  margin-bottom: 2pt;
+}
+
+/* 
+   Specific Tweaks for Content Types 
+*/
+
+/* Dates & Locations */
+/* The markdown likely uses code blocks or strong tags for these. 
+   We want them to align right or look distinct. 
+   Since we can't easily align right without HTML structure, 
+   we keep them inline but distinct.
+*/
+
+code {
+  font-family: inherit; /* No monospace for dates in print */
+  font-style: italic;
+  background: none;
+  border: none;
+  padding: 0;
+  font-weight: normal;
+  float: right; /* Try to float dates to right */
+}
+
+strong {
+  font-weight: bold;
+}
+
+a {
+  color: #000000;
+  text-decoration: none;
+}
+
+/* Page Breaks */
+h2 {
+  page-break-after: avoid;
+}
+
+li {
+  page-break-inside: avoid;
+}
+
+/* Hide the page break div used in web/markdown */
+div[style*="page-break-after"] {
+  height: 0;
+  margin: 0;
+}

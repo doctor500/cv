@@ -16,10 +16,11 @@ Cloud Infrastructure, Automation, DevOps Engineer.
 
 ## Profile Summary
 
+David Layardi works in the field of infrastructure and platform engineering, focusing on building scalable, automated, and reliable cloud systems. With over six years of experience across multiple industries, he has driven infrastructure modernization projects that enhanced performance, reduced operational costs, and improved developer productivity.
 
-My journey has been a research-driven pursuit of my passion and curiosity since 2011. I began with application development in VB6 and have since honed my skills as a freelance web developer specializing in PHP-based programming since 2016. In 2018, I shifted my focus toward infrastructure and automation and worked in more than three industries. I've completed over 10 projects, delivering exceptional results by developing innovative automation solutions for complex business challenges.
+Specializing in Google Cloud Platform (GCP) and AWS, David has deep expertise in Kubernetes, Terraform, CI/CD automation, and cloud cost optimization. His work has led to significant improvements in reliability and efficiency, including infrastructure cost reductions of over 90% through strategic automation and refactoring.
 
-I have extensive knowledge and experience in AWS and GCP Cloud environments. My expertise includes application pipeline engineering, container-based architectures, and cloud infrastructure operations. Additionally, I am skilled in maintaining thorough logs and conducting monitoring practices. Guided by innovation, I'm dedicated to enhancing operational efficiency for sustainable growth.
+Beginning his career in software development from 2011, David’s curiosity and problem-solving mindset naturally evolved toward infrastructure and DevOps. He enjoys designing systems that empower developers, support business scalability, and simplify complex operations. Guided by continuous learning and a collaborative approach, he focuses on building platforms that enable teams to deliver securely, efficiently, and with confidence.
 
 
 ### Technical Skill
@@ -30,7 +31,14 @@ AWS (EC2, ECR, IAM, VPC, LB, Route53), GCP (CE, GKE, Cloud SQL, Cloud Logging, C
 
 ## Professional Experience
 
-`Jan 2024 - Now`
+`Oct 2025 - Present`
+
+__Software Engineer - CI/CD Platform__, Rakuten
+
+Part of Rakuten OneCloud Initiative. Designing, maintaining, and automating large-scale CI/CD infrastructure on Kubernetes to support enterprise-wide development. Responsible for CI/CD-as-a-Service, Container Registry (Harbor), and Artifact Registry (JFrog Artifactory). Focused on reliability, scalability, and developer enablement through automation, backend development (Go/Python), and platform modernization.
+
+
+`Jan 2024 - Sep 2025`
 
 __Infrastructure Engineer__, GovTech Procurement Indonesia
 
