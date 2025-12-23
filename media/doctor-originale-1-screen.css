@@ -1,0 +1,232 @@
+/* 
+   Template: doctor-originale-1 (Screen)
+   Inspiration: https://flowcv.com/resume-template/atlantic-blue-multi-column-sidebar-left
+   Layout: Responsive Single Column (simulating the aesthetic)
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto+Slab:wght@400;700&display=swap');
+
+:root {
+  --color-dark-blue: #1A2B3C;
+  --color-dark-blue-accent: #2C3E50;
+  --color-white: #FFFFFF;
+  --color-text-main: #333333;
+  --color-text-light: #F3F4F6;
+  --color-gray-bg: #E5E7EB;
+  --color-gray-border: #D1D5DB;
+  
+  --font-heading: 'Roboto Slab', serif;
+  --font-body: 'Lato', sans-serif;
+}
+
+/* Reset & Base */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text-main);
+  background: #F9FAFB; /* Light background for the whole page */
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+/* Container */
+#main {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: var(--color-white);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  min-height: 100vh;
+}
+
+#content {
+  padding-bottom: 4rem;
+}
+
+/* 
+   HEADER SECTION (Simulating the Sidebar look) 
+   Targeting the top elements: h1, p (role), #webaddress
+   Since HTML is flat, we rely on these being at the top.
+   We wrap the top visual area in a background color.
+*/
+
+/* We can't wrap them in HTML, so we style the top elements to LOOK like a header block.
+   This relies on h1 being the first element.
+*/
+
+/* Name (H1) */
+h1 {
+  background: var(--color-dark-blue);
+  color: var(--color-white);
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  margin: 0;
+  padding: 3rem 2rem 0.5rem 2rem;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+/* Role (Paragraph immediately after H1) */
+h1 + p {
+  background: var(--color-dark-blue);
+  color: var(--color-text-light);
+  font-size: 1.25rem;
+  margin: 0;
+  padding: 0 2rem 1.5rem 2rem;
+  text-align: center;
+  font-weight: 300;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Contact Info (#webaddress) */
+#webaddress {
+  background: var(--color-dark-blue);
+  color: var(--color-white);
+  padding: 1rem 2rem 3rem 2rem;
+  text-align: center;
+  font-size: 0.95rem;
+  /* Making it a flex container for responsiveness */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+#webaddress a {
+  color: var(--color-text-light);
+  text-decoration: none;
+  border-bottom: 1px dotted rgba(255,255,255,0.5);
+  transition: color 0.2s;
+}
+
+#webaddress a:hover {
+  color: var(--color-white);
+  border-bottom-style: solid;
+}
+
+/* Separator pipes in contact info - hide them if we flex */
+#webaddress text {
+    display: block;
+    width: 100%;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+/* 
+   MAIN CONTENT STYLING 
+*/
+
+/* Headings (H2) - The "Bar" style from the design */
+h2 {
+  font-family: var(--font-heading);
+  background-color: var(--color-gray-bg);
+  color: var(--color-text-main);
+  padding: 0.5rem 1rem;
+  margin: 2.5rem 2rem 1.5rem 2rem;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  border-left: 5px solid var(--color-dark-blue);
+  display: flex;
+  align-items: center;
+}
+
+/* Optional: Add icon-like effect */
+h2::before {
+  /* content: '➜';  */
+  /* margin-right: 10px; */
+  /* color: var(--color-dark-blue); */
+}
+
+/* Sub-headings (H3) */
+h3 {
+  font-family: var(--font-heading);
+  color: var(--color-dark-blue);
+  margin: 1.5rem 2rem 0.5rem 2rem;
+  font-size: 1.1rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.25rem;
+}
+
+/* Paragraphs & Lists */
+p, ul {
+  margin: 0.5rem 2rem 1rem 2rem;
+  color: #4B5563;
+}
+
+ul {
+  padding-left: 3.5rem; /* Indent lists slightly more */
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+/* Links in body */
+a {
+  color: var(--color-dark-blue);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* 
+   Specific Section Tweaks 
+*/
+
+/* Job Entries */
+/* Markdown often renders as: `Date` <br> __Position__, Company */
+code {
+  background: #EFF6FF; /* Very light blue */
+  color: var(--color-dark-blue);
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-family: 'Lato', sans-serif; /* Keep consistent font */
+  font-size: 0.9em;
+  font-weight: bold;
+}
+
+strong {
+  color: #111827;
+}
+
+/* Blockquotes or special divs */
+blockquote {
+  border-left: 4px solid var(--color-gray-border);
+  margin: 1rem 2rem;
+  padding-left: 1rem;
+  font-style: italic;
+  color: #6B7280;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2rem;
+    padding-top: 2rem;
+  }
+  
+  #webaddress {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  h2 {
+    margin: 2rem 1rem 1rem 1rem;
+  }
+  
+  p, ul, h3 {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  
+  ul {
+    padding-left: 2rem;
+  }
+}
