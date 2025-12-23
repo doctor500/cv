@@ -68,22 +68,22 @@ jobs:
         name: jekyll-published-page
         path: ./_site
     - name: Create PDF from artifact
-      uses: markwilson/html2pdf@v1.1
+      uses: ferdinandkeller/html-to-pdf-action@v2
       with:
-        htmlPath: "./_site/index.html"
-        pdfName: "CV-${{ env.PIPELINE_DATE }}"
+        source-path: "./_site"
+        destination-path: "./CV-${{ env.PIPELINE_DATE }}.pdf"
     - name: Publish PDF result to artifact
       if: ${{ github.event.inputs.build_private == 'true' }}
       uses: actions/upload-artifact@v4
       with:
         name: "CV-${{ env.PIPELINE_DATE }}.pdf"
-        path: "${{ github.workspace }}/dist/CV-${{ env.PIPELINE_DATE }}.pdf"
+        path: "${{ github.workspace }}/CV-${{ env.PIPELINE_DATE }}.pdf"
         retention-days: 2
     - name: Publish PDF to GitHub release
       if: ${{ github.event.inputs.build_private == 'false' }}
       uses: softprops/action-gh-release@v2
       with:
-        files: "${{ github.workspace }}/dist/CV-${{ env.PIPELINE_DATE }}.pdf"
+        files: "${{ github.workspace }}/CV-${{ env.PIPELINE_DATE }}.pdf"
         fail_on_unmatched_files: true
         name: "🚀 PDF Publish R.${{ env.PIPELINE_DATE }}"
         tag_name: "PDF_${{ env.PIPELINE_DATE }}-${{ env.PIPELINE_TIMESTAMP }}"
