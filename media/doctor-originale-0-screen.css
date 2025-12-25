@@ -1,0 +1,205 @@
+/* 
+   Template: doctor-originale-0 (Screen)
+   Based on: doctor-originale-1-print.css
+   Purpose: Unified template with identical screen and print styles for consistent browser/PDF rendering
+   Layout: Single Column, ATS-Friendly, Serif
+*/
+
+@page {
+    size: A4;
+    margin: 1.5cm 2cm;
+}
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 11pt;
+    line-height: 1.4;
+    color: #000000;
+    background: #F5F5F5;
+    /* Light gray background like viewing a PDF */
+    margin: 0;
+    padding: 20px;
+    /* Breathing room around the page */
+}
+
+/* Hide web-only elements if any */
+#webaddress text {
+    display: inline;
+}
+
+/* Main Container - page-like appearance */
+#main {
+    max-width: 900px;
+    /* A4-like width */
+    margin: 0 auto;
+    /* Center the page */
+    background: #FFFFFF;
+    /* White page */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow like a physical page */
+    padding: 40px 60px;
+    /* Inner margins like PDF */
+    min-height: 100vh;
+    /* At least full viewport height */
+}
+
+#content {
+    padding: 0;
+}
+
+/* 
+   HEADER 
+*/
+
+/* Name */
+h1 {
+    font-size: 24pt;
+    font-weight: normal;
+    /* Often not bold in classic LaTeX templates */
+    text-align: center;
+    margin: 0 0 5pt 0;
+    padding: 0;
+    color: #000000;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Role (Paragraph after h1) */
+h1+p {
+    text-align: center;
+    font-size: 11pt;
+    margin: 0 0 5pt 0;
+    padding: 0;
+    font-style: italic;
+}
+
+/* Contact Info */
+#webaddress {
+    text-align: center;
+    font-size: 10pt;
+    margin-bottom: 20pt;
+}
+
+#webaddress a {
+    text-decoration: none;
+    color: #000000;
+}
+
+/* 
+   SECTIONS 
+*/
+
+/* Section Headers */
+h2 {
+    font-size: 12pt;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-bottom: 1px solid #000000;
+    margin: 15pt 0 10pt 0;
+    padding-bottom: 2pt;
+    letter-spacing: 0.5px;
+}
+
+/* Sub-headings (Job Titles, Degrees) */
+h3 {
+    font-size: 11pt;
+    font-weight: bold;
+    margin: 10pt 0 2pt 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    /* If flex works in print renderer, otherwise fallback */
+}
+
+/* Content */
+p {
+    margin: 0 0 5pt 0;
+    text-align: justify;
+}
+
+ul {
+    margin: 0 0 10pt 0;
+    padding-left: 1.2em;
+    /* Minimal indentation */
+}
+
+li {
+    margin-bottom: 2pt;
+}
+
+/* 
+   Specific Tweaks for Content Types 
+*/
+
+/* Dates & Locations */
+/* The markdown likely uses code blocks or strong tags for these. 
+   We want them to align right or look distinct. 
+   Since we can't easily align right without HTML structure, 
+   we keep them inline but distinct.
+*/
+
+code {
+    font-family: inherit;
+    /* No monospace for dates in print */
+    font-style: italic;
+    background: none;
+    border: none;
+    padding: 0;
+    font-weight: normal;
+    float: right;
+    /* Try to float dates to right */
+}
+
+strong {
+    font-weight: bold;
+}
+
+a {
+    color: #000000;
+    text-decoration: none;
+}
+
+/* Page Breaks */
+h2 {
+    page-break-after: avoid;
+}
+
+li {
+    page-break-inside: avoid;
+}
+
+/* Hide the page break div used in web/markdown */
+div[style*="page-break-after"] {
+    height: 0;
+    margin: 0;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+        /* Reduce outer spacing on mobile */
+    }
+
+    #main {
+        padding: 30px 20px;
+        /* Reduce inner padding on mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 5px;
+    }
+
+    #main {
+        padding: 20px 15px;
+        font-size: 10pt;
+        /* Slightly smaller text for very small screens */
+    }
+
+    h1 {
+        font-size: 20pt;
+        /* Scale down header */
+    }
+}
