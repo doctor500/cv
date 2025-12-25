@@ -273,9 +273,13 @@ Available templates in `media/` directory:
 
 | Template | Style | Best For |
 |----------|-------|----------|
-| **kjhealy** (default) | Two-column, minimalist | Academic, Tech |
-| **davewhipp** | Alternative styling | Professional |
-| **doctor-originale-1** | Custom design | Creative, Modern |
+| **kjhealy** (default) | Classic two-column, minimalist academic style | Academic, Research, Traditional |
+| **davewhipp** | Modern two-column with warm accents | Professional, Corporate, Balanced |
+| **doctor-originale-0** | Clean single-column, print-optimized | Tech, ATS-friendly, PDF-focused |
+| **doctor-originale-1** | Modern single-column with blue theme (print same as -0) | Tech, Startups, Web-first |
+
+> [!NOTE]
+> **doctor-originale series**: All variants share the same print template for consistent PDF output. Differences are in web view styling only.
 
 **To switch templates:**
 
