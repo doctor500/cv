@@ -18,6 +18,7 @@
 - [Customization](#-customization)
 - [PDF Generation Pipeline](#-pdf-generation-pipeline)
 - [AI Agent Workflows](#-ai-agent-workflows)
+- [Governance](#-governance)
 - [For Core Team: Git Workflow](#-for-core-team-git-workflow)
 - [Contributing](#-contributing)
 - [License](#-license)
@@ -446,6 +447,18 @@ When you create a **public PDF build**, the workflow:
 For detailed step-by-step instructions, see:
 - [`.agent/workflows/git-branch-pr.md`](./.agent/workflows/git-branch-pr.md)
 - [`.agent/PROJECT_CONTEXT.md`](./.agent/PROJECT_CONTEXT.md#-deployment--branch-management)
+
+---
+
+---
+
+## 🏛️ Governance
+
+**Approval Mode** is active by default for all AI agents working on this repository.
+
+-   **Goal:** Ensure safety and alignment through explicit planning and user approval.
+-   **Protocol:** Agents must propose a plan and receive a "Yes/Proceed" from the user *before* executing any code changes or commands.
+-   **Details:** See [docs/governance.md](./docs/governance.md) for full protocols and Auto Pilot opt-in options.
 
 ---
 
