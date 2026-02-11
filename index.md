@@ -136,7 +136,7 @@ Take Business Intelligence minor, Graduate in the 7th semester. Final GPA: 3.8 o
 ### Training & Certifications
 
 `Jan 2023`
-[Associate Cloud Engineer](https://www.credential.net/3e62c331-8419-43d6-9d48-849d04182582), **from GCP**
+[Associate Cloud Engineer](https://1drv.ms/b/c/aa36e840db41ae08/IQAIrkHbQOg2IICqawoAAAAAAXgi4mP106MEfaVJgA1The4?e=dA2Xfe), **from GCP**
 
 `Sep 2022`
 [Google Cloud Fundamentals: Core Infrastructure](https://www.coursera.org/account/accomplishments/verify/B2V6L4ZSGNUH), **from Coursera**
