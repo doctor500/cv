@@ -47,7 +47,8 @@ For each link/file provided:
 │   └── No → Is it a URL?
 │       ├── Attempt 1: Fetch with curl
 │       │   ├── Success → Parse content
-│       │   └── Fail → Attempt 2: Retry curl with different headers
+│       │   └── Fail → Attempt 2: Retry curl with browser-like User-Agent
+│       │       │   Header: -H "User-Agent: Mozilla/5.0 (compatible)"
 │       │       ├── Success → Parse content
 │       │       └── Fail → Attempt 3: Use Browser tool (if available)
 │       │           ├── Success → Parse content
@@ -242,18 +243,44 @@ Before writing to `index.md`, validate:
 - [ ] Consistent spacing: blank line between entries
 - [ ] No trailing whitespace
 
+**Automated HTML check:**
+// turbo
+```bash
+# Count opening vs closing tags for common elements
+for tag in div a text u; do
+  open=$(grep -co "<${tag}[ >]" index.md)
+  close=$(grep -co "</${tag}>" index.md)
+  [ "$open" != "$close" ] && echo "⚠️ <${tag}>: $open open, $close close" || echo "✅ <${tag}>: balanced ($open)"
+done
+```
+
 If any issues found, fix automatically and notify user of changes made.
 
 ---
 
 ### Step 8: Render Testing
 
-Ask user:
+**First, detect available tools:**
+// turbo
+```bash
+echo "Docker: $(which docker > /dev/null 2>&1 && echo '✅ Available' || echo '❌ Not found')"
+echo "Ruby: $(which ruby > /dev/null 2>&1 && echo '✅ Available' || echo '❌ Not found')"
+```
+
+**Present only available options:**
 ```
 Content validated! Would you like to test the rendering locally?
-1. Yes, using Docker (recommended)
-2. Yes, using Ruby directly
+1. Yes, using Docker (recommended) [if Docker detected]
+2. Yes, using Ruby directly [if Ruby detected]
 3. No, skip testing
+```
+
+If neither Docker nor Ruby is detected:
+```
+⚠️ No local rendering tools found (Docker/Ruby).
+Skip to finalization, or install Docker first?
+1. Skip rendering test
+2. I'll install Docker first (pause here)
 ```
 
 **Test locally** using the commands in `QUICK_REFERENCE.md` (Local Development section).

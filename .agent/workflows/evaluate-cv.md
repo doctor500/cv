@@ -235,6 +235,11 @@ Create an HTML file at `docs/evaluation/cv-evaluation.html` (or timestamped vari
 - Print-friendly view option
 - Dark/light mode toggle optional
 
+**File management note:**
+- Dashboard is generated at `docs/evaluation/cv-evaluation.html`
+- This file is for local/personal review — add `docs/evaluation/` to `.gitignore` if not tracking evaluations in git
+- Alternatively, commit to track evaluation history over time
+
 After generation:
 ```
 ✅ Dashboard generated at docs/evaluation/cv-evaluation.html
@@ -305,12 +310,12 @@ If option 2-4: Perform additional targeted analysis.
     | Category                 | Score | Weight | Weighted |
     |--------------------------|-------|--------|----------|
     | Content Quality          | 8/10  | 25%    | 2.00     |
-    | Structure & Formatting   | 9/10  | 15%    | 1.35     |
+    | Structure & Formatting   | 7/10  | 15%    | 1.05     |
     | Impact & Metrics         | 8/10  | 20%    | 1.60     |
     | ATS Compatibility        | 7/10  | 15%    | 1.05     |
-    | Relevance                | 8/10  | 15%    | 1.20     |
+    | Relevance                | 9/10  | 15%    | 1.35     |
     | Professional Presentation| 8/10  | 10%    | 0.80     |
-    | **Composite Score**      |       |        | **8.00** |
+    | **Composite Score**      |       |        | **8.05** |
 
     Rating: ✅ Strong
 
