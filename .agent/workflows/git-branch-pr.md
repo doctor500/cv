@@ -4,6 +4,8 @@ description: Create branch and PR workflow (prevents direct commits to main/page
 
 # Git Branch & Pull Request Workflow
 
+// turbo-all
+
 **Purpose:** Guide developers through proper git workflow using feature branches and pull requests. Prevents direct commits to protected branches (`main` and `page-release`).
 
 ## Important Principles
@@ -64,9 +66,20 @@ Proceed to **Step 5** (Stage Changes).
 
 ---
 
-### Step 2: Determine Change Type
+### Step 2: Determine Change Type & Branch Name
 
-Ask user:
+> [!TIP]
+> **Smart Inference:** If the change type and description are obvious from context (e.g., user already made changes or described the task), the AI may propose a branch name directly and ask for confirmation in a single prompt, rather than asking two separate questions.
+
+**If context is clear**, propose directly:
+```
+Based on your changes, I suggest:
+  Branch: fix/update-cert-url
+  
+Proceed? (yes/no/edit)
+```
+
+**If context is ambiguous**, ask:
 ```
 What type of change are you making?
 1. Feature (new functionality)
@@ -74,20 +87,15 @@ What type of change are you making?
 3. Docs (documentation only)
 4. Refactor (code improvement)
 5. Chore (maintenance, dependencies)
+
+Brief description (lowercase, hyphens, e.g., 'add-skills-section'):
 ```
 
-Store as `$CHANGE_TYPE` (feat, fix, docs, refactor, chore).
+Store as `$CHANGE_TYPE` (feat, fix, docs, refactor, chore) and `$DESCRIPTION`.
 
 ---
 
 ### Step 3: Create Feature Branch
-
-Ask user:
-```
-Brief description of the change (lowercase, hyphens, e.g., 'add-skills-section'):
-```
-
-Store as `$DESCRIPTION`.
 
 Create branch name: `$CHANGE_TYPE/$DESCRIPTION`
 
@@ -119,7 +127,10 @@ git status
 
 ### Step 5: Stage Changes
 
-Ask user which files to stage:
+> [!TIP]
+> **Single File Shortcut:** If only one file is modified, stage it automatically and include it in the commit approval prompt (Step 6). No need to ask separately.
+
+**If multiple files modified**, ask user:
 ```
 Modified files:
 [list from git status]
@@ -192,32 +203,23 @@ git push -u origin $CHANGE_TYPE/$DESCRIPTION
 
 ### Step 8: Check for Existing Pull Request
 
+> [!TIP]
+> **Skip this step** if the branch was just created in Step 3 — there cannot be an existing PR for a freshly created branch. Proceed directly to Step 9A.
+
 Check if PR already exists for this branch:
 
-**Method 1: GitHub CLI (if installed)**
 ```bash
 gh pr list --head $CHANGE_TYPE/$DESCRIPTION
-```
-
-**Method 2: GitHub API**
-```bash
-curl -s "https://api.github.com/repos/[username]/[repo]/pulls?head=[username]:$CHANGE_TYPE/$DESCRIPTION&state=open"
-```
-
-**Method 3: Manual Check**
-Ask user:
-```
-Does a PR already exist for this branch?
-Check: https://github.com/[username]/[repo]/pulls
-
-(yes/no)
 ```
 
 ---
 
 ### Step 9A: Create New Pull Request (if none exists)
 
-Ask user:
+> [!TIP]
+> **Smart Inference:** If the user already specified the base branch (e.g., "branch from page-release"), use that as the PR target without asking.
+
+**If target is not clear**, ask user:
 ```
 Target branch for PR?
 1. page-release (for deployment)
@@ -226,37 +228,9 @@ Target branch for PR?
 
 Store as `$TARGET_BRANCH`.
 
-**Option 1: GitHub CLI**
+**Create PR using GitHub CLI:**
 ```bash
-gh pr create --base $TARGET_BRANCH --head $CHANGE_TYPE/$DESCRIPTION --title "$CHANGE_TYPE: $DESCRIPTION" --body "## Changes\n\n[User describes changes]\n\n## Verification\n\n- [ ] Tested locally\n- [ ] Documentation updated\n- [ ] Ready for review"
-```
-
-**Option 2: GitHub Web UI**
-```
-Visit: https://github.com/[username]/[repo]/compare/$TARGET_BRANCH...$CHANGE_TYPE/$DESCRIPTION
-
-Fill in:
-- Title: $CHANGE_TYPE: $DESCRIPTION
-- Description: 
-  ## Changes
-  [Describe what changed]
-  
-  ## Verification
-  - [ ] Tested locally
-  - [ ] Documentation updated
-  - [ ] Ready for review
-
-Click "Create pull request"
-```
-
-**Option 3: Manual Instructions**
-```
-1. Go to https://github.com/[username]/[repo]
-2. Click "Pull requests" > "New pull request"
-3. Base: $TARGET_BRANCH
-4. Compare: $CHANGE_TYPE/$DESCRIPTION
-5. Add title and description
-6. Create pull request
+gh pr create --base $TARGET_BRANCH --head $CHANGE_TYPE/$DESCRIPTION --title "$CHANGE_TYPE: $DESCRIPTION" --body "## Changes\n\n[Describe changes]\n\n## Verification\n\n- [ ] Tested locally\n- [ ] Ready for review"
 ```
 
 Confirm:
@@ -301,12 +275,14 @@ gh pr edit --body "Updated description..."
 > [!IMPORTANT]
 > Only merge PRs that have been reviewed and approved!
 
-**Option 1: GitHub CLI**
+**Preferred method (GitHub CLI):**
 ```bash
-gh pr merge --squash
+gh pr merge --squash --delete-branch
 ```
 
-**Option 2: GitHub Web UI**
+This will squash-merge the PR and automatically delete both local and remote feature branches.
+
+**Fallback (GitHub Web UI):**
 ```
 1. Go to PR page
 2. Click "Merge pull request"
@@ -314,7 +290,7 @@ gh pr merge --squash
 4. Confirm merge
 ```
 
-After merging:
+If using Web UI, clean up manually:
 ```bash
 # Switch back to target branch
 git checkout $TARGET_BRANCH
@@ -365,6 +341,9 @@ gh pr list
 
 # View PR
 gh pr view --web
+
+# Merge PR (preferred)
+gh pr merge --squash --delete-branch
 ```
 
 ---
@@ -398,9 +377,20 @@ Format: `<type>/<description>`
 
 | Branch | Purpose | Protection |
 |--------|---------|------------|
-| `main` | Primary development, staging | No direct commits |
 | `page-release` | GitHub Pages deployment | No direct commits |
+| `main` | Primary development, staging | No direct commits |
 | Feature branches | Active development | Free to commit |
+
+---
+
+## Deployment Flow
+
+```
+feature-branch → PR → page-release → PR → main
+```
+
+1. **Feature branches** → merge into `page-release` for deployment
+2. **page-release** → merge into `main` to keep main in sync
 
 ---
 
@@ -426,7 +416,7 @@ git push origin feat/my-changes
 # Update feature branch with latest target
 git checkout feat/my-feature
 git fetch origin
-git merge origin/main  # or origin/page-release
+git merge origin/page-release  # or origin/main
 
 # Resolve conflicts, then:
 git add .
@@ -453,63 +443,36 @@ git push origin feat/my-feature
 ## Example Session
 
 ```
-🤖: What type of change are you making?
-    1. Feature
-    2. Fix
-    3. Docs
-    4. Refactor
-    5. Chore
-
-👤: 1
-
-🤖: Brief description (lowercase, hyphens):
-
-👤: add-language-skills
-
-🤖: Creating branch: feat/add-language-skills
+🤖: You're on page-release with 1 modified file (index.md).
+    Based on your changes, I suggest:
+      Branch: fix/update-cert-url
     
-    $ git checkout -b feat/add-language-skills
-    
-    ✅ Ready to make changes!
-
-[User edits files]
-
-🤖: Stage all modified files? (yes/no)
+    Proceed? (yes/edit)
 
 👤: yes
 
-🤖: Ready to commit with message:
-    "feat: add-language-skills"
+🤖: ✅ Created branch: fix/update-cert-url
+    
+    Ready to commit with message:
+    "fix: update certificate URL"
     
     Staged files:
     - index.md
     
-    Proceed with commit? (yes/no)
+    Proceed with commit? (yes/no/edit-message)
 
 👤: yes
 
-🤖: $ git commit -m "feat: add language skills section"
-    ✅ Committed
+🤖: ✅ Committed and pushed to remote
     
-    $ git push -u origin feat/add-language-skills
-    ✅ Pushed to remote
-    
-    Checking for existing PR...
-    No existing PR found.
-    
-    Target branch for PR?
-    1. page-release (deploy)
-    2. main (staging)
+    Creating PR targeting page-release...
+    ✅ PR created: https://github.com/[user]/[repo]/pull/42
 
-👤: 2
+👤: lets merge it
 
-🤖: Creating PR targeting main...
-    
-    $ gh pr create --base main --head feat/add-language-skills
-    
-    ✅ PR created: https://github.com/[username]/[repo]/pull/123
-    
-    Next: Review and merge when ready!
+🤖: $ gh pr merge --squash --delete-branch
+    ✅ PR merged! Branch cleaned up.
+    Your changes are now in page-release!
 ```
 
 ---
@@ -521,8 +484,10 @@ When using this workflow as an AI agent:
 1. ✅ **DO:**
    - Always check current branch first
    - Create feature branches for all changes
+   - Infer change type and branch name when context is clear
    - Ask for commit approval BEFORE executing
-   - Check for existing PRs before creating new ones
+   - Skip redundant prompts (single file staging, fresh branch PR check)
+   - Use `gh pr merge --squash --delete-branch` for clean merges
    - Provide clear branch and commit suggestions
 
 2. ❌ **DON'T:**
