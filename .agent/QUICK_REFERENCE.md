@@ -115,6 +115,8 @@ git push origin feat/my-feature
 ## 🤖 AI Commands
 
 - `/add-cv-section` - Add content to index.md
+- `/build-cv-wizard` - Build CV from data sources
+- `/evaluate-cv` - Evaluate CV with scoring & dashboard
 - `/generate-template` - Create new CSS template
 - `/git-branch-pr` - Branch & PR workflow
 
