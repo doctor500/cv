@@ -6,13 +6,19 @@ This directory contains AI agent configurations, workflows, and project context 
 
 ```
 .agent/
-├── PROJECT_CONTEXT.md           # Comprehensive project documentation
-├── QUICK_REFERENCE.md           # Quick command reference  
-├── CHANGELOG.md                 # Project changes tracking
+├── references/
+│   ├── cv-construction-guide.md     # CV writing best practices & ATS tips
+│   └── cv-evaluation-framework.md   # 6-category scoring framework
 ├── workflows/
-│   ├── add-cv-section.md        # Workflow: Update index.md with new sections
-│   └── generate-template.md     # Workflow: Generate CSS templates
-└── README.md                    # This file
+│   ├── add-cv-section.md            # Workflow: Update index.md with new sections
+│   ├── build-cv-wizard.md           # Workflow: Build CV from data sources
+│   ├── evaluate-cv.md               # Workflow: Evaluate CV with scoring
+│   ├── generate-template.md         # Workflow: Generate CSS templates
+│   └── git-branch-pr.md             # Workflow: Branch & PR management
+├── PROJECT_CONTEXT.md               # Comprehensive project documentation
+├── QUICK_REFERENCE.md               # Quick command reference
+├── CHANGELOG.md                     # Project changes tracking
+└── README.md                        # This file
 ```
 
 ## 🎯 Core Principle
@@ -100,6 +106,52 @@ Tracks:
 
 ---
 
+### workflows/build-cv-wizard.md
+**Workflow: Build CV from user-provided data sources**
+
+**Key Principle:** Curates multiple data sources into `index.md` content
+
+**Features:**
+- Multi-source data gathering (URLs, files, guided interview)
+- 3-tier URL fallback (curl → browser → manual)
+- Section ordering with default structure from `index.md`
+- Syntax validation and render testing loop
+- References `references/cv-construction-guide.md` for best practices
+
+**Execute:** `/build-cv-wizard`
+
+---
+
+### workflows/evaluate-cv.md
+**Workflow: Evaluate and critique CV with scoring**
+
+**Key Principle:** Provides scored analysis using a 6-category framework
+
+**Features:**
+- 6-category scoring (Content, Structure, Impact, ATS, Relevance, Presentation)
+- Dual output: narrative analysis + score card
+- Optional job-targeted evaluation with keyword matching
+- Optional interactive HTML dashboard (neo-brutalism theme)
+- References `references/cv-evaluation-framework.md` for rubric
+
+**Execute:** `/evaluate-cv`
+
+---
+
+### references/cv-construction-guide.md
+**Reference: CV writing best practices**
+
+Detailed guide covering ATS optimization, action verbs, career-type considerations, and section-specific writing tips. Loaded by `/build-cv-wizard` when needed.
+
+---
+
+### references/cv-evaluation-framework.md
+**Reference: CV scoring framework**
+
+Complete evaluation rubric with 6 weighted categories, composite scoring, job-targeted addon, and section-specific criteria. Loaded by `/evaluate-cv` when performing evaluations.
+
+---
+
 ## 🚀 Quick Start
 
 ### For AI Agents
@@ -107,6 +159,8 @@ Tracks:
 2. Use `QUICK_REFERENCE.md` for fast lookups
 3. Execute workflows:
    - `/add-cv-section` - Update `index.md`
+   - `/build-cv-wizard` - Build CV from data sources
+   - `/evaluate-cv` - Evaluate CV with scoring
    - `/generate-template` - Create CSS templates
 
 ### For Developers
@@ -130,6 +184,7 @@ Tracks:
 - Only template workflow creates new files
 - LinkedIn URL extracted from `index.md` or user input
 - Always validate before committing
+- **DRY pattern:** `build-cv-wizard` is the canonical source for render testing and URL fallback; other workflows reference it rather than duplicating
 
 ---
 
@@ -195,7 +250,7 @@ When creating workflows:
 ## 🔖 Version
 
 - **Created:** 2025-12-20
-- **Last Updated:** 2025-12-20
+- **Last Updated:** 2026-02-14
 - **Status:** Active
 
 ---
