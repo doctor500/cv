@@ -23,7 +23,7 @@ Specializing in Google Cloud Platform (GCP) and AWS, David has deep expertise in
 Beginning his career in software development from 2011, David’s curiosity and problem-solving mindset naturally evolved toward infrastructure and DevOps. He enjoys designing systems that empower developers, support business scalability, and simplify complex operations. Guided by continuous learning and a collaborative approach, he focuses on building platforms that enable teams to deliver securely, efficiently, and with confidence.
 
 
-### Technical Skills
+### Technical Skill
 
 
 AWS (EC2, ECR, IAM, VPC, LB, Route53), GCP (CE, GKE, Cloud SQL, Cloud Logging, Cloud Monitoring, IAM, VPC, Artifact Registry, LB, Cloud DNS, Cloud Storage, Cloud Run, Secret Manager), Linux VM, Windows Server, Debian, CentOS, Docker, Kubernetes, Helm, Kustomize, MySQL, PostgreSQL, Git, Jenkins, GitLab CI, GitHub Actions, Python, Java (Groovy), Shell, Terraform, Nginx, OpenVPN, Teleport, Cloudflare, NewRelic, Datadog, Prometheus, Grafana
@@ -42,7 +42,7 @@ Part of Rakuten OneCloud Initiative. Designing, maintaining, and automating larg
 
 __Infrastructure Engineer__, GovTech Procurement, Indonesia
 
-Government Technology (GovTech) Procurement is part of Telkom Indonesia (IDX: TLKM). Entrusted to maintain the operations of **600+** nation-scale government procurement apps, managing more than **20+** Kubernetes clusters that can have more than **70+** cost-effective worker nodes (spot instances).
+Government Technology (GovTech) Procurement is part of Telkom Indonesia (IDX: TLKM). I'm entrusted to maintain the operations of **600+** nation-scale government procurement apps, managing more than **20+** Kubernetes clusters that can have more than **70+** cost-effective worker nodes (spot instances).
 - Lead and execute infrastructure refactoring from the GCP Cloud Run workload to the GKE Kubernetes cluster. Decrease production costs by more than **90%** daily and save over **$150,000** monthly.
 - Transform the nation-level Mail Services from a monolithic VM to a scalable and cost-effective Kubernetes deployment. **Increase service scaling performance by six times**, making it more reliable.
 - Implement fully audited and approval-based access control for over **500** cloud resources in GovTech Procurement using Teleport.
@@ -72,7 +72,7 @@ Maintain the Jenkins pipeline and internal tools in the Kubernetes Cluster, whic
 - Transform **80%+** of redundant **Jenkins** pipeline files into a single standardized deployment pipeline. **Rebuilt the company-level pipeline** to scale up pipeline maintainability.
 - **Decreased up to 6x provisioning time** of pipeline supporting resources by migrating them to on top of the **Kubernetes** platform. Provide ready-to-use resources in less than a minute.
 - **Decreased up to 85% of the pipeline initialization build time** of the backend repo (mono repo).
-- Scaled up backend pipeline capabilities to support **multi-cloud deployment** process.
+- Scalled up backend pipeline capabilities to support **multi-cloud deployment** process.
 
 
 `Mar 2018 - Feb 2020`
