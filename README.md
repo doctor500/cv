@@ -471,7 +471,7 @@ This repository includes pre-built workflows in the `.agent/` folder designed fo
 
 ### Available Workflows
 
-The `.agent/workflows/` directory contains three powerful automation workflows:
+The `.agent/workflows/` directory contains five automation workflows:
 
 #### 1. 📝 Add CV Section (`/add-cv-section`)
 **Purpose:** Interactively add new sections to your `index.md` CV
@@ -499,7 +499,33 @@ The `.agent/workflows/` directory contains three powerful automation workflows:
 
 ---
 
-#### 3. 🔀 Git Branch & PR (`/git-branch-pr`)
+#### 3. 🏗️ Build CV Wizard (`/build-cv-wizard`)
+**Purpose:** Build a complete CV from multiple data sources
+
+**Features:**
+- Multi-source data gathering (URLs, files, guided interview)
+- 3-tier URL fallback (curl → browser → manual paste)
+- Syntax validation and local render testing
+- References best practices from `cv-construction-guide.md`
+
+**Usage:** AI agents curate data from various sources into a polished `index.md`.
+
+---
+
+#### 4. 📊 Evaluate CV (`/evaluate-cv`)
+**Purpose:** Evaluate and critique CV with a 6-category scoring framework
+
+**Features:**
+- 6-category scoring (Content, Structure, Impact, ATS, Relevance, Presentation)
+- Optional job-targeted evaluation with keyword matching
+- Narrative analysis + score card output
+- Optional interactive HTML dashboard
+
+**Usage:** AI agents provide detailed feedback and actionable improvement suggestions.
+
+---
+
+#### 5. 🔀 Git Branch & PR (`/git-branch-pr`)
 **Purpose:** Guide through proper git workflow with feature branches
 
 **Features:**
@@ -511,6 +537,13 @@ The `.agent/workflows/` directory contains three powerful automation workflows:
 **Usage:** AI agents follow this workflow to ensure clean git history and proper collaboration.
 
 ---
+
+### Reference Documents
+
+Workflows are supported by detailed reference guides in `.agent/references/`:
+
+- **[`cv-construction-guide.md`](./.agent/references/cv-construction-guide.md)** - CV writing best practices, ATS optimization, action verbs
+- **[`cv-evaluation-framework.md`](./.agent/references/cv-evaluation-framework.md)** - 6-category scoring rubric, composite scoring, section criteria
 
 ### Technical Documentation
 
