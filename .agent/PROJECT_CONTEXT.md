@@ -23,6 +23,19 @@ A **markdown-based CV generator** using Jekyll static site generator, deployed v
 
 ```
 cv/
+├── .agent/
+│   ├── references/
+│   │   ├── cv-construction-guide.md   # CV writing best practices & ATS tips
+│   │   └── cv-evaluation-framework.md # 6-category scoring framework
+│   ├── workflows/
+│   │   ├── add-cv-section.md          # Add content to index.md
+│   │   ├── build-cv-wizard.md         # Build CV from data sources
+│   │   ├── evaluate-cv.md             # Evaluate CV with scoring
+│   │   ├── generate-template.md       # Create CSS templates
+│   │   └── git-branch-pr.md           # Branch & PR workflow
+│   ├── PROJECT_CONTEXT.md
+│   ├── QUICK_REFERENCE.md
+│   └── README.md
 ├── .github/
 │   └── workflows/
 │       └── publish-pdf.yml        # PDF generation & release pipeline
@@ -37,7 +50,7 @@ cv/
 ├── index.md                       # Main CV content (MARKDOWN)
 ├── Gemfile                        # Ruby dependencies (Jekyll)
 ├── docker-compose.yml             # Local development setup
-└── README.md                      # Comprehensive user-facing documentation (504 lines)
+└── README.md                      # Comprehensive user-facing documentation
 ```
 
 ---
@@ -362,6 +375,38 @@ The profile contains valuable information that can be extracted:
 
 > [!IMPORTANT]
 > AI agents will never auto-commit. All git commits require explicit user approval.
+
+---
+
+### 4. Build CV Wizard
+**Command:** `/build-cv-wizard`  
+**Purpose:** Help user construct a complete CV by curating provided resources (links, files, manual input)
+
+**Features:**
+- Multi-source data gathering (URLs, files, guided interview)
+- 3-tier URL fallback (curl → browser → manual)
+- Section ordering customization
+- Automatic syntax validation and render testing
+- Iteration support for refinements
+- References `.agent/references/cv-construction-guide.md` for best practices
+
+**Supported Sources:** LinkedIn profiles, portfolio sites, existing resumes, manual input
+
+---
+
+### 5. CV Evaluation
+**Command:** `/evaluate-cv`  
+**Purpose:** Evaluate and critique CV with scored analysis and optional web dashboard
+
+**Features:**
+- 6-category scoring framework (Content, Structure, Impact, ATS, Relevance, Presentation)
+- Dual output: narrative analysis + score card
+- Optional job-targeted evaluation with keyword matching
+- Optional interactive HTML dashboard (neo-brutalism theme)
+- Section-specific or full CV evaluation
+- References `.agent/references/cv-evaluation-framework.md` for scoring rubric
+
+**Dashboard Output:** `docs/evaluation/` directory
 
 ---
 

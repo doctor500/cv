@@ -151,41 +151,10 @@ style: $TEMPLATE_NAME
 
 ### Step 8: Test Template
 
-Ask user:
-```
-Would you like to test the template locally?
-1. Yes, using Docker (recommended)
-2. Yes, using Ruby directly
-3. No
-```
+Follow the render testing procedure from `build-cv-wizard.md` Step 8, or use commands in `QUICK_REFERENCE.md` (Local Development section).
 
-**Option 1: Docker**
-```bash
-# Restart container to load new template
-docker-compose down
-docker-compose up -d
-```
-Verify with:
-```bash
-curl http://localhost:4000
-```
-
-**Option 2: Ruby (Direct)**
-```bash
-# Start server
-bundle exec jekyll serve
-```
-Verify with:
-```bash
-curl http://localhost:4000
-```
-
-Ask user:
-```
-Template is live!
-
-Does it look good? (yes/no/adjust)
-```
+> [!NOTE]
+> For templates, you may need to restart the Docker container (`docker-compose down && docker-compose up -d`) to load CSS changes.
 
 ---
 
@@ -245,23 +214,8 @@ style: $TEMPLATE_NAME
 
 ### Step 12: Finalize Changes (Git Branch & PR)
 
-Instead of committing directly, follow the Git Branch & PR Workflow:
-
-1. **Check branch:** Ensure not on `main` or `page-release`.
-2. **Create branch:** `feat/add-template-$TEMPLATE_NAME`.
-3. **Commit:** Stage and commit CSS files and `_config.yml` (after user approval).
-4. **PR:** Push and create/update Pull Request.
-
-**Refer to:** `.agent/workflows/git-branch-pr.md` for detailed steps.
-
-Ask user:
-```
-✅ Template created successfully!
-
-Proceed with Git Branch & PR workflow? (yes/no)
-```
-
-If "yes", execute the steps from `git-branch-pr.md`.
+Follow `.agent/workflows/git-branch-pr.md` to commit and create a PR.
+Suggested branch name: `feat/add-template-$TEMPLATE_NAME`
 
 ---
 
@@ -341,27 +295,9 @@ If "yes", execute the steps from `git-branch-pr.md`.
 
 ## Design Best Practices
 
-### Color Schemes
-- **Professional:** Navy, dark gray, minimal accent
-- **Creative:** Bold colors, gradients
-- **Academic:** Classic black/gray
-- **Tech:** Blue/purple palette
-
-### Typography
-- Headings: 1.5-3em with weight hierarchy
-- Body: 14-16px, line-height 1.4-1.6em
-- Code/Dates: Monospace, 80-90% size
-
-### Layout
-- Sidebar: 25-33% for labels
-- Content: 65-75% for information
-- Consistent margins: 1-2em
-
-### Print Optimization
-- Page size: A4 or Letter
-- Safe margins: 1-2cm
-- Test in grayscale
-- Avoid breaking sections
+- **Professional CVs:** Navy/dark gray, minimal accent colors
+- **Typography:** Headings 1.5-3em, body 14-16px, line-height 1.4-1.6em
+- **Print:** Test in grayscale, use 1-2cm margins, avoid breaking sections across pages
 
 ---
 

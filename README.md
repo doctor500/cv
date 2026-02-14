@@ -17,9 +17,8 @@
 - [Local Development](#-local-development)
 - [Customization](#-customization)
 - [PDF Generation Pipeline](#-pdf-generation-pipeline)
+- [Governance & Git Workflow](#%EF%B8%8F-governance--git-workflow)
 - [AI Agent Workflows](#-ai-agent-workflows)
-- [Governance](#-governance)
-- [For Core Team: Git Workflow](#-for-core-team-git-workflow)
 - [Contributing](#-contributing)
 - [License](#-license)
 
@@ -407,137 +406,76 @@ Generate PDFs that include your phone number without publishing it publicly.
 
 ---
 
-### 📊 Understanding Releases
-
-When you create a **public PDF build**, the workflow:
-1. Generates a PDF from your current `index.md`
-2. Creates a GitHub Release with tag `PDF_YYYYMMDD-HHMMSS`
-3. Attaches the PDF to that release
-4. Makes it publicly downloadable
-
-**Release naming:**
-- `PDF_20251223-143052` = PDF generated on Dec 23, 2025 at 14:30:52 UTC
-
-**Why use releases?** They provide a permanent, versioned history of your CV snapshots.
-
----
-
-## 🔧 For Core Team: Git Workflow
-
 > [!NOTE]
-> **Fork users can skip this section!** This is only for core contributors to the original `doctor500/cv` repository.
+> **Understanding Releases:** Public builds create a GitHub Release tagged `PDF_YYYYMMDD-HHMMSS` with the PDF attached. This gives you a permanent, versioned history of CV snapshots.
 
-### Protected Branches
+## 🏛️ Governance & Git Workflow
 
-- **`main`** - Primary development (protected)
-- **`page-release`** - GitHub Pages deployment (protected)
-
-### Workflow for Core Contributors
-
-**Never commit directly to `main` or `page-release`!** Always use feature branches and pull requests.
-
-**Recommended process:**
-1. Use the `/git-branch-pr` custom workflow to create a feature branch
-2. Make your changes on the feature branch
-3. Commit and push changes
-4. Create or update a pull request
-5. Merge PR after review
-6. Branch is automatically cleaned up
-
-For detailed step-by-step instructions, see:
-- [`.agent/workflows/git-branch-pr.md`](./.agent/workflows/git-branch-pr.md)
-- [`.agent/PROJECT_CONTEXT.md`](./.agent/PROJECT_CONTEXT.md#-deployment--branch-management)
-
----
-
----
-
-## 🏛️ Governance
+### Governance
 
 **Approval Mode** is active by default for all AI agents working on this repository.
 
--   **Goal:** Ensure safety and alignment through explicit planning and user approval.
--   **Protocol:** Agents must propose a plan and receive a "Yes/Proceed" from the user *before* executing any code changes or commands.
--   **Details:** See [docs/governance.md](./docs/governance.md) for full protocols and Auto Pilot opt-in options.
+- **Goal:** Ensure safety and alignment through explicit planning and user approval.
+- **Protocol:** Agents must propose a plan and receive a "Yes/Proceed" from the user *before* executing any code changes or commands.
+- **Details:** See [docs/governance.md](./docs/governance.md) for full protocols and Auto Pilot opt-in options.
+
+### For Core Team: Git Workflow
+
+> [!NOTE]
+> **Fork users can skip this subsection!** This is only for core contributors to the original `doctor500/cv` repository.
+
+**Protected branches:** `main` (primary development) and `page-release` (GitHub Pages deployment).
+
+**Never commit directly to protected branches!** Always use feature branches and pull requests.
+
+**Recommended process:**
+1. Use the `/git-branch-pr` workflow to create a feature branch
+2. Make changes, commit, push
+3. Create/update a pull request
+4. Merge PR after review
+
+For details, see [`.agent/workflows/git-branch-pr.md`](./.agent/workflows/git-branch-pr.md).
 
 ---
 
 ## 🤖 AI Agent Workflows
 
-This repository includes pre-built workflows in the `.agent/` folder designed for AI agents (like Gemini, Claude, ChatGPT) to help you manage your CV more efficiently.
+This repository includes pre-built workflows in `.agent/workflows/` designed for any AI agent (Gemini, Claude, ChatGPT, etc.) to help you manage your CV more efficiently.
 
 > [!TIP]
-> **AI agents can automatically:** Add new CV sections, generate custom templates, and manage git workflows - all through simple conversational commands.
+> **Fork users:** The `.agent/` folder is included when you fork! Any AI agent with file system access can use these workflows.
 
 ### Available Workflows
 
-The `.agent/workflows/` directory contains three powerful automation workflows:
+| Command | Purpose | Key Features |
+|---------|---------|-------------|
+| `/add-cv-section` | Add sections to `index.md` | Manual entry or LinkedIn fetch, auto-formatting, validation |
+| `/generate-template` | Create CSS templates | URL or description based, screen + print CSS, auto-testing |
+| `/build-cv-wizard` | Build CV from data sources | Multi-source gathering, 3-tier URL fallback, render testing |
+| `/evaluate-cv` | Score and critique CV | 6-category scoring, job-targeted mode, HTML dashboard |
+| `/git-branch-pr` | Git branch & PR management | Feature branches, PR automation, protected branch enforcement |
 
-#### 1. 📝 Add CV Section (`/add-cv-section`)
-**Purpose:** Interactively add new sections to your `index.md` CV
+### Reference Documents
 
-**Features:**
-- Add professional experience, education, activities, or projects
-- Manual data entry OR fetch from LinkedIn profile
-- Automatic formatting based on CV structure
-- Section validation and preview before saving
-
-**Usage:** AI agents can execute this workflow to help you add new CV entries through conversation.
-
----
-
-#### 2. 🎨 Generate Template (`/generate-template`)
-**Purpose:** Create new CSS templates for custom CV styling
-
-**Features:**
-- Generate templates from reference URLs or descriptions
-- Creates both screen and print CSS files
-- Automatic template testing and validation
-- Updates configuration automatically
-
-**Usage:** AI agents can create custom CV designs based on your preferences or reference websites.
-
----
-
-#### 3. 🔀 Git Branch & PR (`/git-branch-pr`)
-**Purpose:** Guide through proper git workflow with feature branches
-
-**Features:**
-- Creates feature branches with naming conventions
-- Manages pull request creation/updates
-- Prevents direct commits to protected branches
-- Automated cleanup after merge
-
-**Usage:** AI agents follow this workflow to ensure clean git history and proper collaboration.
-
----
+| File | Used By | Content |
+|------|---------|--------|
+| [`cv-construction-guide.md`](./.agent/references/cv-construction-guide.md) | `/build-cv-wizard` | Writing best practices, ATS tips |
+| [`cv-evaluation-framework.md`](./.agent/references/cv-evaluation-framework.md) | `/evaluate-cv` | 6-category scoring rubric |
 
 ### Technical Documentation
 
-For AI agents and developers working with this repository:
+- **[`.agent/README.md`](./.agent/README.md)** — Full workflow documentation and usage details
+- **[`.agent/PROJECT_CONTEXT.md`](./.agent/PROJECT_CONTEXT.md)** — Complete technical architecture
+- **[`.agent/QUICK_REFERENCE.md`](./.agent/QUICK_REFERENCE.md)** — Quick command reference
 
-- **[`.agent/PROJECT_CONTEXT.md`](./.agent/PROJECT_CONTEXT.md)** - Complete technical architecture documentation
-- **[`.agent/QUICK_REFERENCE.md`](./.agent/QUICK_REFERENCE.md)** - Quick command reference
-- **[`.agent/README.md`](./.agent/README.md)** - Agent directory overview
-
-### How AI Agents Use These Workflows
-
-AI agents (Gemini, Claude, ChatGPT, etc.) can:
-
-1. **Read workflow files** - Each workflow is a markdown file with step-by-step instructions
-2. **Execute interactively** - Guide you through each step with questions and confirmations
-3. **Automate tasks** - Handle repetitive CV updates, template generation, and git operations
-4. **Maintain consistency** - Follow established patterns and formatting rules
-
-### Example Interactions
+<details>
+<summary><strong>💬 Example Interactions</strong></summary>
 
 **Adding a new job:**
 ```
 You: "Add my new position at TechCorp as Senior Engineer"
 AI: *Reads /add-cv-section workflow*
 AI: "I'll help you add that! What's the start date?"
-You: "January 2024"
-AI: "And is this your current position or has it ended?"
 ... (continues through workflow)
 ```
 
@@ -548,16 +486,7 @@ AI: *Reads /generate-template workflow*
 AI: "I'll create a custom template based on that design..."
 ... (generates CSS files, tests, and updates config)
 ```
-
-### For Fork Users
-
-> [!IMPORTANT]
-> When you fork this repository, the `.agent/` folder comes with it! Any AI agent with file system access can use these workflows to help you manage your CV.
-
-**Requirements:**
-- AI agent with file system + command execution capabilities
-- Access to your local repository
-- Gemini, Claude, ChatGPT, or compatible AI assistant
+</details>
 
 ---
 
@@ -588,25 +517,11 @@ I believe this project can always improve! Contributions are welcome and appreci
 - Review existing templates in `media/` for style guidelines
 - Test your changes locally before submitting
 
-### 🙏 Recognition
-
-Contributors who submit PRs will be acknowledged here:
-
-<!-- Contributors list will be added here -->
-
 ---
 
 ## 🪪 License
 
-MIT License
-
-Copyright (c) David Layardi (david@layardi.com)
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+This project is licensed under the [MIT License](./LICENSE).
 
 ---
 
