@@ -116,7 +116,8 @@ git push origin feat/my-feature
 
 - `/add-cv-section` - Add content to index.md
 - `/build-cv-wizard` - Build CV from data sources
-- `/evaluate-cv` - Evaluate CV with scoring & dashboard
+- `/evaluate-cv-quick` - Quick CV evaluation (~2-4K tokens)
+- `/evaluate-cv-deepdive` - Deep dive evaluation (~8-15K tokens)
 - `/generate-template` - Create new CSS template
 - `/git-branch-pr` - Branch & PR workflow
 

@@ -1,6 +1,6 @@
 # CV Evaluation Framework
 
-**Purpose:** Structured analysis framework for evaluating CV quality. Loaded by the `/evaluate-cv` workflow when performing scored evaluations.
+**Purpose:** Structured analysis framework for evaluating CV quality. Loaded by the `/evaluate-cv-quick` and `/evaluate-cv-deepdive` workflows when performing scored evaluations.
 
 ---
 
@@ -185,4 +185,89 @@ When the user provides a target job description, perform additional analysis:
 
 ---
 
-_This framework is loaded by the `/evaluate-cv` workflow when performing structured evaluations._
+## Insight Quality Standards
+
+The `/evaluate-cv-deepdive` workflow enforces all 10 standards below. Each standard is **mandatory** — the evaluation output must satisfy every one before being presented.
+
+### Standard 1: Positioning Diagnosis
+Create a one-line framing that captures the gap between the CV's current narrative and desired positioning.
+
+**Rule:** Compare what the CV currently communicates vs. what the candidate wants it to communicate.
+
+**Example:**
+> "Your CV reads as a **strong 2023-era DevOps engineer**, but not as a **2026 infrastructure engineer leveraging AI**."
+
+### Standard 2: Evidence-Based Analysis
+Every claim in the evaluation must cite specific content from the CV.
+
+**Rule:** Reference exact phrases, section names, or word choices. Never make vague claims.
+
+- ❌ Bad: "The profile summary needs improvement."
+- ✅ Good: "The phrase 'I am a fast learner and team player' (Profile Summary) uses first-person pronouns and clichés that weaken the professional tone."
+
+### Standard 3: Actionable Rewrite Examples
+Every improvement suggestion must include concrete replacement text.
+
+**Rule:** Show "before → after" or provide suggested new content.
+
+- ❌ Bad: "→ Suggestion: Make the summary more professional."
+- ✅ Good: "→ Suggested rewrite: 'Backend engineer with 4 years of experience building scalable APIs and microservices in Java and Python.'"
+
+### Standard 4: Estimated Score Impact
+For each major recommendation, estimate how much it would improve the composite score.
+
+**Rule:** Provide specific numerical estimates (e.g., "+0.5 to +1.0") and a combined estimate for top actions.
+
+**Example:**
+> "Implementing all 3 actions could move the composite score from **4.85** to approximately **6.5-7.0** (⚠️ Adequate → ✅ Strong)."
+
+### Standard 5: Contradiction Detection
+Actively scan for inconsistencies in dates, claims, narrative flow, or stated vs. demonstrated skills.
+
+**Rule:** Check for: timeline gaps, skills claimed but not evidenced, tense inconsistencies, narrative contradictions, stated goal vs. CV content misalignment.
+
+**Example:**
+> "Contradiction: Profile claims 'transition into DevOps' but Skills lists only 1 DevOps tool (Jenkins)."
+
+### Standard 6: Current Role Priority
+The most recent role must receive the deepest analysis and most detailed recommendations.
+
+**Rule:** The current role should have more analysis text than any other role. If it's the weakest entry, flag this prominently.
+
+**Example:**
+> "🚨 **Critical:** Your current role (most important entry) has **zero quantified achievements** and only lists responsibilities."
+
+### Standard 7: Career Arc Analysis
+Identify and articulate the implicit career trajectory, then assess whether it's clearly communicated.
+
+**Rule:** Map the progression explicitly (e.g., "Junior → Mid → Senior → [desired]"). Assess whether the CV tells this story.
+
+### Standard 8: Top N High-Impact Actions
+Conclude every evaluation with the top 3 highest-impact actions, ranked by estimated score improvement.
+
+**Rule:** Each action must include: what to do, why it matters, and estimated score impact. Include a combined estimate.
+
+**Example:**
+> 1. **Add metrics to current role** (Est. +1.0-1.5)
+> 2. **Rewrite Profile Summary** (Est. +0.5-1.0)
+> 3. **Categorize Technical Skills** (Est. +0.5)
+>
+> **Combined:** 4.85 → 6.5-7.0
+
+### Standard 9: Total Actionable Items
+Ensure at least 10-15 actionable items across the evaluation.
+
+**Rule:** Each item must be specific enough that the candidate can implement it without further guidance. "Improve your summary" is NOT actionable. "Remove first-person pronouns from Profile Summary and replace with third-person or omit subject" IS actionable.
+
+### Standard 10: Specificity Score Self-Check
+Before finalizing, review all suggestions. The ratio of specific-to-generic suggestions must be ≥80%.
+
+**Rule:**
+- **Specific:** References exact CV content, provides rewrite text, cites section
+- **Generic:** Could apply to any CV (e.g., "use more action verbs")
+
+If a suggestion is generic, enhance it with a specific example from this CV.
+
+---
+
+_This framework is loaded by the `/evaluate-cv-quick` and `/evaluate-cv-deepdive` workflows when performing structured evaluations._

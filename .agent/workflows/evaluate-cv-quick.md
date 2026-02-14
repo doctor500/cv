@@ -1,10 +1,22 @@
 ---
-description: Evaluate and critique CV with scoring framework and optional web dashboard
+description: Quick CV evaluation with scoring framework (lightweight, ~2K-4K output tokens)
 ---
 
-# CV Evaluation Workflow
+# CV Evaluation — Quick
 
-**Purpose:** Provide fair critique, actionable suggestions, and scored evaluation for the CV in `index.md`. Optionally generate an interactive HTML dashboard to visualize results.
+**Purpose:** Fast, structured critique of the CV in `index.md` with scored evaluation and optional HTML dashboard. Lightweight version optimized for iteration cycles.
+
+> [!TIP]
+> **When to use Quick vs Deep Dive:**
+>
+> | Aspect | Quick (`/evaluate-cv-quick`) | Deep Dive (`/evaluate-cv-deepdive`) |
+> |--------|-----|-----------|
+> | Output tokens | ~2K-4K | ~8K-15K |
+> | Insight patterns | Best-effort | 10/10 mandatory |
+> | Evidence citations | Optional | Mandatory (every claim) |
+> | Rewrite examples | Optional | Mandatory (every suggestion) |
+> | Specificity | ~20-40% | ~80-95% |
+> | Best for | Quick checks, iteration cycles | Comprehensive review, major revisions |
 
 ## Important Notes
 - **Evaluation target:** Evaluates content in `index.md` (single source of truth)
@@ -72,6 +84,7 @@ Evaluation scope:
 - Target: [Entire CV / Specific section(s)]
 - Goal: [General review / Job-targeted / etc.]
 - Job target: [Job title at Company / None]
+- Mode: Quick (lightweight evaluation)
 
 Proceeding with evaluation...
 ```
@@ -265,11 +278,13 @@ What would you like to do next?
 2. Deep-dive into a specific section
 3. Get rewrite suggestions for specific bullets
 4. Evaluate against a (different) job posting
-5. Done
+5. Switch to /evaluate-cv-deepdive for comprehensive analysis
+6. Done
 ```
 
 If option 1: Return to Step 2 with updated content.
 If option 2-4: Perform additional targeted analysis.
+If option 5: Run the deep dive workflow.
 
 ---
 
@@ -289,49 +304,28 @@ If option 2-4: Perform additional targeted analysis.
     4. ATS optimization
     5. Specific concern
 
-👤: 2
+👤: 1
 
-🤖: Please provide the job posting URL or paste the description:
-
-👤: https://company.com/jobs/senior-devops-engineer
-
-🤖: Evaluating your CV against: Senior DevOps Engineer at Company...
+🤖: Evaluating your CV (Quick mode)...
 
     # CV Evaluation Results
 
     ## Overall Assessment
     Your CV presents a strong technical profile with excellent
-    quantified achievements. The infrastructure cost reduction
-    metrics are particularly impactful. However, some recent
-    role descriptions could be strengthened with more specific
-    outcomes.
+    quantified achievements...
 
     ## Score Card
     | Category                 | Score | Weight | Weighted |
     |--------------------------|-------|--------|----------|
     | Content Quality          | 8/10  | 25%    | 2.00     |
-    | Structure & Formatting   | 7/10  | 15%    | 1.05     |
-    | Impact & Metrics         | 8/10  | 20%    | 1.60     |
-    | ATS Compatibility        | 7/10  | 15%    | 1.05     |
-    | Relevance                | 9/10  | 15%    | 1.35     |
-    | Professional Presentation| 8/10  | 10%    | 0.80     |
-    | **Composite Score**      |       |        | **8.05** |
+    | ...                      | ...   | ...    | ...      |
+    | **Composite Score**      |       |        | **7.85** |
 
     Rating: ✅ Strong
 
-    [... detailed analysis follows ...]
-
-🤖: Would you like to generate an interactive web dashboard?
-    1. Yes
-    2. No
-
-👤: 1
-
-🤖: ✅ Dashboard generated at docs/evaluation/cv-evaluation.html
-    
-    You can customize the theme by editing CSS variables in the file.
-    
-    What would you like to do next?
+🤖: What would you like to do next?
+    ...
+    5. Switch to /evaluate-cv-deepdive for comprehensive analysis
 ```
 
 ---
@@ -346,4 +340,4 @@ If option 2-4: Perform additional targeted analysis.
 
 ---
 
-_This workflow evaluates content in `index.md`._
+_This is the lightweight evaluation workflow. For comprehensive, evidence-based evaluation with mandatory insight patterns, use `/evaluate-cv-deepdive`._
