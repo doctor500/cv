@@ -8,11 +8,13 @@ This directory contains AI agent configurations, workflows, and project context 
 .agent/
 ├── references/
 │   ├── cv-construction-guide.md     # CV writing best practices & ATS tips
-│   └── cv-evaluation-framework.md   # 6-category scoring framework
+│   ├── cv-evaluation-framework.md   # 6-category scoring framework
+│   └── benchmark-testing-framework.md # Workflow benchmarking standard
 ├── workflows/
 │   ├── add-cv-section.md            # Workflow: Update index.md with new sections
 │   ├── build-cv-wizard.md           # Workflow: Build CV from data sources
-│   ├── evaluate-cv.md               # Workflow: Evaluate CV with scoring
+│   ├── evaluate-cv-quick.md         # Workflow: Quick CV evaluation (~2-4K tokens)
+│   ├── evaluate-cv-deepdive.md      # Workflow: Deep dive evaluation (~8-15K tokens)
 │   ├── generate-template.md         # Workflow: Generate CSS templates
 │   └── git-branch-pr.md             # Workflow: Branch & PR management
 ├── PROJECT_CONTEXT.md               # Comprehensive project documentation
@@ -122,10 +124,10 @@ Tracks:
 
 ---
 
-### workflows/evaluate-cv.md
-**Workflow: Evaluate and critique CV with scoring**
+### workflows/evaluate-cv-quick.md
+**Workflow: Quick CV evaluation (~2K-4K output tokens)**
 
-**Key Principle:** Provides scored analysis using a 6-category framework
+**Key Principle:** Fast, lightweight scored analysis for iteration cycles
 
 **Features:**
 - 6-category scoring (Content, Structure, Impact, ATS, Relevance, Presentation)
@@ -134,7 +136,24 @@ Tracks:
 - Optional interactive HTML dashboard (neo-brutalism theme)
 - References `references/cv-evaluation-framework.md` for rubric
 
-**Execute:** `/evaluate-cv`
+**Execute:** `/evaluate-cv-quick`
+
+---
+
+### workflows/evaluate-cv-deepdive.md
+**Workflow: Comprehensive CV evaluation (~8K-15K output tokens)**
+
+**Key Principle:** Evidence-based evaluation with 10 mandatory insight quality standards
+
+**Everything in Quick mode, plus:**
+- Positioning Diagnosis, Career Arc Analysis
+- Evidence-based citations (every claim cites specific CV content)
+- Actionable rewrite examples (every suggestion includes replacement text)
+- Score impact estimates, contradiction detection
+- Top 3 high-impact actions with combined score projection
+- ≥80% specificity guarantee
+
+**Execute:** `/evaluate-cv-deepdive`
 
 ---
 
@@ -148,7 +167,14 @@ Detailed guide covering ATS optimization, action verbs, career-type consideratio
 ### references/cv-evaluation-framework.md
 **Reference: CV scoring framework**
 
-Complete evaluation rubric with 6 weighted categories, composite scoring, job-targeted addon, and section-specific criteria. Loaded by `/evaluate-cv` when performing evaluations.
+Complete evaluation rubric with 6 weighted categories, composite scoring, job-targeted addon, and section-specific criteria. Loaded by `/evaluate-cv-quick` and `/evaluate-cv-deepdive` workflows.
+
+---
+
+### references/benchmark-testing-framework.md
+**Reference: Workflow benchmarking standard**
+
+Standardized procedure for comparing workflow performance. Provides methodology, metrics templates, Quality Index formula, execution protocol, and decision criteria for adopting workflow changes.
 
 ---
 
@@ -160,7 +186,8 @@ Complete evaluation rubric with 6 weighted categories, composite scoring, job-ta
 3. Execute workflows:
    - `/add-cv-section` - Update `index.md`
    - `/build-cv-wizard` - Build CV from data sources
-   - `/evaluate-cv` - Evaluate CV with scoring
+   - `/evaluate-cv-quick` - Quick CV evaluation
+   - `/evaluate-cv-deepdive` - Deep dive evaluation
    - `/generate-template` - Create CSS templates
 
 ### For Developers

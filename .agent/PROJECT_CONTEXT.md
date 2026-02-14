@@ -25,12 +25,14 @@ A **markdown-based CV generator** using Jekyll static site generator, deployed v
 cv/
 ├── .agent/
 │   ├── references/
+│   │   ├── benchmark-testing-framework.md # Standardized workflow benchmarking
 │   │   ├── cv-construction-guide.md   # CV writing best practices & ATS tips
 │   │   └── cv-evaluation-framework.md # 6-category scoring framework
 │   ├── workflows/
 │   │   ├── add-cv-section.md          # Add content to index.md
 │   │   ├── build-cv-wizard.md         # Build CV from data sources
-│   │   ├── evaluate-cv.md             # Evaluate CV with scoring
+│   │   ├── evaluate-cv-quick.md       # Quick CV evaluation (~2-4K tokens)
+│   │   ├── evaluate-cv-deepdive.md    # Deep dive evaluation (~8-15K tokens)
 │   │   ├── generate-template.md       # Create CSS templates
 │   │   └── git-branch-pr.md           # Branch & PR workflow
 │   ├── PROJECT_CONTEXT.md
@@ -394,19 +396,49 @@ The profile contains valuable information that can be extracted:
 
 ---
 
-### 5. CV Evaluation
-**Command:** `/evaluate-cv`  
-**Purpose:** Evaluate and critique CV with scored analysis and optional web dashboard
+### 5. CV Evaluation (Two Variants)
+
+#### Quick Mode
+**Command:** `/evaluate-cv-quick`  
+**Token cost:** ~2K-4K output tokens  
+**Purpose:** Fast, lightweight CV evaluation for iteration cycles
 
 **Features:**
 - 6-category scoring framework (Content, Structure, Impact, ATS, Relevance, Presentation)
 - Dual output: narrative analysis + score card
 - Optional job-targeted evaluation with keyword matching
 - Optional interactive HTML dashboard (neo-brutalism theme)
-- Section-specific or full CV evaluation
 - References `.agent/references/cv-evaluation-framework.md` for scoring rubric
 
+#### Deep Dive Mode
+**Command:** `/evaluate-cv-deepdive`  
+**Token cost:** ~8K-15K output tokens  
+**Purpose:** Comprehensive, evidence-based evaluation with 10 mandatory insight quality standards
+
+**Everything in Quick mode, plus:**
+- Positioning Diagnosis (one-line gap framing)
+- Career Arc Analysis (trajectory mapping)
+- Evidence-based citations (every claim references specific CV content)
+- Actionable rewrite examples (every suggestion includes replacement text)
+- Score impact estimates (numerical improvement predictions)
+- Contradiction detection (inconsistencies between sections)
+- Top 3 high-impact actions with combined score projection
+- ≥80% specificity guarantee (self-checked before output)
+
 **Dashboard Output:** `docs/evaluation/` directory
+
+---
+
+### 6. Benchmark Testing Framework
+**Reference:** `.agent/references/benchmark-testing-framework.md`  
+**Purpose:** Standardized procedure for comparing workflow performance
+
+**When to use:**
+- Enhancing or refactoring an existing workflow
+- Comparing two workflow approaches
+- Validating that changes improve output quality
+
+**Provides:** Methodology, metrics templates, Quality Index formula, execution protocol, trade-off analysis framework, and decision criteria for adopting changes.
 
 ---
 
