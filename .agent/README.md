@@ -184,6 +184,7 @@ Complete evaluation rubric with 6 weighted categories, composite scoring, job-ta
 - Only template workflow creates new files
 - LinkedIn URL extracted from `index.md` or user input
 - Always validate before committing
+- **DRY pattern:** `build-cv-wizard` is the canonical source for render testing and URL fallback; other workflows reference it rather than duplicating
 
 ---
 
@@ -249,7 +250,7 @@ When creating workflows:
 ## 🔖 Version
 
 - **Created:** 2025-12-20
-- **Last Updated:** 2025-12-20
+- **Last Updated:** 2026-02-14
 - **Status:** Active
 
 ---
