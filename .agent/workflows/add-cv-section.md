@@ -94,42 +94,15 @@ Description:
 
 ### Step 4: Format Data
 
-Use appropriate template from CV structure:
+Use the CV formatting templates from `QUICK_REFERENCE.md` (CV Formatting section).
 
-**Experience:**
-```markdown
-`[StartDate] - [EndDate]`
-__[Position]__, [Company]
+Key rules:
+- Dates in backticks (`` `Jan 2024 - Now` ``)
+- Positions/institutions in `__underline__` format
+- Metrics in **bold**
+- URLs as proper markdown links
 
-[Description]
-
-- 1) [Achievement with **metrics**]
-- 2) [Another achievement]
-```
-
-**Education:**
-```markdown
-`[StartYear] - [EndYear]`
-__[Institution], [Location]__
-
-[Degree details], GPA: [X.X] of 4.0
-```
-
-**Activities:**
-```markdown
-`[Date]`
-[**[Title]**]([URL])
-
-[Metrics/additional info]
-```
-
-**Project:**
-```markdown
-`[DateRange]`
-**[Project Name]**, [Organization]
-
-[Description and achievements]
-```
+**Reference:** See `.agent/references/cv-construction-guide.md` for achievement quantification patterns.
 
 ---
 
@@ -188,60 +161,16 @@ __Infrastructure Engineer__, GovTech Procurement
 
 ---
 
-### Step 8: Finalize Changes (Git Branch & PR)
+### Step 8: Optional - Preview Locally
 
-Instead of committing directly, follow the Git Branch & PR Workflow:
-
-1. **Check branch:** Ensure not on `main` or `page-release`.
-2. **Create branch:** If needed, create `feat/[section-name]` or `fix/[update-type]`.
-3. **Commit:** Stage and commit changes (after user approval).
-4. **PR:** Push and create/update Pull Request.
-
-**Refer to:** `.agent/workflows/git-branch-pr.md` for detailed steps.
-
-Ask user:
-```
-✅ Successfully updated index.md!
-
-Proceed with Git Branch & PR workflow? (yes/no)
-```
-
-If "yes", execute the steps from `git-branch-pr.md`.
+Follow the render testing procedure from `build-cv-wizard.md` Step 8, or use commands in `QUICK_REFERENCE.md` (Local Development section).
 
 ---
 
-### Step 9: Optional - Preview Locally
+### Step 9: Finalize Changes (Git Branch & PR)
 
-Before or during the PR process, you can preview locally.
-
-Ask user:
-```
-Would you like to preview the changes locally?
-1. Yes, using Docker (recommended)
-2. Yes, using Ruby directly
-3. No
-```
-
-**Option 1: Docker**
-```bash
-docker-compose up -d
-```
-Verify with:
-```bash
-curl http://localhost:4000
-```
-
-**Option 2: Ruby (Direct)**
-```bash
-bundle install
-bundle exec jekyll serve
-```
-(Run in background or new terminal)
-
-Verify with:
-```bash
-curl http://localhost:4000
-```
+Follow `.agent/workflows/git-branch-pr.md` to commit and create a PR.
+Suggested branch name: `feat/[section-name]` or `fix/[update-type]`
 
 ---
 
@@ -324,26 +253,9 @@ curl http://localhost:4000
 2. Extract href from LinkedIn link in webaddress section
 3. Or ask user to provide URL
 
-### Browser Automation Steps
-// turbo
-1. Launch Chrome with: `google-chrome-stable --no-sandbox --disable-gpu`
-2. Navigate to LinkedIn URL
-3. Handle login if needed (prompt user for password)
-4. Navigate to relevant section (Experience/Education/etc.)
-5. Extract data from DOM
-6. Return structured data to workflow
-
-### Extracted Data Format
-```json
-{
-  "type": "experience",
-  "title": "Position Title",
-  "company": "Company Name",
-  "dates": "Jan 2024 - Present",
-  "description": "Role description...",
-  "achievements": ["Achievement 1", "Achievement 2"]
-}
-```
+### Fetch Process
+Use the same URL fallback chain from `build-cv-wizard.md` Step 1:
+curl → retry with User-Agent → Browser tool → ask user to paste content
 
 ---
 
@@ -360,13 +272,23 @@ curl http://localhost:4000
 ## Validation Checklist
 
 Before saving to `index.md`:
-- [ ] Dates are in correct format
-- [ ] URLs are valid
+- [ ] Dates are in correct format (backticks)
+- [ ] URLs are valid (see automated check below)
 - [ ] Markdown syntax is correct
-- [ ] Spacing is consistent
+- [ ] Spacing is consistent (blank lines between entries)
 - [ ] Metrics are bolded
 - [ ] No trailing whitespace
 - [ ] Section exists in index.md
+
+**Automated URL check:**
+// turbo
+```bash
+# Verify URLs in index.md respond
+grep -oP 'https?://[^\s\)\]]+' index.md | while read url; do
+  code=$(curl -sL -o /dev/null -w "%{http_code}" --max-time 5 "$url")
+  [ "$code" -ge 400 ] && echo "⚠️ $code $url" || echo "✅ $code $url"
+done
+```
 
 ---
 

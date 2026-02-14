@@ -243,6 +243,13 @@ Before writing to `index.md`, validate:
 - [ ] Consistent spacing: blank line between entries
 - [ ] No trailing whitespace
 
+**Automated YAML front matter check:**
+// turbo
+```bash
+# Validate YAML front matter exists and is well-formed
+head -10 index.md | grep -q "^---" && echo "✅ YAML front matter found" || echo "⚠️ Missing YAML front matter"
+```
+
 **Automated HTML check:**
 // turbo
 ```bash
@@ -252,6 +259,16 @@ for tag in div a text u; do
   close=$(grep -co "</${tag}>" index.md)
   [ "$open" != "$close" ] && echo "⚠️ <${tag}>: $open open, $close close" || echo "✅ <${tag}>: balanced ($open)"
 done
+```
+
+**Automated page break check:**
+// turbo
+```bash
+# Verify page break positions
+grep -n "page-break" index.md | while read line; do
+  echo "📄 Page break at: $line"
+done
+echo "Active: $(grep -c 'page-break-after' index.md), Commented: $(grep -c '<!-- .*page-break' index.md || echo 0)"
 ```
 
 If any issues found, fix automatically and notify user of changes made.
@@ -324,20 +341,8 @@ After changes, re-run Steps 7-8 (validate + render) before finalizing.
 
 ### Step 10: Finalize (Git Branch & PR)
 
-Follow the Git Branch & PR Workflow:
-
-1. **Check branch:** Ensure not on `main` or `page-release`.
-2. **Create branch:** `feat/build-cv` or `feat/cv-rebuild`.
-3. **Commit:** Stage and commit `index.md` (after user approval).
-4. **PR:** Push and create/update Pull Request.
-
-**Refer to:** `.agent/workflows/git-branch-pr.md` for detailed steps.
-
-```
-✅ CV build complete!
-
-Proceed with Git Branch & PR workflow? (yes/no)
-```
+Follow `.agent/workflows/git-branch-pr.md` to commit and create a PR.
+Suggested branch name: `feat/build-cv` or `feat/cv-rebuild`
 
 ---
 
