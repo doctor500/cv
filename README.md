@@ -452,7 +452,8 @@ This repository includes pre-built workflows in `.agent/workflows/` designed for
 | `/add-cv-section` | Add sections to `index.md` | Manual entry or LinkedIn fetch, auto-formatting, validation |
 | `/generate-template` | Create CSS templates | URL or description based, screen + print CSS, auto-testing |
 | `/build-cv-wizard` | Build CV from data sources | Multi-source gathering, 3-tier URL fallback, render testing |
-| `/evaluate-cv` | Score and critique CV | 6-category scoring, job-targeted mode, HTML dashboard |
+| `/evaluate-cv-quick` | Quick CV scoring & critique | 6-category scoring, ~2K-4K tokens, fast iteration cycles |
+| `/evaluate-cv-deepdive` | Comprehensive CV evaluation | 10 mandatory insight standards, evidence citations, rewrite examples, HTML dashboard |
 | `/git-branch-pr` | Git branch & PR management | Feature branches, PR automation, protected branch enforcement |
 
 ### Reference Documents
@@ -460,7 +461,8 @@ This repository includes pre-built workflows in `.agent/workflows/` designed for
 | File | Used By | Content |
 |------|---------|--------|
 | [`cv-construction-guide.md`](./.agent/references/cv-construction-guide.md) | `/build-cv-wizard` | Writing best practices, ATS tips |
-| [`cv-evaluation-framework.md`](./.agent/references/cv-evaluation-framework.md) | `/evaluate-cv` | 6-category scoring rubric |
+| [`cv-evaluation-framework.md`](./.agent/references/cv-evaluation-framework.md) | `/evaluate-cv-quick`, `/evaluate-cv-deepdive` | 6-category scoring rubric, 10 insight quality standards |
+| [`benchmark-testing-framework.md`](./.agent/references/benchmark-testing-framework.md) | `/evaluate-cv-deepdive` | Benchmark testing criteria and validation patterns |
 
 ### Technical Documentation
 
