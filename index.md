@@ -160,7 +160,7 @@ Completed Business Intelligence minor, graduated in the 7th semester. Final GPA:
 [DevOps Engineering on AWS](https://1drv.ms/b/s!AgiuQdtA6DaqkRFlSnO8rKrDO8iQ?e=htxgE9), **from AWS**
 
 
-<div style="page-break-after: always;"></div>
+<!-- <div style="page-break-after: always;"></div> -->
 
 
 ### Latest Professional Projects
