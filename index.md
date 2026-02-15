@@ -16,17 +16,30 @@ Cloud Infrastructure, Automation, DevOps Engineer.
 
 ## Profile Summary
 
-David Layardi works in the field of infrastructure and platform engineering, focusing on building scalable, automated, and reliable cloud systems. With over six years of experience across multiple industries, he has driven infrastructure modernization projects that enhanced performance, reduced operational costs, and improved developer productivity.
+David Layardi is an infrastructure and platform engineer with nearly a decade of experience building scalable cloud systems across government (600+ apps), fintech (100+ services), and enterprise. He has delivered infrastructure cost reductions exceeding 90% and $150K monthly savings through Kubernetes migration, automation, and cloud refactoring on GCP and AWS.
 
-Specializing in Google Cloud Platform (GCP) and AWS, David has deep expertise in Kubernetes, Terraform, CI/CD automation, and cloud cost optimization. His work has led to significant improvements in reliability and efficiency, including infrastructure cost reductions of over 90% through strategic automation and refactoring.
+Currently pioneering Agentic AI for infrastructure operations at Rakuten, he develops Claude Code plugins, AI Agent contexts, and autonomous analytical tooling that reduced cyber incident investigation from 24 hours to under 2 hours.
 
-Beginning his career in software development from 2011, David’s curiosity and problem-solving mindset naturally evolved toward infrastructure and DevOps. He enjoys designing systems that empower developers, support business scalability, and simplify complex operations. Guided by continuous learning and a collaborative approach, he focuses on building platforms that enable teams to deliver securely, efficiently, and with confidence.
-
-
-### Technical Skills
+He also builds open-source AI-governed infrastructure projects — including automated server provisioning with Kubernetes and AI Agent governance, and CV evaluation frameworks with scoring pipelines — combining deep Kubernetes, Terraform, and DevOps expertise with AI-powered operational workflows.
 
 
-AWS (EC2, ECR, IAM, VPC, LB, Route53), GCP (CE, GKE, Cloud SQL, Cloud Logging, Cloud Monitoring, IAM, VPC, Artifact Registry, LB, Cloud DNS, Cloud Storage, Cloud Run, Secret Manager), Linux VM, Windows Server, Debian, CentOS, Docker, Kubernetes, Helm, Kustomize, MySQL, PostgreSQL, Git, Jenkins, GitLab CI, GitHub Actions, Python, Java (Groovy), Shell, Terraform, Nginx, OpenVPN, Teleport, Cloudflare, NewRelic, Datadog, Prometheus, Grafana
+## Technical Skills
+
+**Cloud Platforms:** AWS (EC2, ECR, IAM, VPC, LB, Route53), GCP (CE, GKE, Cloud SQL, Cloud Logging, Cloud Monitoring, IAM, VPC, Artifact Registry, LB, Cloud DNS, Cloud Storage, Cloud Run, Secret Manager)
+
+**Container & Orchestration:** Docker, Kubernetes, Helm, Kustomize, Harbor, JFrog Artifactory
+
+**CI/CD & Automation:** Jenkins, GitLab CI, GitHub Actions, ArgoCD
+
+**AI & Agentic Tools:** Claude Code, AI Agent Development, MCP (Model Context Protocol), Agentic Workflow Design, Prompt Engineering
+
+**Languages & Scripting:** Python, Go, Java (Groovy), Shell/Bash
+
+**Infrastructure as Code:** Terraform
+
+**Monitoring & Observability:** NewRelic, Datadog, Prometheus, Grafana
+
+**Networking & Security:** Nginx, OpenVPN, Teleport, Cloudflare
 
 
 ## Professional Experience
@@ -35,7 +48,11 @@ AWS (EC2, ECR, IAM, VPC, LB, Route53), GCP (CE, GKE, Cloud SQL, Cloud Logging, C
 
 __Software Engineer - CI/CD Platform__, Rakuten, Japan
 
-Part of Rakuten OneCloud Initiative. Designing, maintaining, and automating large-scale CI/CD infrastructure on Kubernetes to support enterprise-wide development. Responsible for CI/CD-as-a-Service, Container Registry (Harbor), and Artifact Registry (JFrog Artifactory). Focused on reliability, scalability, and developer enablement through automation, backend development (Go/Python), and platform modernization.
+Part of Rakuten OneCloud Initiative. Designing, maintaining, and automating large-scale CI/CD infrastructure on Kubernetes to support enterprise-wide development. Responsible for CI/CD-as-a-Service, Container Registry (Harbor), and Artifact Registry (JFrog Artifactory).
+- Developed Claude Code Plugin (Skills + Sub-Agent) to auto-generate compliance-ready operation documents, reducing document creation time by over **80%** with **100%** holistic compliance checks per cycle.
+- Reduced cyber incident investigation time from **24 hours to under 2 hours** by building AI-powered analysis pipelines for multi-department incident decision-making.
+- Designed and maintained CI/CD-as-a-Service platform on Kubernetes serving multiple business units, including Container Registry and Artifact Registry.
+- Built backend automation tooling in **Go** and **Python** for platform modernization and developer enablement.
 
 
 `Jan 2024 - Sep 2025`
@@ -46,7 +63,7 @@ Government Technology (GovTech) Procurement is part of Telkom Indonesia (IDX: TL
 - Lead and execute infrastructure refactoring from the GCP Cloud Run workload to the GKE Kubernetes cluster. Decrease production costs by more than **90%** daily and save over **$150,000** monthly.
 - Transform the nation-level Mail Services from a monolithic VM to a scalable and cost-effective Kubernetes deployment. **Increase service scaling performance by six times**, making it more reliable.
 - Implement fully audited and approval-based access control for over **500** cloud resources in GovTech Procurement using Teleport.
-- Research and implement (POC) independently or in groups for tooling to improve GovTech Procurement mankind productivity, such as Goldilocks, External Secrets Operator, Kafka on Kubernetes, Pomerium on GKE, and many more.
+- Researched and implemented (POC) tooling to improve GovTech Procurement team productivity, such as Goldilocks, External Secrets Operator, Kafka on Kubernetes, Pomerium on GKE, and many more.
  
  
 <!-- <div style="page-break-after: always;"></div> -->
@@ -59,8 +76,8 @@ __DevOps Engineer__, Gojek - GoTo Financial (GTF), Indonesia
 Maintained **100+** backend services in multi-cloud **Kubernetes** cluster, **Gitlab CI** pipeline & runners to fulfill 24/7 business needs.
 - **Decreased AWS infra cost** for application development by **up to 50% hourly** by planning and executing **cloud cost-saving** activities based on resource utilization metrics.
 - **Provided 100% configuration visibility** to prevent backend misconfiguration cases by improving GTF product-level (Selly Keyboard) backend release processes using open-source secret and configuration management (**Vault**). 
-- Create **transformation for 400+** existing production-level **AWS** resources to Code-based configuration and integrate them with cloud cost analysis.
-- Optimize the **GCP Cloud SQL** Migration Process from **2 Hours to 15 minutes** by implementing the CDC mechanism using **GCP DMS**
+- Created **transformation for 400+** existing production-level **AWS** resources to Code-based configuration and integrated them with cloud cost analysis.
+- Optimized the **GCP Cloud SQL** Migration Process from **2 Hours to 15 minutes** by implementing the CDC mechanism using **GCP DMS**.
 
 
 
@@ -79,7 +96,7 @@ Maintain the Jenkins pipeline and internal tools in the Kubernetes Cluster, whic
 __Data Center Staff__, Bina Nusantara - IT Division, Indonesia
 
 
-Work closely with the Data Center & IT Infrastructure group to Help Binus IT Operational Processes.
+Worked closely with the Data Center & IT Infrastructure group to support Binus IT Operational Processes.
 - Pioneer of QR-based event registration system for Binus University, [<u>used on national-scale event</u>](https://binus.ac.id/2019/01/sarasehan-dialog-nasional-bersama-menteri-ristekdikti-republik-nasional/). Reduced manual checking time by 10x from minutes to QR scan and go in seconds. Develop using **PHP Laravel, SQL Server, and Windows Server 2016**. 
 - Create tools & scripts to automate data analyst reporting processes. Provided automation for student document reports to the university and government. Provide several tools/scripts using **PHP Laravel, Windows BAT Script, Pentaho, and SQL Server**.
 - Developed WiFi debugging tools to help the network-infra team when doing on-site WiFi connection troubleshooting. Simplified debug data gathering into a one-click process. Develop using **C#, PHP, and Windows Server 2016**.
@@ -133,6 +150,8 @@ Take Business Intelligence minor, Graduate in the 7th semester. Final GPA: 3.8 o
 - Reach 20000+ Visitor (per 2026/02/14) under CodeX publication
 
 
+
+
 ### Training & Certifications
 
 `Jan 2023`
@@ -150,10 +169,20 @@ Take Business Intelligence minor, Graduate in the 7th semester. Final GPA: 3.8 o
 
 ### Latest Professional Projects
 
+`Oct 2025 - Present`
+**Compliance Document Automation Plugin (Claude Code)**, Rakuten
+
+Developed Claude Code Plugin consisting of Skills and Sub-Agent to auto-generate compliance-ready operation documents for CI/CD operations. Reduced document creation time by over **80%**, with **100%** holistic compliance checks on every document creation and update cycle. Previously a fully manual process requiring cross-team coordination.
+
+`2024 - Present`
+**Open Source CV with AI-Powered Evaluation Framework**, Personal — [github.com/doctor500/cv](https://github.com/doctor500/cv)
+
+Built an open-source CV generation system using Jekyll and GitHub Actions, expanded with AI Agent capabilities: automated CV evaluation workflows (quick + deep dive), a scoring framework across **6** categories and **10** quality standards, and AI-powered content improvement pipelines. Integrated Claude Code, MCP, and agentic workflow orchestration for infrastructure-as-code operations.
+
 `May 2024 - Dec 2024`
 **SPSE Migration from Bare Metal to Government-certified Cloud**, GovTech Procurement
 
-Execute and supervise the Automation process of the SPSE migration process. Assess, troubleshoot, and design for implementing automation at the infrastructure level. We're currently moving more than 600 SPSE services to a Government-certified cloud. Provide them with better security and reliable infrastructure.
+Executed and supervised the automation of the SPSE migration process. Assessed, troubleshot, and designed infrastructure-level automation for moving more than **600** SPSE services to a Government-certified cloud, providing improved security and reliable infrastructure.
 
 `Aug 2022 - Sep 2022`
 **Config & Secret Management for Selly.id using Vault Cluster**, Gojek - GoTo Financial (GTF)
@@ -177,6 +206,7 @@ The primary goal is to create a data pipeline from operational data to reporting
 __Indonesian__ - Native proficiency
 
 __English__ - Business level proficiency
+
 
 
 <!-- ### Footer
