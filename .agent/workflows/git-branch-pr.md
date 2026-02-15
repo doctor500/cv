@@ -373,24 +373,32 @@ Format: `<type>/<description>`
 
 ---
 
-## Protected Branches
+## Branch Architecture
 
-| Branch | Purpose | Protection |
-|--------|---------|------------|
-| `page-release` | GitHub Pages deployment | No direct commits |
-| `main` | Primary development, staging | No direct commits |
-| Feature branches | Active development | Free to commit |
+> [!CAUTION]
+> **`main` is the upstream template for fork users.** Never sync personal CV content (`index.md`) from `page-release` to `main`. Doing so introduces breaking merge conflicts for every fork user.
 
----
+| Branch | Purpose | `index.md` Contains | Protection |
+|--------|---------|---------------------|------------|
+| `main` | Upstream template for forks | Example/dummy CV ("Alex Johnson") | No direct commits, no full page-release sync |
+| `page-release` | Personal GitHub Pages deployment | Personal CV data | No direct commits |
+| Feature branches | Active development | Either | Free to commit |
 
-## Deployment Flow
+### Content Flow
 
 ```
-feature-branch → PR → page-release → PR → main
+feature-branch → PR → page-release    (CV content changes)
+feature-branch → PR → main            (template/infrastructure changes)
+page-release → SELECTIVE sync → main   (infrastructure only, never index.md)
 ```
 
-1. **Feature branches** → merge into `page-release` for deployment
-2. **page-release** → merge into `main` to keep main in sync
+### Sync Rules (page-release → main)
+
+| Sync? | Files |
+|-------|-------|
+| ✅ Always sync | `README.md`, `.agent/`, `media/`, `_layouts/`, `_config.yml`, `.github/`, `docker-compose.yml`, `Gemfile`, `.gitignore` |
+| ❌ Never sync | `index.md`, `docs/evaluation/` |
+| ⚠️ Case-by-case | `docs/governance.md`, other docs |
 
 ---
 
@@ -477,6 +485,38 @@ git push origin feat/my-feature
 
 ---
 
+## Step 11: Sync Infrastructure to Main (File-Specific)
+
+> [!WARNING]
+> **Never do a full branch merge from `page-release` → `main`!**
+> Use this file-specific approach instead.
+
+When infrastructure changes on `page-release` need to reach `main`:
+
+```bash
+# 1. Create sync branch from main
+git checkout main && git pull origin main
+git checkout -b docs/sync-infra-to-main
+
+# 2. Copy ONLY allowed files from page-release
+git checkout page-release -- README.md .agent/ media/ _layouts/ _config.yml .github/ docker-compose.yml Gemfile .gitignore
+
+# 3. Verify index.md is NOT staged
+git diff --cached --name-only | grep -q '^index.md$' && echo '❌ STOP: index.md detected!' || echo '✅ Safe to proceed'
+
+# 4. Commit, push, and PR to main
+git commit -m "sync: infrastructure files from page-release"
+git push origin docs/sync-infra-to-main
+gh pr create --base main --title "sync: infrastructure from page-release"
+```
+
+**Pre-merge checklist:**
+- [ ] `index.md` is NOT in the changed files list
+- [ ] `docs/evaluation/` files are NOT included
+- [ ] PR description lists which files are being synced
+
+---
+
 ## AI Agent Guidelines
 
 When using this workflow as an AI agent:
@@ -489,12 +529,16 @@ When using this workflow as an AI agent:
    - Skip redundant prompts (single file staging, fresh branch PR check)
    - Use `gh pr merge --squash --delete-branch` for clean merges
    - Provide clear branch and commit suggestions
+   - **Use Step 11 (file-specific sync) for page-release → main syncs**
+   - **Verify `index.md` is never included in PRs targeting `main`**
 
 2. ❌ **DON'T:**
    - Never auto-commit without user permission
    - Never commit directly to main or page-release
    - Never skip the PR process
    - Never force push without warning
+   - **Never do a full branch merge from page-release → main**
+   - **Never sync `index.md` or `docs/evaluation/` to main**
 
 ---
 
