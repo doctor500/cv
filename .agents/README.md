@@ -5,7 +5,7 @@ This directory contains AI agent configurations, workflows, and project context 
 ## 📁 Directory Structure
 
 ```
-.agent/
+.agents/
 ├── references/
 │   ├── cv-construction-guide.md     # CV writing best practices & ATS tips
 │   ├── cv-evaluation-framework.md   # 6-category scoring framework
@@ -219,7 +219,7 @@ Standardized procedure for comparing workflow performance. Provides methodology,
 
 When creating workflows:
 
-1. Create in `.agent/workflows/[name].md`
+1. Create in `.agents/workflows/[name].md`
 2. Add YAML frontmatter:
    ```yaml
    ---

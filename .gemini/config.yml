@@ -1,0 +1,46 @@
+# Gemini CLI Configuration for CV Project
+# Registers workflows from .agent/workflows/ as custom commands
+
+workflows:
+  # Add new section to CV (updates index.md)
+  add-cv-section:
+    path: .agent/workflows/add-cv-section.md
+    description: Add new section to CV (updates index.md)
+    enabled: true
+  
+  # Build CV from data sources
+  build-cv-wizard:
+    path: .agent/workflows/build-cv-wizard.md
+    description: Build CV from user-provided data sources (links, files, manual input)
+    enabled: true
+  
+  # Evaluate CV with scoring framework
+  evaluate-cv:
+    path: .agent/workflows/evaluate-cv.md
+    description: Evaluate and critique CV with scoring framework and optional web dashboard
+    enabled: true
+  
+  # Generate new CSS template
+  generate-template:
+    path: .agent/workflows/generate-template.md
+    description: Generate new CV template (CSS files only)
+    enabled: true
+  
+  # Git branch and PR workflow
+  git-branch-pr:
+    path: .agent/workflows/git-branch-pr.md
+    description: Create branch and PR workflow (prevents direct commits to main/page-release)
+    enabled: true
+
+# Project metadata
+project:
+  name: CV Project
+  version: 1.0.0
+  repository: https://github.com/doctor500/cv
+
+# AI behavior settings
+ai:
+  auto_commit: false  # Never auto-commit without user approval
+  protected_branches:
+    - main
+    - page-release

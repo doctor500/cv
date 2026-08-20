@@ -20,7 +20,7 @@ description: Quick CV evaluation with scoring framework (lightweight, ~2K-4K out
 
 ## Important Notes
 - **Evaluation target:** Evaluates content in `index.md` (single source of truth)
-- **Framework reference:** See `.agent/references/cv-evaluation-framework.md` for the complete scoring rubric and criteria
+- **Framework reference:** See `.agents/references/cv-evaluation-framework.md` for the complete scoring rubric and criteria
 - **Output formats:** Narrative analysis, score card, and optional HTML dashboard
 
 ---
@@ -93,7 +93,7 @@ Proceeding with evaluation...
 
 ### Step 3: Analyze with Framework
 
-Load and apply the evaluation framework from `.agent/references/cv-evaluation-framework.md`.
+Load and apply the evaluation framework from `.agents/references/cv-evaluation-framework.md`.
 
 **For each of the 6 categories, evaluate and score 1-10:**
 

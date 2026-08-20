@@ -263,7 +263,7 @@ Your CV content lives in **[`index.md`](./index.md)** - this is the single sourc
 7. **Languages** - Language proficiency
 
 > [!TIP]
-> **Pro tip:** Use the `/add-cv-section` custom command (if you have the `.agent/workflows` setup) to interactively add new sections with proper formatting!
+> **Pro tip:** Use the `/add-cv-section` custom command (if you have the `.agents/workflows` setup) to interactively add new sections with proper formatting!
 
 ---
 
@@ -434,16 +434,16 @@ Generate PDFs that include your phone number without publishing it publicly.
 3. Create/update a pull request
 4. Merge PR after review
 
-For details, see [`.agent/workflows/git-branch-pr.md`](./.agent/workflows/git-branch-pr.md).
+For details, see [`.agents/workflows/git-branch-pr.md`](./.agents/workflows/git-branch-pr.md).
 
 ---
 
 ## 🤖 AI Agent Workflows
 
-This repository includes pre-built workflows in `.agent/workflows/` designed for any AI agent (Gemini, Claude, ChatGPT, etc.) to help you manage your CV more efficiently.
+This repository includes pre-built workflows in `.agents/workflows/` designed for any AI agent (Gemini, Claude, ChatGPT, etc.) to help you manage your CV more efficiently.
 
 > [!TIP]
-> **Fork users:** The `.agent/` folder is included when you fork! Any AI agent with file system access can use these workflows.
+> **Fork users:** The `.agents/` folder is included when you fork! Any AI agent with file system access can use these workflows.
 
 ### Available Workflows
 
@@ -460,15 +460,15 @@ This repository includes pre-built workflows in `.agent/workflows/` designed for
 
 | File | Used By | Content |
 |------|---------|--------|
-| [`cv-construction-guide.md`](./.agent/references/cv-construction-guide.md) | `/build-cv-wizard` | Writing best practices, ATS tips |
-| [`cv-evaluation-framework.md`](./.agent/references/cv-evaluation-framework.md) | `/evaluate-cv-quick`, `/evaluate-cv-deepdive` | 6-category scoring rubric, 10 insight quality standards |
-| [`benchmark-testing-framework.md`](./.agent/references/benchmark-testing-framework.md) | `/evaluate-cv-deepdive` | Benchmark testing criteria and validation patterns |
+| [`cv-construction-guide.md`](./.agents/references/cv-construction-guide.md) | `/build-cv-wizard` | Writing best practices, ATS tips |
+| [`cv-evaluation-framework.md`](./.agents/references/cv-evaluation-framework.md) | `/evaluate-cv-quick`, `/evaluate-cv-deepdive` | 6-category scoring rubric, 10 insight quality standards |
+| [`benchmark-testing-framework.md`](./.agents/references/benchmark-testing-framework.md) | `/evaluate-cv-deepdive` | Benchmark testing criteria and validation patterns |
 
 ### Technical Documentation
 
-- **[`.agent/README.md`](./.agent/README.md)** — Full workflow documentation and usage details
-- **[`.agent/PROJECT_CONTEXT.md`](./.agent/PROJECT_CONTEXT.md)** — Complete technical architecture
-- **[`.agent/QUICK_REFERENCE.md`](./.agent/QUICK_REFERENCE.md)** — Quick command reference
+- **[`.agents/README.md`](./.agents/README.md)** — Full workflow documentation and usage details
+- **[`.agents/PROJECT_CONTEXT.md`](./.agents/PROJECT_CONTEXT.md)** — Complete technical architecture
+- **[`.agents/QUICK_REFERENCE.md`](./.agents/QUICK_REFERENCE.md)** — Quick command reference
 
 <details>
 <summary><strong>💬 Example Interactions</strong></summary>
@@ -515,7 +515,7 @@ I believe this project can always improve! Contributions are welcome and appreci
 
 ### 📖 Before Contributing
 
-- Check [`.agent/PROJECT_CONTEXT.md`](./.agent/PROJECT_CONTEXT.md) for technical details
+- Check [`.agents/PROJECT_CONTEXT.md`](./.agents/PROJECT_CONTEXT.md) for technical details
 - Review existing templates in `media/` for style guidelines
 - Test your changes locally before submitting
 

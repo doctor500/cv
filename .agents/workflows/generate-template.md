@@ -214,7 +214,7 @@ style: $TEMPLATE_NAME
 
 ### Step 12: Finalize Changes (Git Branch & PR)
 
-Follow `.agent/workflows/git-branch-pr.md` to commit and create a PR.
+Follow `.agents/workflows/git-branch-pr.md` to commit and create a PR.
 Suggested branch name: `feat/add-template-$TEMPLATE_NAME`
 
 ---

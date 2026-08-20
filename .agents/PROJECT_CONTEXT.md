@@ -23,7 +23,7 @@ A **markdown-based CV generator** using Jekyll static site generator, deployed v
 
 ```
 cv/
-├── .agent/
+├── .agents/
 │   ├── references/
 │   │   ├── benchmark-testing-framework.md # Standardized workflow benchmarking
 │   │   ├── cv-construction-guide.md   # CV writing best practices & ATS tips
@@ -390,7 +390,7 @@ The profile contains valuable information that can be extracted:
 - Section ordering customization
 - Automatic syntax validation and render testing
 - Iteration support for refinements
-- References `.agent/references/cv-construction-guide.md` for best practices
+- References `.agents/references/cv-construction-guide.md` for best practices
 
 **Supported Sources:** LinkedIn profiles, portfolio sites, existing resumes, manual input
 
@@ -408,7 +408,7 @@ The profile contains valuable information that can be extracted:
 - Dual output: narrative analysis + score card
 - Optional job-targeted evaluation with keyword matching
 - Optional interactive HTML dashboard (neo-brutalism theme)
-- References `.agent/references/cv-evaluation-framework.md` for scoring rubric
+- References `.agents/references/cv-evaluation-framework.md` for scoring rubric
 
 #### Deep Dive Mode
 **Command:** `/evaluate-cv-deepdive`  
@@ -430,7 +430,7 @@ The profile contains valuable information that can be extracted:
 ---
 
 ### 6. Benchmark Testing Framework
-**Reference:** `.agent/references/benchmark-testing-framework.md`  
+**Reference:** `.agents/references/benchmark-testing-framework.md`  
 **Purpose:** Standardized procedure for comparing workflow performance
 
 **When to use:**

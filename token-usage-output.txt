@@ -1,0 +1,185 @@
+═══════════════════════════════════════════════════════════════════════════
+Token Analysis: Session ses_265ac8e48ffe2HGTqWgWr6yIu1
+Model: gpt-5.4
+═══════════════════════════════════════════════════════════════════════════
+
+WARNINGS
+───────────────────────────────────────────────────
+- OpenCode export failed for session ses_265ac8e48ffe2HGTqWgWr6yIu1. Context sections were skipped: JSON Parse error: Unterminated string
+
+TOKEN BREAKDOWN BY CATEGORY
+─────────────────────────────────────────────────────────────────────────
+Estimated using tokenizer analysis of message content:
+
+Input Categories:
+  SYSTEM    ████████████░░░░░░░░░░░░░░░░░░    38.8% (49,619)
+  USER      ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░      1.0% (1,339)
+  TOOLS     ██████████████████░░░░░░░░░░░░    60.1% (76,768)
+
+  Subtotal: 127,726 estimated input tokens
+  Note: inferred system/overhead values are heuristic estimates from API telemetry.
+
+Output Categories:
+  ASSISTANT ██████████████████████░░░░░░░░     72.6% (8,612)
+  REASONING ████████░░░░░░░░░░░░░░░░░░░░░░     27.4% (3,254)
+
+  Subtotal: 11,866 estimated output tokens
+
+Local Total: 139,592 tokens (estimated)
+
+TOOL USAGE BREAKDOWN
+─────────────────────────────────────────────────────────────────────────
+websearch            ████████████░░░░░░░░░░░░░░░░░░    39.2% (30,063)    5x
+task                 ███████░░░░░░░░░░░░░░░░░░░░░░░    24.0% (18,420)   24x
+read                 ██████░░░░░░░░░░░░░░░░░░░░░░░░    18.5% (14,179)   31x
+skill                ███░░░░░░░░░░░░░░░░░░░░░░░░░░░     10.0% (7,703)    1x
+bash                 █░░░░░░░░░░░░░░░░░░░░░░░░░░░░░      3.9% (3,001)   38x
+grep                 █░░░░░░░░░░░░░░░░░░░░░░░░░░░░░      2.1% (1,641)    3x
+todowrite            █░░░░░░░░░░░░░░░░░░░░░░░░░░░░░      2.1% (1,640)   12x
+apply_patch          ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░         0.1% (93)    6x
+glob                 ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░         0.0% (28)    5x
+
+TOP CONTRIBUTORS
+─────────────────────────────────────────────────────────────────────────
+• System (inferred from API telemetry) 49,619 tokens (35.5%)
+• websearch                    30,063 tokens (21.5%)
+• task                         18,420 tokens (13.2%)
+• read                         14,179 tokens (10.2%)
+• skill                        7,703 tokens (5.5%)
+
+═══════════════════════════════════════════════════════════════════════════
+MOST RECENT API CALL
+─────────────────────────────────────────────────────────────────────────
+
+Raw telemetry from last API response:
+  Input (fresh):            238 tokens
+  Cache read:           127,488 tokens
+  Output:                   299 tokens
+  Provider total:       128,025 tokens
+  ─────────────────────────────────────
+  Total:                128,025 tokens
+
+═══════════════════════════════════════════════════════════════════════════
+SESSION TOTALS (All 66 API calls)
+─────────────────────────────────────────────────────────────────────────
+
+Assistant messages observed: 71 (structural count)
+
+Total tokens processed across the entire session (for cost calculation):
+
+  Input tokens:         899,339 (fresh tokens across all calls)
+  Cache read:         5,752,192 (cached tokens across all calls)
+  Cache write:                0 (tokens written to cache)
+  Output tokens:         36,689 (all model responses)
+  Reasoning tokens:       7,117 (thinking/reasoning)
+  ─────────────────────────────────────
+  Session Total:      6,695,337 tokens (for billing)
+  Cache read calls:          59 / 66
+  Cache write calls:          0 / 66
+
+═══════════════════════════════════════════════════════════════════════════
+ESTIMATED SESSION COST (API Key Pricing)
+─────────────────────────────────────────────────────────────────────────
+
+You appear to be on a subscription plan (API cost is $0).
+Here's what this session would cost with direct API access:
+
+  Input tokens:         899,339 × $2.50/M  = $2.2483
+  Output tokens:         43,806 × $15.00/M  = $0.6571
+  Cache read:         5,752,192 × $0.25/M  = $1.4380
+─────────────────────────────────────────────────────────────────────────
+ESTIMATED TOTAL: $4.3435
+
+Note: This estimate uses standard API pricing from models.json.
+Actual API costs may vary based on provider and context size.
+
+══════════════════════════════════════════════════════════════════════════
+AVAILABLE SKILLS (always-available context)
+─────────────────────────────────────────────────────────────────────────
+
+These skills were recovered from the skill tool metadata available to this session.
+
+  Skill                  Description                                   Tokens
+  ───────────────────────────────────────────────────────────────────────
+  agent-browser          Browser automation CLI for AI agents. Use wh…    ~110
+  ───────────────────────────────────────────────────────────────────────
+  Total: ~110 tokens (1 skills available)
+
+  Note: Full skill tool description is ~452 tokens (includes boilerplate).
+
+═══════════════════════════════════════════════════════════════════════════
+AVAILABLE SUBAGENTS (in task tool definition)
+─────────────────────────────────────────────────────────────────────────
+
+These subagents are embedded in the task tool description and consume tokens on every API call.
+
+  Subagent               Description                                        Tokens
+  ───────────────────────────────────────────────────────────────────────
+  explore                Fast agent specialized for exploring codebases. U…    ~101
+  general                General-purpose agent for researching complex que…     ~28
+  opusgptplan            Claude Opus 4.6 planning mode with GPT-5.4 as the…     ~28
+  qwen3coder             Qwen3-Coder-30B-A3B via SiliconFlow for dedicated…     ~27
+  glmgptplan             GLM 5.1 planning mode with GPT-5.4 as the intende…     ~26
+  stepflash              Step-3.5-Flash assistant via SiliconFlow for quic…     ~20
+  glm-or                 OpenRouter fallback for GLM tasks when SiliconFlo…     ~16
+  sf                     SiliconFlow GLM assistant for step-by-step analys…     ~13
+  ───────────────────────────────────────────────────────────────────────
+  Total: ~259 tokens (8 subagents available)
+
+  Note: Full task tool description is ~1,101 tokens (includes instructions/examples).
+
+═══════════════════════════════════════════════════════════════════════════
+LOADED SKILLS (on-demand content)
+─────────────────────────────────────────────────────────────────────────
+
+Skills loaded during this session via the skill tool.
+
+  Skill                  Message #     Tokens     Calls
+  ─────────────────────────────────────────────────────
+  agent-browser                 #38      7,703        1x
+  ─────────────────────────────────────────────────────
+  Total: 7,703 tokens (1 skill loaded)
+
+  Note: Loaded skill content stays in context (protected from pruning).
+
+═══════════════════════════════════════════════════════════════════════════
+SUBAGENT COSTS (23 child sessions, 114 API calls)
+─────────────────────────────────────────────────────────────────────────
+
+  explore                      $0.0644  (7,989 tokens, 1 calls)
+  explore                      $0.0051  (7,404 tokens, 1 calls)
+  explore                      $0.0000  (0 tokens, 0 calls)
+  opusgptplan                  $0.0000  (0 tokens, 0 calls)
+  opusgptplan                  $0.2296  (111,105 tokens, 4 calls)
+  stepflash                    $0.0040  (38,956 tokens, 2 calls)
+  qwen3coder                   $0.0000  (0 tokens, 0 calls)
+  stepflash                    $0.0040  (38,997 tokens, 2 calls)
+  qwen3coder                   $0.0114  (158,838 tokens, 4 calls)
+  stepflash                    $0.0076  (72,181 tokens, 3 calls)
+  qwen3coder                   $0.0369  (521,404 tokens, 14 calls)
+  stepflash                    $0.0073  (70,954 tokens, 3 calls)
+  qwen3coder                   $0.0167  (237,075 tokens, 11 calls)
+  stepflash                    $0.0116  (112,430 tokens, 5 calls)
+  stepflash                    $0.0107  (103,328 tokens, 5 calls)
+  qwen3coder                   $0.0213  (300,435 tokens, 11 calls)
+  qwen3coder                   $0.0055  (77,632 tokens, 4 calls)
+  opusgptplan                  $1.2042  (285,190 tokens, 7 calls)
+  qwen3coder                   $0.0427  (594,267 tokens, 18 calls)
+  stepflash                    $0.0046  (42,732 tokens, 2 calls)
+  stepflash                    $0.0234  (229,854 tokens, 6 calls)
+  glmgptplan                   $0.0402  (227,714 tokens, 6 calls)
+  qwen3coder                   $0.0119  (152,301 tokens, 5 calls)
+─────────────────────────────────────────────────────────────────────────
+Subagent Total:            $1.7633  (3,390,786 tokens, 114 calls)
+
+═══════════════════════════════════════════════════════════════════════════
+SUMMARY
+─────────────────────────────────────────────────────────────────────────
+
+                          Cost        Tokens          API Calls
+  Main session:      $    4.3435     6,695,337            66
+  Subagents:         $    1.7633     3,390,786           114
+─────────────────────────────────────────────────────────────────────────
+  TOTAL:             $    6.1068    10,086,123           180
+
+═══════════════════════════════════════════════════════════════════════════

@@ -8,7 +8,7 @@ description: Build CV from user-provided data sources (links, files, manual inpu
 
 ## Important Notes
 - **Single source:** Only `index.md` contains CV content
-- **Reference guide:** See `.agent/references/cv-construction-guide.md` for detailed CV writing best practices, ATS optimization, and section-specific tips
+- **Reference guide:** See `.agents/references/cv-construction-guide.md` for detailed CV writing best practices, ATS optimization, and section-specific tips
 - **Direct editing:** This workflow generates/overwrites `index.md` content directly
 
 ---
@@ -202,7 +202,7 @@ Build the complete `index.md` using the project's markdown syntax patterns.
 **Format patterns:** Use the templates documented in `QUICK_REFERENCE.md` (CV Formatting section).
 Key rules: dates in backticks, positions in `__underline__`, metrics in **bold**, page breaks with `<div style="page-break-after: always;"></div>`.
 
-**Reference:** See `.agent/references/cv-construction-guide.md` for achievement quantification patterns and ATS optimization guidelines.
+**Reference:** See `.agents/references/cv-construction-guide.md` for achievement quantification patterns and ATS optimization guidelines.
 
 ---
 
@@ -341,7 +341,7 @@ After changes, re-run Steps 7-8 (validate + render) before finalizing.
 
 ### Step 10: Finalize (Git Branch & PR)
 
-Follow `.agent/workflows/git-branch-pr.md` to commit and create a PR.
+Follow `.agents/workflows/git-branch-pr.md` to commit and create a PR.
 Suggested branch name: `feat/build-cv` or `feat/cv-rebuild`
 
 ---

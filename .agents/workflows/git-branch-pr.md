@@ -396,7 +396,7 @@ page-release → SELECTIVE sync → main   (infrastructure only, never index.md)
 
 | Sync? | Files |
 |-------|-------|
-| ✅ Always sync | `README.md`, `.agent/`, `media/`, `_layouts/`, `_config.yml`, `.github/`, `docker-compose.yml`, `Gemfile`, `.gitignore` |
+| ✅ Always sync | `README.md`, `.agents/`, `media/`, `_layouts/`, `_config.yml`, `.github/`, `docker-compose.yml`, `Gemfile`, `.gitignore` |
 | ❌ Never sync | `index.md`, `docs/evaluation/` |
 | ⚠️ Case-by-case | `docs/governance.md`, other docs |
 
@@ -499,7 +499,7 @@ git checkout main && git pull origin main
 git checkout -b docs/sync-infra-to-main
 
 # 2. Copy ONLY allowed files from page-release
-git checkout page-release -- README.md .agent/ media/ _layouts/ _config.yml .github/ docker-compose.yml Gemfile .gitignore
+git checkout page-release -- README.md .agents/ media/ _layouts/ _config.yml .github/ docker-compose.yml Gemfile .gitignore
 
 # 3. Verify index.md is NOT staged
 git diff --cached --name-only | grep -q '^index.md$' && echo '❌ STOP: index.md detected!' || echo '✅ Safe to proceed'
