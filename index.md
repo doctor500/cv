@@ -18,7 +18,7 @@ Cloud Infrastructure, DevOps & Agentic AI Engineer.
 
 David Layardi is an infrastructure and platform engineer with nearly a decade of experience building scalable cloud systems across government (600+ apps), fintech (100+ services), and enterprise. He has delivered infrastructure cost reductions exceeding 90% and $150K monthly savings through Kubernetes migration, automation, and cloud refactoring on GCP and AWS.
 
-Currently pioneering Agentic AI for infrastructure operations at Rakuten, he develops Claude Code plugins, AI Agent contexts, and autonomous analytical tooling that reduced cyber incident investigation from 24 hours to under 2 hours.
+Now a Site Reliability Engineer at Woven by Toyota, he previously pioneered Agentic AI for infrastructure operations at Rakuten — developing Claude Code plugins, AI Agent contexts, and autonomous analytical tooling that reduced cyber incident investigation from 24 hours to under 2 hours.
 
 He also builds open-source AI-governed infrastructure projects, including automated server provisioning with Kubernetes and AI Agent governance, and a CV evaluation framework with AI-powered scoring pipelines. These projects combine deep Kubernetes, Terraform, and DevOps expertise with agentic workflow orchestration for infrastructure-as-code operations.
 
@@ -44,7 +44,12 @@ He also builds open-source AI-governed infrastructure projects, including automa
 
 ## Professional Experience
 
-`Oct 2025 - Present`
+`Sep 2026 - Present`
+
+__Site Reliability Engineer__, Woven by Toyota, Tokyo, Japan
+
+
+`Oct 2025 - Aug 2026`
 
 __Software Engineer - CI/CD Platform__, Rakuten, Japan
 
@@ -165,7 +170,7 @@ Completed Business Intelligence minor, graduated in the 7th semester. Final GPA:
 
 ### Latest Professional Projects
 
-`Oct 2025 - Present`
+`Oct 2025 - Aug 2026`
 **Compliance Document Automation Plugin (Claude Code)**, Rakuten
 
 Developed Claude Code Plugin consisting of Skills and Sub-Agent to auto-generate compliance-ready operation documents for CI/CD operations. Reduced document creation time by over **80%**, with **100%** holistic compliance checks on every document creation and update cycle. Previously a fully manual process requiring cross-team coordination.
