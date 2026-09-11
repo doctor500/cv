@@ -8,35 +8,6 @@ docs/evaluation/
 # Local agent state — never commit. Holds a workspace token.
 .claude/
 
-# ---------------------------------------------------------------------------
-# This is a PUBLIC repo. The rules below keep working material out of it.
-# ---------------------------------------------------------------------------
-
-# Scratch and prep directories
-.scratch/
-output/
-enexia/
-
-# Job-application and recruiting notes
-*-jd-brief.md
-airwallex-*.md
-enexia-*.md
-thecoo-*.md
-
-# Prompt dumps and usage logs
-prompt.md
-prompt_template.md
-token-usage-output.txt
-
-# Generated CV PDFs — publish-pdf.yml attaches these to a Release, never commits
-*.pdf
-
-# Root-level screenshots and images (media/ is unaffected)
-/Screenshot_*
-/*.jpg
-/*.jpeg
-/*.png
-
 # Docker-based tooling only; this repo has no package.json
 node_modules/
 
