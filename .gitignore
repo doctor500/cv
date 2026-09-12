@@ -1,3 +1,15 @@
-Gemfile.lock
+# Jekyll build output and lockfile
 _site/
+Gemfile.lock
+
+# Governance docs kept out of the public template
 docs/evaluation/
+
+# Local agent state — never commit. Holds a workspace token.
+.claude/
+
+# Docker-based tooling only; this repo has no package.json
+node_modules/
+
+# OS cruft
+.DS_Store
