@@ -387,10 +387,16 @@ Format: `<type>/<description>`
 ### Content Flow
 
 ```
-feature-branch → PR → page-release    (CV content changes)
-feature-branch → PR → main            (template/infrastructure changes)
-page-release → SELECTIVE sync → main   (infrastructure only, never index.md)
+feature-branch → PR → page-release     (CV content changes)
+feature-branch → PR → main             (template/infrastructure changes)
+page-release → SELECTIVE sync → main    (infrastructure only, never index.md — Step 11)
+main → GUARDED merge → page-release     (infrastructure only, index.md restored — Step 12)
 ```
+
+> [!IMPORTANT]
+> **The two sync directions are not symmetric.**
+> `page-release → main` is file-specific and must never be a full merge, because `page-release` holds personal CV history that would leak into the public fork template.
+> `main → page-release` is a **guarded merge** (Step 12), merged as a **merge commit**, because there `main` is the upstream and sharing commit ancestry is the goal.
 
 ### Sync Rules (page-release → main)
 
@@ -399,6 +405,11 @@ page-release → SELECTIVE sync → main   (infrastructure only, never index.md)
 | ✅ Always sync | `README.md`, `.agent/`, `media/`, `_layouts/`, `_config.yml`, `.github/`, `docker-compose.yml`, `Gemfile`, `.gitignore` |
 | ❌ Never sync | `index.md`, `docs/evaluation/` |
 | ⚠️ Case-by-case | `docs/governance.md`, other docs |
+
+### Sync Rules (main → page-release)
+
+Guarded merge — see Step 12. Allowed to move: infrastructure (`.github/`, `.gitignore`, `README.md`, `.agent/`, `media/`, `_layouts/`, `_config.yml`, `docker-compose.yml`, `Gemfile`).
+Restored to `page-release` after the merge: `index.md` (always), `docs/evaluation/` (when tracked).
 
 ---
 
@@ -489,7 +500,7 @@ git push origin feat/my-feature
 
 > [!WARNING]
 > **Never do a full branch merge from `page-release` → `main`!**
-> Use this file-specific approach instead.
+> Use this file-specific approach instead. This restriction is unchanged — it applies to *this direction only*. For the reverse direction, `main → page-release`, use the guarded merge in Step 12.
 
 When infrastructure changes on `page-release` need to reach `main`:
 
@@ -517,6 +528,54 @@ gh pr create --base main --title "sync: infrastructure from page-release"
 
 ---
 
+## Step 12: Sync Infrastructure to page-release (Guarded Merge)
+
+> [!IMPORTANT]
+> **Merge this PR as a MERGE COMMIT — never squash.**
+> The point of this workflow is shared commit ancestry between `main` and `page-release`, so the git graph shows where the branches merged and split. `gh pr merge --squash` produces a content-equivalent commit with no shared parent and silently defeats the entire exercise.
+
+When infrastructure on `main` needs to reach `page-release` (CI workflows, `.gitignore`, docs), do **not** hand-copy files the way Step 11 does. Do a real merge, then put `index.md` back.
+
+`index.md` will always conflict, because `main` carries the dummy "Alex Johnson" CV and `page-release` carries the real one. That conflict is expected and is resolved by restoring `page-release`'s version.
+
+```bash
+# 1. Branch from the deployment branch, not from main
+git fetch origin
+git checkout -b chore/merge-main-infra origin/page-release
+
+# 2. Merge main in, without committing yet
+git merge --no-commit --no-ff origin/main
+
+# 3. Restore page-release's own content
+git checkout HEAD -- index.md
+git checkout HEAD -- docs/evaluation/ 2>/dev/null || true   # not tracked on every branch
+
+# 4. GUARD — stop if index.md is staged
+git diff --cached --name-only | grep -q '^index.md$' && echo '❌ STOP: index.md staged' || echo '✅ safe'
+
+# 5. Confirm the staged set is infrastructure only
+git diff --cached --name-only
+git diff --stat origin/page-release -- index.md    # must be empty
+
+# 6. Commit, push, PR into page-release
+git commit -m "merge: sync infra from main (guarded index.md)"
+git push origin chore/merge-main-infra
+gh pr create --base page-release --title "merge: sync infra from main (guarded)"
+```
+
+**In the PR body, state plainly that it must be merged as a merge commit, never squashed.**
+
+**Pre-merge checklist:**
+- [ ] Branch was cut from `origin/page-release`, not from `main`
+- [ ] Guard printed `✅ safe` — `index.md` is not staged
+- [ ] `git diff --stat origin/page-release -- index.md` is empty
+- [ ] The commit has **two parents** (`git rev-list --parents -1 HEAD`)
+- [ ] PR body warns the reviewer not to squash
+
+Merging the result into `page-release` deploys the CV, so that final step stays human-gated.
+
+---
+
 ## AI Agent Guidelines
 
 When using this workflow as an AI agent:
@@ -527,10 +586,12 @@ When using this workflow as an AI agent:
    - Infer change type and branch name when context is clear
    - Ask for commit approval BEFORE executing
    - Skip redundant prompts (single file staging, fresh branch PR check)
-   - Use `gh pr merge --squash --delete-branch` for clean merges
+   - Use `gh pr merge --squash --delete-branch` for feature-branch PRs (the merge commits in Step 12 are the exception — never squash those)
    - Provide clear branch and commit suggestions
    - **Use Step 11 (file-specific sync) for page-release → main syncs**
+   - **Use Step 12 (guarded merge) for main → page-release syncs**
    - **Verify `index.md` is never included in PRs targeting `main`**
+   - **Restore `index.md` and run the guard on any merge into `page-release`**
 
 2. ❌ **DON'T:**
    - Never auto-commit without user permission
@@ -538,6 +599,7 @@ When using this workflow as an AI agent:
    - Never skip the PR process
    - Never force push without warning
    - **Never do a full branch merge from page-release → main**
+   - **Never squash a guarded-merge PR (Step 12) — it destroys the shared-hash topology**
    - **Never sync `index.md` or `docs/evaluation/` to main**
 
 ---
