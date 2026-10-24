@@ -20,7 +20,7 @@ David Layardi is an infrastructure and platform engineer with nearly a decade of
 
 Now a Site Reliability Engineer at Woven by Toyota, he previously pioneered Agentic AI for infrastructure operations at Rakuten — developing Claude Code plugins, AI Agent contexts, and autonomous analytical tooling that reduced cyber incident investigation from 24 hours to under 2 hours.
 
-He also builds open-source AI-governed infrastructure projects, including automated server provisioning with Kubernetes and AI Agent governance, and a CV evaluation framework with AI-powered scoring pipelines. These projects combine deep Kubernetes, Terraform, and DevOps expertise with agentic workflow orchestration for infrastructure-as-code operations.
+Beyond work, he runs a self-hosted Kubernetes and Terraform homelab, and shares selected AI-governed tooling publicly on GitHub — from server provisioning frameworks to an AI-powered CV evaluation platform.
 
 
 ## Technical Skills
